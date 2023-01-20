@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - ESSA Training</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+
+
+<div id='main'>
+  <div id='map'></div>
+  <div id='info'>
+    <h1>ESSA - Arlanda</h1>
+    <div>
+      <input type="checkbox" id="ttip" name="ttip" onclick="ttipClick()">
+      <label for="ttip"> Show Labels</label>
+    </div>
+    <div id='practicefield' class="practice">
+      <h3>Airfield</h3>
+      <button class="pButton active" id="1" onclick="mapButton(1)">Runways & Taxiways</button>
+      <button class="pButton" id="2" onclick="mapButton(2)">Stands</button>
+      <button class="pButton" id="3" onclick="mapButton(3)">Aprons & Terminals</button>
+      <button class="pButton" id="4" onclick="mapButton(4)">Service Roads</button>
+      <button class="pButton" id="5" onclick="mapButton(5)">Other points of interests</button>
+      <button class="pButton" id="6" onclick="mapButton(6)">GND/CD Frequencies</button>
+    </div>
+    <div id='practicectr' class="practice">
+      <h3>CTR</h3>
+      <button class="pButton" id="7" onclick="practiceButton(1)">VFR Entry/Exit Points</button>
+      <button class="pButton" id="8" onclick="practiceButton(1)">VFR Holdings</button>
+      <button class="pButton" id="9" onclick="practiceButton(1)">VFR Local References</button>
+      <button class="pButton" id="10" onclick="practiceButton(1)">TWR/ATIS Frequencies</button>
+    </div>
+    <div id='practicetma' class="practice">
+      <h3>TMA</h3>
+      <button class="pButton" id="11" onclick="practiceButton(1)">TMA Entry Points</button>
+      <button class="pButton" id="12" onclick="practiceButton(1)">TMA Exit Points</button>
+      <button class="pButton" id="13" onclick="practiceButton(1)">TMA Frequencies</button>
+    </div>
+    <div id="test">
+      <h3>Knowledge Test</h3>
+      <li><div id="questions">Questions: n/n</div></li>
+      <li><div id="tq">--</div></li>
+      <li><div id="answers">Correct answers: n/n</div></li>
+      <li><div id="timer">Time lapsed: 00:00</div></li>
+      <button class="pButton" id="testbutton" type="button" onclick="timerButton()">Start Test</button>
+    </div>    
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
