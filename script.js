@@ -63,6 +63,7 @@ let dataAprons = {"type": "FeatureCollection","features": []};
 let dataTerminals = {"type": "FeatureCollection","features": []};
 let dataStandPoints = {"type": "FeatureCollection","features": []};
 let dataStandLines = {"type": "FeatureCollection","features": []};
+let dataRoads;
 // Initialising the corresponding layers to be used by Leaflet
 let layerTerminals;
 let layerAprons;
@@ -70,10 +71,14 @@ let layerTaxiways;
 let layerRunways;
 let layerStandPoint;
 let layerStandLines;
+let layerRoads;
 // Layer Groups
 let layerStands;
 let layerRamps;
 let layerWays;
+let layerGroupRoads;
+// Layer BIG Groups
+let layerAirfield;
 
 let layerList = [];
 let selectedLayer;
@@ -118,7 +123,8 @@ const baseMapGrey = new L.tileLayer(URL_WHITE, {
 }).addTo(map);
 const baseMap = L.tileLayer(URL_OSM, {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> kitpaddle',
-  minZoom: 9
+  minZoom: 9,
+  fillOpacity: 0.25
 });
 const baseMapSat = new L.tileLayer(URL_SAT, {
   attribution: '&copy; <a href="https://carto.com/">CartoDB</a> & <a href="https://www.openstreetmap.org/copyright">OSM</a>& <a href="https://www.esri.com/en-us/home">ESRI</a> kitpaddle',
@@ -130,63 +136,17 @@ const baseMapSat = new L.tileLayer(URL_SAT, {
 // Creating Layergroup for basemaps
 const baseMaps = {
   "Base Map": baseMapGrey,
-  "Detailed Map": baseMap,
+  // TOO DETAILED SO HIDING DETAILED MAP
+  //"Detailed Map": baseMap,
   "Satellite": baseMapSat
 };
-/*
-// Creating GeoJson
-let geoCtrPoly = {
-  "type": "Feature",
-    "properties": {
-      "name": "ESSA CTR",
-      "popupContent": "The ESSA CTR boundaries"
-    },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              17.96161651611328,
-              59.491469015645784
-            ],
-            [
-              18.322792053222656,
-              59.632351851463916
-            ],
-            [
-              18.253097534179688,
-              59.774028637875354
-            ],
-            [
-              18.172760009765625,
-              59.814792236965225
-            ],
-            [
-              17.77759552001953,
-              59.81496485809926
-            ],
-            [
-              17.696571350097656,
-              59.55798351453151
-            ],
-            [
-              17.779998779296875,
-              59.506803361027174
-            ],
-            [
-              17.96161651611328,
-              59.491469015645784
-            ]
-          ]
-        ]
-      }
-};*/
 
 // Create control with layerGroups
 let panelLayers = new L.control.layers(baseMaps);
 // Add control AND layers to map
 panelLayers.addTo(map);
 //map.fitBounds(ctrLayer.getBounds());
+layerAirfield = L.layerGroup([]);
 
 function getUniqueValues(array){
   return Array.from(new Set(array));
@@ -199,7 +159,7 @@ function onEachRunway(feature, layer){
     //layer.bindPopup(feature.properties.name).openPopup(); // here add openPopup()
   });
   layer.on('mouseout', function () {
-    this.setStyle({color: 'black', weight: 8});
+    this.setStyle({color: 'black', weight: 9});
   });
   layer.on('click', function(){
     testClick(feature.properties.name);
@@ -227,7 +187,7 @@ function onEachTaxiway(feature, layer){
     //layer.bindPopup(feature.properties.name).openPopup(); // here add openPopup()
   });
   layer.on('mouseout', function () {
-    this.setStyle({color: 'grey', weight: 4});
+    this.setStyle({color: 'grey', weight: 7});
   });
   layer.on('click', function(){
     testClick(feature.properties.ref);
@@ -264,9 +224,44 @@ function onEachTerminal(feature, layer){
     testClick(feature.properties.name);
   });
 }
+function onEachRoad(feature, layer){
+  let html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>'
+  layer.bindTooltip(html, {permanent: false, direction: 'top'});
+  layer.on('mouseover', function () {
+    this.setStyle({color: 'orange', weight: 7});
+    //layer.bindPopup(feature.properties.name).openPopup(); // here add openPopup()
+  });
+  layer.on('mouseout', function () {
+    this.setStyle({color: 'black', weight: 4});
+  });
+  layer.on('click', function(){
+    testClick(feature.properties.name);
+  });
+}
 
+// FETCHING DATA for SERVICE ROADS
+fetch('https://kitpaddle.github.io/essa-training/essa_serviceroads.geojson').then(response => {
+  return response.json();
+}).then(data => {
+  dataRoads = data; // Save data locally
+  //console.log(dataRoads);
+  
+  layerRoads = L.geoJSON(dataRoads, {onEachFeature: onEachRoad, style:{color:'black', weight: 4}});
+  
+  // Grouping stands to one layer
+  layerGroupRoads = L.layerGroup([layerRoads]);
+  // AIRFIELD LAYER
+  layerAirfield.addLayer(layerGroupRoads);
+  
+  // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
+  layerList.push(layerRoads);
+  
+}).catch(err => {
+  // Do something for an error here
+});
 
-
+// FETCH DATA for RWYS & TWYS & STANDS & APRONS & TERMINALS
+// Data is sourced from OpenStreetMap as a GeoJSON saved on my github
 fetch('https://kitpaddle.github.io/hosting/essaosmaeroways220928.geojson').then(response => {
   return response.json();
 }).then(data => {
@@ -317,11 +312,10 @@ fetch('https://kitpaddle.github.io/hosting/essaosmaeroways220928.geojson').then(
       dataTaxiways.features.push(newFeature);
     }
   }
-  
-  layerRunways = L.geoJSON(dataRunways, {onEachFeature: onEachRunway, style:{color:'black', weight: 8}});
+  layerRunways = L.geoJSON(dataRunways, {onEachFeature: onEachRunway, style:{color:'black', weight: 9}});
   layerAprons = L.geoJSON(dataAprons, {onEachFeature: onEachApron,style:{weight: 0.5, color:'grey'}});
   layerTerminals = L.geoJSON(dataTerminals, {onEachFeature: onEachTerminal,style:{weight: 0.5, color:'black'}});
-  layerTaxiways = L.geoJSON(dataTaxiways, {onEachFeature: onEachTaxiway,style:{weight: 4, color:'grey'}});
+  layerTaxiways = L.geoJSON(dataTaxiways, {onEachFeature: onEachTaxiway,style:{weight: 7, color:'grey'}});
   layerStandPoint = L.geoJSON(dataStandPoints, {onEachFeature: onEachStand, pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng, {weight: 0.7, radius: 7, color: "#000"});
   }});
@@ -334,10 +328,18 @@ fetch('https://kitpaddle.github.io/hosting/essaosmaeroways220928.geojson').then(
   // Grouping Aprons and Terminals
   layerRamps = L.layerGroup([layerAprons, layerTerminals]);
   // AIRFIELD LAYER
-  layerAirfield = L.layerGroup([layerStands, layerWays, layerRamps]);
+  
+  layerAirfield.addLayer(layerStands);
+  layerAirfield.addLayer(layerWays);
+  layerAirfield.addLayer(layerRamps);
   
   // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
-  layerList = [layerRunways, layerTaxiways, layerStandPoint, layerAprons, layerTerminals];
+  //layerList = [layerRunways, layerTaxiways, layerStandPoint, layerAprons, layerTerminals];
+  layerList.push(layerRunways);
+  layerList.push(layerTaxiways);
+  layerList.push(layerStandPoint);
+  layerList.push(layerAprons);
+  layerList.push(layerTerminals);
  
   // Adding layers to controlpanel, maybe remove it at the end? ONLY TESTING?
   panelLayers.addOverlay(layerAirfield, "Airfield");
@@ -385,7 +387,7 @@ function mapButton(nr){
     map.removeLayer(layerWays);
     map.removeLayer(layerRamps);
     map.removeLayer(layerStands);
-    
+    map.removeLayer(layerGroupRoads);
   }
   
   switch (nr){
@@ -403,6 +405,11 @@ function mapButton(nr){
       selectedLayer = layerRamps;
       layerRamps.addTo(map);
       qsize = layerAprons.getLayers().length + layerTerminals.getLayers().length;
+      break;
+    case 4:
+      selectedLayer = layerGroupRoads;
+      layerGroupRoads.addTo(map);
+      qsize = layerRoads.getLayers().length;
       break;
   }
   document.getElementById("questions").innerHTML = "Questions: 0/"+qsize;
