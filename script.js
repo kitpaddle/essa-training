@@ -57,28 +57,31 @@ let bounds;
 let osmData;
 
 // Initaliasing empty GeoJSON objects and filling them with data/features later
+// AIRFIELD DATA
 let dataRunways = {"type": "FeatureCollection","features": []};
 let dataTaxiways = {"type": "FeatureCollection","features": []};
 let dataAprons = {"type": "FeatureCollection","features": []};
 let dataTerminals = {"type": "FeatureCollection","features": []};
 let dataStandPoints = {"type": "FeatureCollection","features": []};
 let dataStandLines = {"type": "FeatureCollection","features": []};
-let dataRoads;
+let dataRoads, dataPoi, dataAirfieldAor;
+// CTR DATA
+let dataSectors, dataCtrPoints;
+
 // Initialising the corresponding layers to be used by Leaflet
-let layerTerminals;
-let layerAprons;
-let layerTaxiways;
-let layerRunways;
-let layerStandPoint;
-let layerStandLines;
-let layerRoads;
-// Layer Groups
-let layerStands;
-let layerRamps;
-let layerWays;
-let layerGroupRoads;
+// AIRFIELD LAYERS
+let layerTerminals, layerAprons, layerTaxiways, layerRunways, layerStandPoint, layerStandLines, layerRoads, layerPoi, layerAirfieldAor;
+// CTR LAYERS
+let layerSectors, layerCtrPoints;
+
+// LAYER GROUPS AIRFIELD
+let layerStands, layerRamps, layerWays, layerGroupRoads, layerGroupPoi, layerGroupAirfieldAor;
+// LAYER GROUPS CTR
+let layerGroupSectors, layerGroupCtrPoints;
+
 // Layer BIG Groups
 let layerAirfield;
+let layerCtr;
 
 let layerList = [];
 let selectedLayer;
@@ -90,6 +93,21 @@ let testProgress = 0;
 let testPoints = 0;
 
 
+let timerInterval; //Define the timerInterval so its available
+
+let iconVfrPoint = L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/kitpaddle/essa-training/f4be9cfcfb957623310fa5c05ae31353f1ed6c58/ctr_vfr_point.png',
+    iconSize:     [20, 20], // size of the icon
+    iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
+    popupAnchor:  [21, 10] // point from which the popup should open relative to the iconAnchor
+});
+
+let iconVfrHold = L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/kitpaddle/essa-training/41caaabb597ea02be6e5815ca5f2313e5185f06f/ctr_vfr_hold.png',
+    iconSize:     [20, 20], // size of the icon
+    iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
+    popupAnchor:  [21, 10] // point from which the popup should open relative to the iconAnchor
+});
 
 //// JS RELATED TO MAP / LEAFLET
 
@@ -147,6 +165,7 @@ let panelLayers = new L.control.layers(baseMaps);
 panelLayers.addTo(map);
 //map.fitBounds(ctrLayer.getBounds());
 layerAirfield = L.layerGroup([]);
+layerCtr = L.layerGroup([]);
 
 function getUniqueValues(array){
   return Array.from(new Set(array));
@@ -225,8 +244,9 @@ function onEachTerminal(feature, layer){
   });
 }
 function onEachRoad(feature, layer){
-  let html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>'
+  let html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
   layer.bindTooltip(html, {permanent: false, direction: 'top'});
+  
   layer.on('mouseover', function () {
     this.setStyle({color: 'orange', weight: 7});
     //layer.bindPopup(feature.properties.name).openPopup(); // here add openPopup()
@@ -239,8 +259,114 @@ function onEachRoad(feature, layer){
   });
 }
 
+function onEachPoi(feature, layer){
+  let html
+  if(feature.properties.description!=undefined){
+    html = '<div class="tooltip"><b>'+feature.properties.name+'</b><br>'+feature.properties.description+'</div>';
+  }else{
+    html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
+  }
+  
+  layer.bindTooltip(html, {permanent: false, direction: 'top'});
+  
+  layer.on('click', function(){
+    testClick(feature.properties.name);
+  });
+  
+  layer.on('mouseover', function () {
+    this.setStyle({color: 'orange', weight: 7});
+    //layer.bindPopup(feature.properties.name).openPopup(); // here add openPopup()
+  });
+  layer.on('mouseout', function () {
+    this.setStyle({color: 'black', weight: 3});
+  });
+}
+
+function onEachVfrPoint(feature, layer){
+  let html
+  if(feature.properties.description!=undefined){
+    html = '<div class="tooltip"><b>'+feature.properties.name+'</b><br>'+feature.properties.description+'</div>';
+  }else{
+    html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
+  }
+  
+  layer.bindTooltip(html, {permanent: false, direction: 'top'});
+  
+}
+
+// FETCHING DATA for VFR Points
+fetch('https://kitpaddle.github.io/essa-training/essa_ctr_vfrPoints.geojson').then(response => {
+  return response.json();
+}).then(data => {
+  dataCtrPoints = data; // Save data locally
+  //console.log(data);
+  
+  layerCtrPoints = L.geoJSON(dataCtrPoints, {
+    onEachFeature: onEachVfrPoint, 
+    pointToLayer: function (feature, latlng) {
+      switch(feature.properties.category){
+        case 'VFR Holding': return L.marker(latlng, {icon: iconVfrHold});
+        case 'VFR Reporting Point': return L.marker(latlng, {icon: iconVfrPoint});
+      }
+    }
+  });
+  
+  // Grouping stands to one layer
+  layerGroupCtrPoints = L.layerGroup([layerCtrPoints]);
+  // CTR LAYER
+  layerCtr.addLayer(layerGroupCtrPoints);
+  
+  // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
+  layerList.push(layerCtrPoints);
+  
+}).catch(err => {
+  // Do something for an error here
+});
+
+// FETCHING DATA for CTR Sectors
+fetch('https://kitpaddle.github.io/essa-training/essa_ctr_sectors.geojson').then(response => {
+  return response.json();
+}).then(data => {
+  dataSectors = data; // Save data locally
+  //console.log(dataRoads);
+  
+  layerSectors = L.geoJSON(dataSectors, {style:{color:'grey', weight: 3}});
+  
+  // Grouping stands to one layer
+  layerGroupSectors = L.layerGroup([layerSectors]);
+  // CTR LAYER
+  layerCtr.addLayer(layerGroupSectors);
+  
+  // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
+  layerList.push(layerSectors);
+  
+}).catch(err => {
+  // Do something for an error here
+});
+
+// FETCHING DATA for AORs
+fetch('https://kitpaddle.github.io/essa-training/essa_airfield_aor.geojson').then(response => {
+  return response.json();
+}).then(data => {
+  dataAirfieldAor = data; // Save data locally
+  //console.log(dataRoads);
+  
+  layerAirfieldAor = L.geoJSON(dataAirfieldAor, {onEachFeature: onEachRoad, style:{color:'black', weight: 4}});
+  
+  // Grouping stands to one layer
+  layerGroupAirfieldAor = L.layerGroup([layerAirfieldAor]);
+  // AIRFIELD LAYER
+  layerAirfield.addLayer(layerGroupAirfieldAor);
+  
+  // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
+  layerList.push(layerAirfieldAor);
+  
+}).catch(err => {
+  // Do something for an error here
+});
+
 // FETCHING DATA for SERVICE ROADS
-fetch('https://kitpaddle.github.io/essa-training/essa_serviceroads.geojson').then(response => {
+fetch('https://kitpaddle.github.io/essa-training/essa_serviceroadsV2.geojson').then(response => {
   return response.json();
 }).then(data => {
   dataRoads = data; // Save data locally
@@ -255,6 +381,37 @@ fetch('https://kitpaddle.github.io/essa-training/essa_serviceroads.geojson').the
   
   // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
   layerList.push(layerRoads);
+  
+}).catch(err => {
+  // Do something for an error here
+});
+
+// FETCHING DATA for Points of Interests
+fetch('https://kitpaddle.github.io/essa-training/essa_poi.geojson').then(response => {
+  return response.json();
+}).then(data => {
+  dataPoi = data; // Save data locally
+  //console.log(dataRoads);
+  
+  layerPoi = L.geoJSON(dataPoi, {onEachFeature: onEachPoi,
+                                 pointToLayer: function(feature,latlng){
+                                   return L.circleMarker(latlng, {color: 'black', weight: 3})},
+                                 style:function(feature){
+                                   if(feature.properties.category == "Hotspot")
+                                     return {color: 'black', fillColor: "red"};
+                                   else{
+                                     return {fillColor: 'grey', radius: 6}
+                                   }
+                                 }
+                                });
+  
+  // Grouping stands to one layer
+  layerGroupPoi = L.layerGroup([layerPoi]);
+  // AIRFIELD LAYER
+  layerAirfield.addLayer(layerGroupPoi);
+  
+  // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
+  layerList.push(layerPoi);
   
 }).catch(err => {
   // Do something for an error here
@@ -343,6 +500,7 @@ fetch('https://kitpaddle.github.io/hosting/essaosmaeroways220928.geojson').then(
  
   // Adding layers to controlpanel, maybe remove it at the end? ONLY TESTING?
   panelLayers.addOverlay(layerAirfield, "Airfield");
+  panelLayers.addOverlay(layerCtr, "CTR");
   
   mapButton(1); // Initaliasing first layer
   
@@ -388,6 +546,10 @@ function mapButton(nr){
     map.removeLayer(layerRamps);
     map.removeLayer(layerStands);
     map.removeLayer(layerGroupRoads);
+    map.removeLayer(layerGroupPoi);
+    map.removeLayer(layerGroupAirfieldAor);
+    map.removeLayer(layerGroupSectors);
+    map.removeLayer(layerGroupCtrPoints);
   }
   
   switch (nr){
@@ -395,30 +557,67 @@ function mapButton(nr){
       selectedLayer = layerWays;
       layerWays.addTo(map);
       qsize = layerRunways.getLayers().length + layerTaxiways.getLayers().length;
+      moveMap(layerRunways);
       break;
     case 2:
       selectedLayer = layerStands;
       layerStands.addTo(map);
       qsize = layerStandPoint.getLayers().length;
+      moveMap(layerStandPoint);
       break;
     case 3:
       selectedLayer = layerRamps;
       layerRamps.addTo(map);
       qsize = layerAprons.getLayers().length + layerTerminals.getLayers().length;
+      moveMap(layerAprons);
       break;
     case 4:
       selectedLayer = layerGroupRoads;
       layerGroupRoads.addTo(map);
       qsize = layerRoads.getLayers().length;
+      moveMap(layerRoads);
+      break;
+    case 5:
+      selectedLayer = layerGroupPoi;
+      layerGroupPoi.addTo(map);
+      qsize = layerPoi.getLayers().length;
+      moveMap(layerPoi);
+      break;
+    case 6:
+      selectedLayer = layerGroupAirfieldAor;
+      layerGroupAirfieldAor.addTo(map);
+      qsize = layerAirfieldAor.getLayers().length;
+      moveMap(layerAirfieldAor);
+      break;
+    case 7:
+      selectedLayer = layerGroupSectors;
+      layerGroupSectors.addTo(map);
+      qsize = 1;
+      moveMap(layerCtrPoints);
+      break;
+    case 8:
+      selectedLayer = layerGroupCtrPoints;
+      layerGroupCtrPoints.addTo(map);
+      qsize = layerCtrPoints.getLayers().length;
+      moveMap(layerCtrPoints);
       break;
   }
+  
   document.getElementById("questions").innerHTML = "Questions: 0/"+qsize;
   document.getElementById("answers").innerHTML = "Correct answers: 0/"+qsize;
   if(testing) timerButton(); //If testing was ON, stop testing
 }
 
-function timerButton(){
+function padNumber ( val ) { return val > 9 ? val : "0" + val; }
+
+function moveMap(layer){
+  let bounds = layer.getBounds();
+  map.fitBounds(bounds);
+}
+
+function timerButton(){  
   if(!testing){
+    let testTime = 0; //Define time in seconds for timer
     testArray = []; testProgress = 0; testPoints = 0;
     testing = true; // starting test
     document.getElementById("testbutton").innerHTML = "Stop Testing";
@@ -426,6 +625,10 @@ function timerButton(){
     ttipClick(); // If Tooltips checkbox was on, set to off and update
     document.getElementById('ttip').disabled = true; // Disable checkbox
     document.getElementById("questions").innerHTML = "Question: 1/"+qsize;
+    timerInterval = setInterval( function(){
+      testTime++;
+      document.getElementById("timer").innerHTML='Time lapsed: '+padNumber(parseInt(testTime/60,10))+':'+padNumber(testTime%60)
+    }, 1000);
     
     // HIDE ALL TOOLTIPS by setting opacity 0
     layerList.forEach(l =>{
@@ -460,6 +663,8 @@ function timerButton(){
     document.getElementById("testbutton").innerHTML = "Start Test";
     console.log("not testing");
     document.getElementById('ttip').disabled = false; //un-disable checkbox
+    
+    clearInterval ( timerInterval );
     
     // "UNHIDE" ALL TOOLTIPS by setting opacity back to 1
     layerList.forEach(l =>{
