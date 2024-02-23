@@ -81,7 +81,7 @@
       "type": "Feature",
       "properties": {
         "name": "AoR RWY 01R/19L",
-        "cateogry": "AoR",
+        "category": "AoR",
         "frequency": "125.130"
       },
       "geometry": {
