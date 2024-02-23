@@ -673,6 +673,62 @@
         ],
         "type": "Polygon"
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+      "name": "CD",
+      "category": "labelPoint"
+      },
+      "geometry": {
+        "coordinates": [
+          18.001162450712826,
+          59.63888269299238
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+      "name": "Rescue Channel",
+      "category": "labelPoint"
+      },
+      "geometry": {
+        "coordinates": [
+          18.0010792244841,
+          59.636842402967716
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+      "name": "ATIS ARR",
+      "category": "labelPoint"
+      },
+      "geometry": {
+        "coordinates": [
+          18.000995998256997,
+          59.63478095307494
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+      "name": "ATIS DEP",
+      "category": "labelPoint"
+      },
+      "geometry": {
+        "coordinates": [
+          18.000995998256997,
+          59.632466929940904
+        ],
+        "type": "Point"
+      }
     }
   ]
 }
