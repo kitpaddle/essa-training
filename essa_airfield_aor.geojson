@@ -4,9 +4,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "AoR RWY 01L/19R",
+        "aor": "AoR RWY 01L/19R",
         "category": "AoR",
-        "frequency": 118.505
+        "name": 118.505
       },
       "geometry": {
         "coordinates": [
@@ -44,9 +44,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "AoR RWY 08/26",
+        "aor": "AoR RWY 08/26",
         "category": "AoR",
-        "frequency": "128.730"
+        "name": "128.730"
       },
       "geometry": {
         "coordinates": [
@@ -80,9 +80,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "AoR RWY 01R/19L",
+        "aor": "AoR RWY 01R/19L",
         "category": "AoR",
-        "frequency": "125.130"
+        "name": "125.130"
       },
       "geometry": {
         "coordinates": [
@@ -116,9 +116,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "AoR GND-N",
+        "aor": "AoR GND-N",
         "category": "AoR",
-        "frequency": "121.930"
+        "name": "121.930"
       },
       "geometry": {
         "coordinates": [
@@ -264,9 +264,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "AoR GND-W",
+        "aor": "AoR GND-W",
         "category": "AoR",
-        "frequency": 121.705
+        "name": 121.705
       },
       "geometry": {
         "coordinates": [
@@ -372,9 +372,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "AoR GND-E",
+        "aor": "AoR GND-E",
         "category": "AoR",
-        "frequency": "121.980"
+        "name": "121.980"
       },
       "geometry": {
         "coordinates": [
@@ -677,9 +677,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "CD",
+        "aor": "CD",
         "category": "other",
-        "frequency": "121.830"
+        "name": "121.830"
       },
       "geometry": {
         "coordinates": [
@@ -713,9 +713,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Rescue Channel",
+        "aor": "Rescue Channel",
         "category": "other",
-        "frequency": "123.100"
+        "name": "123.100"
       },
       "geometry": {
         "coordinates": [
@@ -748,9 +748,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "ATIS ARR",
+        "aor": "ATIS ARR",
         "category": "other",
-        "frequency": "119.00"
+        "name": "119.005"
       },
       "geometry": {
         "coordinates": [
@@ -783,9 +783,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "ATIS DEP",
+        "aor": "ATIS DEP",
         "category": "other",
-        "frequency": "121.630"
+        "name": "121.630"
       },
       "geometry": {
         "coordinates": [
