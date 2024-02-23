@@ -537,7 +537,7 @@
       "type": "Feature",
       "properties": {
         "name": "CD",
-        "category": "other",
+        "category": "label",
         "frequency": "121.830"
       },
       "geometry": {
@@ -573,7 +573,7 @@
       "type": "Feature",
       "properties": {
         "name": "Rescue Channel",
-        "category": "other",
+        "category": "label",
         "frequency": "123.100"
       },
       "geometry": {
@@ -608,7 +608,7 @@
       "type": "Feature",
       "properties": {
         "name": "ATIS ARR",
-        "category": "other",
+        "category": "label",
         "frequency": "119.00"
       },
       "geometry": {
@@ -643,7 +643,7 @@
       "type": "Feature",
       "properties": {
         "name": "ATIS DEP",
-        "category": "other",
+        "category": "label",
         "frequency": "121.630"
       },
       "geometry": {
@@ -678,7 +678,7 @@
       "type": "Feature",
       "properties": {
         "name": "CD",
-        "category": "label",
+        "category": "other",
         "frequency": "121.830"
       },
       "geometry": {
@@ -714,7 +714,7 @@
       "type": "Feature",
       "properties": {
         "name": "Rescue Channel",
-        "category": "label",
+        "category": "other",
         "frequency": "123.100"
       },
       "geometry": {
@@ -749,7 +749,7 @@
       "type": "Feature",
       "properties": {
         "name": "ATIS ARR",
-        "category": "label",
+        "category": "other",
         "frequency": "119.00"
       },
       "geometry": {
@@ -784,7 +784,7 @@
       "type": "Feature",
       "properties": {
         "name": "ATIS DEP",
-        "category": "label",
+        "category": "other",
         "frequency": "121.630"
       },
       "geometry": {
