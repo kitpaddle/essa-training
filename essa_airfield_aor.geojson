@@ -536,9 +536,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "CD",
+        "aor": "CD",
         "category": "label",
-        "frequency": "121.830"
+        "name": "121.830"
       },
       "geometry": {
         "coordinates": [
@@ -572,9 +572,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Rescue Channel",
+        "aor": "Rescue Channel",
         "category": "label",
-        "frequency": "123.100"
+        "name": "123.100"
       },
       "geometry": {
         "coordinates": [
@@ -607,9 +607,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "ATIS ARR",
+        "aor": "ATIS ARR",
         "category": "label",
-        "frequency": "119.00"
+        "name": "119.00"
       },
       "geometry": {
         "coordinates": [
@@ -642,9 +642,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "ATIS DEP",
+        "aor": "ATIS DEP",
         "category": "label",
-        "frequency": "121.630"
+        "name": "121.630"
       },
       "geometry": {
         "coordinates": [
