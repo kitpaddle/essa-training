@@ -58,7 +58,8 @@ let osmData;
 
 // Initaliasing empty GeoJSON objects and filling them with data/features later
 // AIRFIELD DATA
-let dataRunways = {"type": "FeatureCollection","features": []};
+//these are initiated like this because i fetch the data from OSM. For all the others it's data created by myself in geojson format.
+let dataRunways = {"type": "FeatureCollection","features": []}; 
 let dataTaxiways = {"type": "FeatureCollection","features": []};
 let dataAprons = {"type": "FeatureCollection","features": []};
 let dataTerminals = {"type": "FeatureCollection","features": []};
@@ -66,18 +67,18 @@ let dataStandPoints = {"type": "FeatureCollection","features": []};
 let dataStandLines = {"type": "FeatureCollection","features": []};
 let dataRoads, dataPoi, dataAirfieldAor;
 // CTR DATA
-let dataSectors, dataCtrPoints;
+let dataSectors, dataCtrPoints, dataCtrPlaces;
 
 // Initialising the corresponding layers to be used by Leaflet
 // AIRFIELD LAYERS
 let layerTerminals, layerAprons, layerTaxiways, layerRunways, layerStandPoint, layerStandLines, layerRoads, layerPoi, layerAirfieldAor;
 // CTR LAYERS
-let layerSectors, layerCtrPoints;
+let layerSectors, layerCtrPoints, layerCtrPlaces;
 
 // LAYER GROUPS AIRFIELD
 let layerStands, layerRamps, layerWays, layerGroupRoads, layerGroupPoi, layerGroupAirfieldAor;
 // LAYER GROUPS CTR
-let layerGroupSectors, layerGroupCtrPoints;
+let layerGroupSectors, layerGroupCtrPoints, layerGroupCtrPlaces;
 
 // Layer BIG Groups
 let layerAirfield;
@@ -283,7 +284,7 @@ function onEachPoi(feature, layer){
 }
 
 function onEachVfrPoint(feature, layer){
-  let html
+  let html;
   if(feature.properties.description!=undefined){
     html = '<div class="tooltip"><b>'+feature.properties.name+'</b><br>'+feature.properties.description+'</div>';
   }else{
@@ -291,8 +292,90 @@ function onEachVfrPoint(feature, layer){
   }
   
   layer.bindTooltip(html, {permanent: false, direction: 'top'});
-  
 }
+
+function onEachAoR(feature,layer){
+  //OBS for this to work the order of the features on tje geojson are important. This is a hack solution
+  if (feature.properties.category == 'label') {
+    layer.setStyle({
+            fillColor: 'transparent', // Set the fill color to transparent
+            color: 'transparent', // Set the border color to transparent
+            opacity: 0, // Set the opacity to 0 (invisible)
+            fillOpacity: 0, // Set the fill opacity to 0 (invisible)
+            pointerEvents: 'none' // Disable pointer events on the polygon
+        });
+    let html = '<b>'+feature.properties.aor+'</b>';
+    let bounds = layer.getBounds().getCenter()
+    layer.bindTooltip(html, {permanent: true, direction: 'center', className: 'aorTip'}).openTooltip();
+    
+  }else{
+
+    let html = '<div class="tooltip"><b>'+feature.properties.aor+'</b><br>Frequency: '+feature.properties.name+'</div>';
+    layer.bindTooltip(html, {permanent: false, direction: 'top'});
+
+    layer.on('mouseover', function () {
+      this.setStyle({color: 'orange', weight: 7});
+      //layer.bindPopup(feature.properties.name).openPopup(); // here add openPopup()
+    });
+    layer.on('mouseout', function () {
+      this.setStyle({color: 'black', weight: 4});
+    });
+    layer.on('click', function(){
+      testClick(feature.properties.name);
+    });
+  }
+}
+//For the places/areas in the CTR
+function onEachPlace(feature, layer){
+  if(feature.properties.category=="sector"){
+    layer.setStyle({color: 'rgb(224, 99, 76)', opacity: 0.8});
+    html = '<div class="tooltip"><b>'+feature.properties.name+'</b><br>'+feature.properties.height+'</div>';
+  }else if(feature.properties.category=="water"){
+    layer.setStyle({color: 'rgb(76, 165, 224)', opacity: 0.8});
+    html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
+  }else{
+    layer.setStyle({color: 'black', opacity: 0.8});
+    html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
+  }
+  layer.bindTooltip(html, {permanent: false, direction: 'top'});
+  layer.on('mouseover', function () {
+    this.setStyle({color: 'orange', opacity: 1});
+    //layer.bindPopup(feature.properties.name).openPopup(); // here add openPopup()
+  });
+  layer.on('mouseout', function () {
+    if(feature.properties.category=="sector"){
+      this.setStyle({color: 'rgb(224, 99, 76)', opacity: 0.8});
+    }else if (feature.properties.category=="water"){
+      this.setStyle({color: 'rgb(76, 165, 224)', opacity: 0.8});
+    }else{
+      this.setStyle({color: 'black', opacity: 0.8});
+    }
+    
+  });
+  layer.on('click', function(){
+    testClick(feature.properties.name);
+  });
+}
+
+// FETCHING DATA for CTR Places, Sectors and Water bodies.
+fetch('https://kitpaddle.github.io/essa-training/essa_ctr_areas.geojson').then(response => {
+  return response.json();
+}).then(data => {
+  dataCtrPlaces = data; // Save data locally
+
+  layerCtrPlaces = L.geoJSON(dataCtrPlaces, {onEachFeature: onEachPlace, style:{color:'black', weight: 3}});
+
+  // Grouping the two layers to one layer
+  layerGroupCtrPlaces = L.layerGroup([layerCtrPlaces]);
+  // AOR LAYER (and added to Airfield so it is show on map and everything)
+  layerCtr.addLayer(layerGroupCtrPlaces);
+  
+  // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
+  layerList.push(layerCtrPlaces);
+  
+}).catch(err => {
+  // Do something for an error here
+});
 
 // FETCHING DATA for VFR Points
 fetch('https://kitpaddle.github.io/essa-training/essa_ctr_vfrPoints.geojson').then(response => {
@@ -330,7 +413,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_ctr_sectors.geojson').then
   dataSectors = data; // Save data locally
   //console.log(dataRoads);
   
-  layerSectors = L.geoJSON(dataSectors, {style:{color:'grey', weight: 3}});
+  layerSectors = L.geoJSON(dataSectors, {interactive: false, style:{color:'grey', weight: 3}});
   
   // Grouping stands to one layer
   layerGroupSectors = L.layerGroup([layerSectors]);
@@ -338,7 +421,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_ctr_sectors.geojson').then
   layerCtr.addLayer(layerGroupSectors);
   
   // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
-  layerList.push(layerSectors);
+  //layerList.push(layerSectors);
   
 }).catch(err => {
   // Do something for an error here
@@ -349,13 +432,20 @@ fetch('https://kitpaddle.github.io/essa-training/essa_airfield_aor.geojson').the
   return response.json();
 }).then(data => {
   dataAirfieldAor = data; // Save data locally
-  //console.log(dataRoads);
+
+  // Different layers for LABELS so these can never be hidden (not added to layerList)
+  // Must be in code above the one below or drawn in wrong order and interferes with clicking
+  layerAirfieldAorLabel = L.geoJSON(dataAirfieldAor, {onEachFeature: onEachAoR, style:{color:'black', weight: 4}, filter: function(feature,layer){
+    return (feature.properties.category == "label")
+  }});
+  // Normal layer 
+  layerAirfieldAor = L.geoJSON(dataAirfieldAor, {onEachFeature: onEachAoR, style:{color:'black', weight: 4}, filter: function(feature,layer){
+    return (feature.properties.category != "label")
+  }});
   
-  layerAirfieldAor = L.geoJSON(dataAirfieldAor, {onEachFeature: onEachRoad, style:{color:'black', weight: 4}});
-  
-  // Grouping stands to one layer
-  layerGroupAirfieldAor = L.layerGroup([layerAirfieldAor]);
-  // AIRFIELD LAYER
+  // Grouping the two layers to one layer
+  layerGroupAirfieldAor = L.layerGroup([layerAirfieldAor, layerAirfieldAorLabel]);
+  // AOR LAYER (and added to Airfield so it is show on map and everything)
   layerAirfield.addLayer(layerGroupAirfieldAor);
   
   // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
@@ -550,6 +640,7 @@ function mapButton(nr){
     map.removeLayer(layerGroupAirfieldAor);
     map.removeLayer(layerGroupSectors);
     map.removeLayer(layerGroupCtrPoints);
+    map.removeLayer(layerGroupCtrPlaces);
   }
   
   switch (nr){
@@ -590,14 +681,16 @@ function mapButton(nr){
       moveMap(layerAirfieldAor);
       break;
     case 7:
-      selectedLayer = layerGroupSectors;
+      selectedLayer = layerGroupCtrPlaces;
       layerGroupSectors.addTo(map);
-      qsize = 1;
-      moveMap(layerCtrPoints);
+      layerGroupCtrPlaces.addTo(map);
+      qsize = layerCtrPlaces.getLayers().length;;
+      moveMap(layerCtrPlaces);
       break;
     case 8:
       selectedLayer = layerGroupCtrPoints;
       layerGroupCtrPoints.addTo(map);
+      layerGroupSectors.addTo(map);
       qsize = layerCtrPoints.getLayers().length;
       moveMap(layerCtrPoints);
       break;
@@ -610,6 +703,7 @@ function mapButton(nr){
 
 function padNumber ( val ) { return val > 9 ? val : "0" + val; }
 
+//function to re-center and resize map view depending on what layer is clicked
 function moveMap(layer){
   let bounds = layer.getBounds();
   map.fitBounds(bounds);
@@ -617,6 +711,7 @@ function moveMap(layer){
 
 function timerButton(){  
   if(!testing){
+    console.log("Starting testing");
     let testTime = 0; //Define time in seconds for timer
     testArray = []; testProgress = 0; testPoints = 0;
     testing = true; // starting test
@@ -653,7 +748,8 @@ function timerButton(){
         })
       })
     }
-    
+    testArray = shuffleArray(testArray);
+    console.log("Testing: "+ testArray[testProgress].feature.properties.name);
     document.getElementById('tq').innerHTML = "Where is "+testArray[testProgress].feature.properties.name+" ?";
     document.getElementById('answers').innerHTML = "Correct answers: 0/"+qsize;
     
@@ -682,7 +778,6 @@ function timerButton(){
 function testClick(r){
   console.log("Clicked: "+r);
   if(testing){
-    console.log("Testing: "+ testArray[testProgress].feature.properties.name);
     if(r == testArray[testProgress].feature.properties.name){
       testPoints++;
       document.getElementById('answers').innerHTML = "Correct answers: "+ testPoints +"/"+qsize; 
@@ -693,8 +788,18 @@ function testClick(r){
       timerButton();
     }else{
       testProgress++;
-    document.getElementById('questions').innerHTML = "Question: "+(testProgress+1) +"/"+qsize;
-    document.getElementById('tq').innerHTML = "Where is "+testArray[testProgress].feature.properties.name+" ?";
+      console.log("Testing: "+ testArray[testProgress].feature.properties.name + " "+testArray[testProgress].feature.properties.category);
+      document.getElementById('questions').innerHTML = "Question: "+(testProgress+1) +"/"+qsize;
+      document.getElementById('tq').innerHTML = "Where is "+testArray[testProgress].feature.properties.name+" ?";
     }
   }
+}
+
+// Function to shuffle an array using the Fisher-Yates algorithm
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
