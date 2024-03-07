@@ -1,1 +1,220 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Sector West","category":"Sector","frequency":118.505},"geometry":{"coordinates":[[17.88388889,59.49833333],[17.78,59.50777778],[17.69666667,59.55777778],[17.78,59.81611111],[17.78,59.81611111],[17.99888889,59.81611111]],"type":"LineString"},"id":0},{"type":"Feature","properties":{"name":"Sector East","category":"Sector","frequency":"128.730"},"geometry":{"coordinates":[[17.99888889,59.81611111],[18.17972222,59.81611111],[18.25472222,59.77444444],[18.32138889,59.63277778],[17.96333333,59.49111111],[17.88388889,59.49833333]],"type":"LineString"},"id":1},{"type":"Feature","properties":{"name":"Sector Separation"},"geometry":{"coordinates":[[17.99888889,59.81611111],[17.88388889,59.49833333]],"type":"LineString"},"id":3}]}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sector West",
+        "category": "Sector",
+        "frequency": 118.505
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            17.88388889,
+            59.49833333
+          ],
+          [
+            17.78,
+            59.50777778
+          ],
+          [
+            17.69666667,
+            59.55777778
+          ],
+          [
+            17.78,
+            59.81611111
+          ],
+          [
+            17.78,
+            59.81611111
+          ],
+          [
+            17.99888889,
+            59.81611111
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": 0
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sector East",
+        "category": "Sector",
+        "frequency": "128.730"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            17.99888889,
+            59.81611111
+          ],
+          [
+            18.17972222,
+            59.81611111
+          ],
+          [
+            18.25472222,
+            59.77444444
+          ],
+          [
+            18.32138889,
+            59.63277778
+          ],
+          [
+            17.96333333,
+            59.49111111
+          ],
+          [
+            17.88388889,
+            59.49833333
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sector Separation"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            17.99888889,
+            59.81611111
+          ],
+          [
+            17.88388889,
+            59.49833333
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": 3
+    },
+    {
+      "type": "Feature",
+      "id": "TMA Stockholm",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            [
+              18.21305556,
+              60.29944444
+            ],
+            [
+              18.55472222,
+              60.26611111
+            ],
+            [
+              18.84694444,
+              59.88277778
+            ],
+            [
+              19.31361111,
+              60.03527778
+            ],
+            [
+              19.82805556,
+              59.67361111
+            ],
+            [
+              19.27361111,
+              59.59944444
+            ],
+            [
+              18.96833333,
+              59.255
+            ],
+            [
+              18.75472222,
+              59.04194444
+            ],
+            [
+              18.53944444,
+              58.8325
+            ],
+            [
+              18.45722222,
+              58.7525
+            ],
+            [
+              17.93277778,
+              58.58305556
+            ],
+            [
+              17.45694444,
+              58.61638889
+            ],
+            [
+              17.40777778,
+              58.96611111
+            ],
+            [
+              17.22333333,
+              58.97861111
+            ],
+            [
+              16.70777778,
+              59.01194444
+            ],
+            [
+              16.26777778,
+              59.04944444
+            ],
+            [
+              16.31833333,
+              59.32388889
+            ],
+            [
+              16.44666667,
+              59.74944444
+            ],
+            [
+              17.59666667,
+              60.23277778
+            ],
+            [
+              18.21305556,
+              60.29944444
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "TYPEOFAREA": "TMAW",
+        "NAMEOFAREA": "STOCKHOLM TMA",
+        "POSITIONINDICATOR": "ESSA",
+        "DATETIMEOFCHG": null,
+        "NAMEOFOPERATOR": null,
+        "ORIGIN": "AIP",
+        "LOCATION": "STOCKHOLM TMA",
+        "UPPER": null,
+        "LOWER": null,
+        "WEF": "2024-02-22",
+        "COMMENT_1": null,
+        "COMMENT_2": "Prior Notice required for certain operations within TMA.\nTypes of traffic affected, see AD 2-ESSA para 2.23.",
+        "QUALITY": "ROUTINE",
+        "CRC_ID": null,
+        "CRC_POS": null,
+        "CRC_TOT": null,
+        "MSID": 3986,
+        "IDNR": 6975,
+        "MI_STYLE": null
+      },
+      "bbox": [
+        16.26777778,
+        58.58305556,
+        19.82805556,
+        60.29944444
+      ]
+    }
+  ]
+}
