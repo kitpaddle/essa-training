@@ -73,3 +73,16 @@ body{
   font-size: 14px;
   color: black;
 }
+
+.tooltip{
+  text-align: center;
+}
+
+.leaflet-tooltip.aorTip{
+  background: none;
+    border: none;
+    box-shadow: none;
+  text-align: center;
+  color: black; 
+  font-size: 12px;
+}
