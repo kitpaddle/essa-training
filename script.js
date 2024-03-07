@@ -333,8 +333,11 @@ function onEachPlace(feature, layer){
   }else if(feature.properties.category=="water"){
     layer.setStyle({color: 'rgb(76, 165, 224)', opacity: 0.8});
     html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
-  }else{
+  }else if(feature.properties.category=="road"){
     layer.setStyle({color: 'black', opacity: 0.8});
+    html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
+  }else{
+    layer.setStyle({color: 'rgb(166, 207, 152)', opacity: 0.8});
     html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
   }
   layer.bindTooltip(html, {permanent: false, direction: 'top'});
@@ -347,10 +350,12 @@ function onEachPlace(feature, layer){
       this.setStyle({color: 'rgb(224, 99, 76)', opacity: 0.8});
     }else if (feature.properties.category=="water"){
       this.setStyle({color: 'rgb(76, 165, 224)', opacity: 0.8});
-    }else{
+    }else if (feature.properties.category=="road"){
       this.setStyle({color: 'black', opacity: 0.8});
+    }else{
+      this.setStyle({color: 'rgb(166, 207, 152)', opacity: 0.8});
     }
-    
+
   });
   layer.on('click', function(){
     testClick(feature.properties.name);
