@@ -384,6 +384,870 @@
         18.70763889,
         59.42227778
       ]
+    },
+    {
+      "type": "Feature",
+      "id": 8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.61844444,
+          59.26008333
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "ALOLA",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "null",
+        "MSL": "null",
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "null",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "FRA(RI)",
+        "COMMENT_2": "null",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 4937,
+        "IDNR": 77928,
+        "MI_STYLE": "null",
+        "name": "ALOLA"
+      },
+      "bbox": [
+        18.61844444,
+        59.26008333,
+        18.61844444,
+        59.26008333
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.88472222,
+          58.81583333
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "NILUG",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "null",
+        "MSL": "null",
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "null",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "FRA(RI)ESKN STAR, ESSA STAR",
+        "COMMENT_2": "null",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 8083,
+        "IDNR": 77786,
+        "MI_STYLE": "null",
+        "name": "NILUG"
+      },
+      "bbox": [
+        17.88472222,
+        58.81583333,
+        17.88472222,
+        58.81583333
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 10,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.50230681,
+          58.93790839
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DMEV",
+        "NAMEOFPOINT": "TRS",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "ESAA DMEV TRS",
+        "MSL": 63,
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "114.30MHZ",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "Channel: 90X",
+        "COMMENT_2": "MAGVAR 06.0 DATE 2020-01-01",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 5919,
+        "IDNR": 6763,
+        "MI_STYLE": "null",
+        "name": "TRS"
+      },
+      "bbox": [
+        17.50230681,
+        58.93790839,
+        17.50230681,
+        58.93790839
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 11,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.49516667,
+          58.98766667
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "GALNU",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "null",
+        "MSL": "null",
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "null",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "ESSA SID",
+        "COMMENT_2": "null",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 5019,
+        "IDNR": 78013,
+        "MI_STYLE": "null",
+        "name": "GALNU"
+      },
+      "bbox": [
+        17.49516667,
+        58.98766667,
+        17.49516667,
+        58.98766667
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 12,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.25811111,
+          59.07277778
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "NOSLI",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "null",
+        "MSL": "null",
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "null",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "FRA(RI)ESSA SID, ESSB SID",
+        "COMMENT_2": "null",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 5059,
+        "IDNR": 77850,
+        "MI_STYLE": "null",
+        "name": "NOSLI"
+      },
+      "bbox": [
+        17.25811111,
+        59.07277778,
+        17.25811111,
+        59.07277778
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 13,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.30617072,
+          59.11609169
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "DIGLI",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "null",
+        "MSL": "null",
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "null",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "ESSA SID",
+        "COMMENT_2": "null",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 4996,
+        "IDNR": 77931,
+        "MI_STYLE": "null",
+        "name": "DIGLI"
+      },
+      "bbox": [
+        17.30617072,
+        59.11609169,
+        17.30617072,
+        59.11609169
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 14,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.01208333,
+          59.20716667
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "PETEV",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "null",
+        "MSL": "null",
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "null",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "FRA(RI)ESSB SID, ESSA SID",
+        "COMMENT_2": "null",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 126825,
+        "IDNR": 78058,
+        "MI_STYLE": "null",
+        "name": "PETEV"
+      },
+      "bbox": [
+        17.01208333,
+        59.20716667,
+        17.01208333,
+        59.20716667
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 15,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.08877778,
+          59.23786111
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "ABENI",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "null",
+        "MSL": "null",
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "null",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "ESSA SID",
+        "COMMENT_2": "null",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 4951,
+        "IDNR": 78146,
+        "MI_STYLE": "null",
+        "name": "ABENI"
+      },
+      "bbox": [
+        17.08877778,
+        59.23786111,
+        17.08877778,
+        59.23786111
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 16,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.35836639,
+          59.53896611
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESSA",
+        "TYPEOFPOINT": "NDB",
+        "NAMEOFPOINT": "LNA",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "LENA",
+        "MSL": 10,
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "330.00 KHZ",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "B",
+        "COMMENT_2": "MAGVAR 06.0 DATE 2020-01-01",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 87934,
+        "IDNR": 17341,
+        "MI_STYLE": "null",
+        "name": "LNA"
+      },
+      "bbox": [
+        17.35836639,
+        59.53896611,
+        17.35836639,
+        59.53896611
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 17,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.48408056,
+          59.26138333
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "NDB",
+        "NAMEOFPOINT": "COR",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "CORNER",
+        "MSL": 0,
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "388.00 KHZ",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "B",
+        "COMMENT_2": "MAGVAR 06.0 DATE 2020-01-01",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 5806,
+        "IDNR": 17379,
+        "MI_STYLE": "null",
+        "name": "COR"
+      },
+      "bbox": [
+        17.48408056,
+        59.26138333,
+        17.48408056,
+        59.26138333
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 18,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.20331661,
+          59.53170158
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DMEV",
+        "NAMEOFPOINT": "TEB",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "ESAA DMEV TEB",
+        "MSL": 64,
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "117.10MHZ",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "Channel: 118X",
+        "COMMENT_2": "MAGVAR 06.0 DATE 2020-01-01",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 5922,
+        "IDNR": 6771,
+        "MI_STYLE": "null",
+        "name": "TEB"
+      },
+      "bbox": [
+        18.20331661,
+        59.53170158,
+        18.20331661,
+        59.53170158
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 19,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.33691278,
+          59.89623639
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESSA",
+        "TYPEOFPOINT": "NDB",
+        "NAMEOFPOINT": "ERK",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "ERKEN",
+        "MSL": 18,
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "383.00 KHZ",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "B",
+        "COMMENT_2": "MAGVAR 06.0 DATE 2020-01-01",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 87933,
+        "IDNR": 17342,
+        "MI_STYLE": "null",
+        "name": "ERK"
+      },
+      "bbox": [
+        18.33691278,
+        59.89623639,
+        18.33691278,
+        59.89623639
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 20,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.74866667,
+          59.58441667
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "ROKNI",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "null",
+        "MSL": "null",
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "null",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "ESSA SID",
+        "COMMENT_2": "null",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 4953,
+        "IDNR": 78073,
+        "MI_STYLE": "null",
+        "name": "ROKNI"
+      },
+      "bbox": [
+        16.74866667,
+        59.58441667,
+        16.74866667,
+        59.58441667
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 21,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.65032083,
+          59.58621408
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESOW",
+        "TYPEOFPOINT": "DMEV",
+        "NAMEOFPOINT": "ARS",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "ESOW DMEV ARS",
+        "MSL": 12,
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "112.80MHZ",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "Channel: 75X",
+        "COMMENT_2": "MAGVAR 06.0 DATE 2020-01-01",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 5961,
+        "IDNR": 6775,
+        "MI_STYLE": "null",
+        "name": "ARS"
+      },
+      "bbox": [
+        16.65032083,
+        59.58621408,
+        16.65032083,
+        59.58621408
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 22,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.98991667,
+          59.82444444
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "ELTOK",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "null",
+        "MSL": "null",
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "null",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "FRA(RIA)(A): ESSAESSA STAR",
+        "COMMENT_2": "null",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 4884,
+        "IDNR": 77867,
+        "MI_STYLE": "null",
+        "name": "ELTOK"
+      },
+      "bbox": [
+        16.98991667,
+        59.82444444,
+        16.98991667,
+        59.82444444
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 23,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.22961111,
+          60.08111111
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "KOGAV",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "null",
+        "MSL": "null",
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "null",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "FRA(RID)(D): ESSAESSA SID",
+        "COMMENT_2": "null",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 5034,
+        "IDNR": 78014,
+        "MI_STYLE": "null",
+        "name": "KOGAV"
+      },
+      "bbox": [
+        17.22961111,
+        60.08111111,
+        17.22961111,
+        60.08111111
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 24,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.30513889,
+          60.04852778
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "TALEK",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "null",
+        "MSL": "null",
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "null",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "ESSA SID",
+        "COMMENT_2": "null",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 5021,
+        "IDNR": 78082,
+        "MI_STYLE": "null",
+        "name": "TALEK"
+      },
+      "bbox": [
+        17.30513889,
+        60.04852778,
+        17.30513889,
+        60.04852778
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": 25,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.59027778,
+          59.74583333
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "BALVI",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "null",
+        "MSL": "null",
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "null",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "ESSA STAR",
+        "COMMENT_2": "null",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 4875,
+        "IDNR": 78135,
+        "MI_STYLE": "null",
+        "name": "BALVI"
+      },
+      "bbox": [
+        17.59027778,
+        59.74583333,
+        17.59027778,
+        59.74583333
+      ]
     }
   ]
 }
