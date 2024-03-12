@@ -68,21 +68,28 @@ let dataStandLines = {"type": "FeatureCollection","features": []};
 let dataRoads, dataPoi, dataAirfieldAor;
 // CTR DATA
 let dataSectors, dataCtrPoints, dataCtrPlaces;
+// TMA DATA
+let dataTMAPoints;
 
 // Initialising the corresponding layers to be used by Leaflet
 // AIRFIELD LAYERS
 let layerTerminals, layerAprons, layerTaxiways, layerRunways, layerStandPoint, layerStandLines, layerRoads, layerPoi, layerAirfieldAor;
 // CTR LAYERS
 let layerSectors, layerCtrPoints, layerCtrPlaces;
+// TMA LAYERS
+let layerTMAPoints;
 
 // LAYER GROUPS AIRFIELD
 let layerStands, layerRamps, layerWays, layerGroupRoads, layerGroupPoi, layerGroupAirfieldAor;
 // LAYER GROUPS CTR
 let layerGroupSectors, layerGroupCtrPoints, layerGroupCtrPlaces;
+// LAYER GROUPS TMA
+let layerGroupTMAPoints;
 
 // Layer BIG Groups
 let layerAirfield;
 let layerCtr;
+let layerTMA;
 
 let layerList = [];
 let selectedLayer;
@@ -110,6 +117,20 @@ let iconVfrHold = L.icon({
     popupAnchor:  [21, 10] // point from which the popup should open relative to the iconAnchor
 });
 
+let iconVfrDme = L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/kitpaddle/essa-training/main/ctr_vfr_dme.png',
+    iconSize:     [20, 20], // size of the icon
+    iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
+    popupAnchor:  [21, 10] // point from which the popup should open relative to the iconAnchor
+});
+
+let iconVfrVor = L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/kitpaddle/essa-training/main/ctr_vfr_vor.png',
+    iconSize:     [20, 20], // size of the icon
+    iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
+    popupAnchor:  [21, 10] // point from which the popup should open relative to the iconAnchor
+});
+
 //// JS RELATED TO MAP / LEAFLET
 
 const startingPos =[59.651, 17.941];
@@ -122,8 +143,6 @@ const URL_SAT = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imag
 const map = L.map('map', {
   center: startingPos,
   zoom: 14,
-  fullscreenControl: true,
-  fullscreenControlOptions: {position: 'topright'},
   attributionControl: false,
   renderer: L.canvas()
 });
@@ -135,19 +154,19 @@ L.control.attribution({
 // Creating Basemaps
 const baseMapGrey = new L.tileLayer(URL_WHITE, {
   attribution: '&copy; <a href="https://carto.com/">CartoDB</a> & <a href="https://www.openstreetmap.org/copyright">OSM</a> kitpaddle',
-  minZoom: 9,
+  minZoom: 8,
   updateWhenIdle: true,
   keepBuffer: 5,
   edgeBufferTiles: 2
 }).addTo(map);
 const baseMap = L.tileLayer(URL_OSM, {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> kitpaddle',
-  minZoom: 9,
+  minZoom: 8,
   fillOpacity: 0.25
 });
 const baseMapSat = new L.tileLayer(URL_SAT, {
   attribution: '&copy; <a href="https://carto.com/">CartoDB</a> & <a href="https://www.openstreetmap.org/copyright">OSM</a>& <a href="https://www.esri.com/en-us/home">ESRI</a> kitpaddle',
-  minZoom: 9,
+  minZoom: 8,
   updateWhenIdle: true,
   keepBuffer: 5,
   edgeBufferTiles: 2
@@ -167,6 +186,7 @@ panelLayers.addTo(map);
 //map.fitBounds(ctrLayer.getBounds());
 layerAirfield = L.layerGroup([]);
 layerCtr = L.layerGroup([]);
+layerTMA = L.layerGroup([]);
 
 function getUniqueValues(array){
   return Array.from(new Set(array));
@@ -292,6 +312,9 @@ function onEachVfrPoint(feature, layer){
   }
   
   layer.bindTooltip(html, {permanent: false, direction: 'top'});
+  layer.on('click', function(){
+      testClick(feature.properties.name);
+    });
 }
 
 function onEachAoR(feature,layer){
@@ -362,6 +385,33 @@ function onEachPlace(feature, layer){
   });
 }
 
+// FETCHING DATA for TMA Points
+fetch('https://kitpaddle.github.io/essa-training/essa_tma_points.geojson').then(response => {
+  return response.json();
+}).then(data => {
+  dataTMAPoints = data; // Save data locally
+  
+  layerTMAPoints = L.geoJSON(dataTMAPoints, {
+    onEachFeature: onEachVfrPoint, 
+    pointToLayer: function (feature, latlng) { return L.marker(latlng, {icon: iconVfrPoint}); }
+      /*switch(feature.properties.TYPEOFPOINT){
+        case 'DNPT': return L.marker(latlng, {icon: iconVfrPoint});
+        case 'NDB': return L.marker(latlng, {icon: iconVfrDme});
+      }
+    }*/
+  });
+  
+  // Grouping stands to one layer
+  layerGroupTMAPoints = L.layerGroup([layerTMAPoints]);
+  // CTR LAYER
+  layerTMA.addLayer(layerTMAPoints);
+  // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
+  layerList.push(layerTMAPoints);
+  
+}).catch(err => {
+  console.log("Error fetching TMA points from file essa_tma_points.geojson");
+});
+
 // FETCHING DATA for CTR Places, Sectors and Water bodies.
 fetch('https://kitpaddle.github.io/essa-training/essa_ctr_areas.geojson').then(response => {
   return response.json();
@@ -379,7 +429,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_ctr_areas.geojson').then(r
   layerList.push(layerCtrPlaces);
   
 }).catch(err => {
-  // Do something for an error here
+  console.log("Error fetching CTR places from file /essa_ctr_areas.geojson");
 });
 
 // FETCHING DATA for VFR Points
@@ -408,7 +458,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_ctr_vfrPoints.geojson').th
   layerList.push(layerCtrPoints);
   
 }).catch(err => {
-  // Do something for an error here
+  console.log("Error fetching VFR points from file essa_ctr_vfrPoints.geojson");
 });
 
 // FETCHING DATA for CTR Sectors
@@ -418,18 +468,19 @@ fetch('https://kitpaddle.github.io/essa-training/essa_ctr_sectors.geojson').then
   dataSectors = data; // Save data locally
   //console.log(dataRoads);
   
-  layerSectors = L.geoJSON(dataSectors, {interactive: false, style:{color:'grey', weight: 3}});
+  layerSectors = L.geoJSON(dataSectors, {interactive: false, style:{color:'grey', weight: 1}});
   
   // Grouping stands to one layer
   layerGroupSectors = L.layerGroup([layerSectors]);
   // CTR LAYER
   layerCtr.addLayer(layerGroupSectors);
-  
+  layerTMA.addLayer(layerGroupSectors);
+  //test
   // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
   //layerList.push(layerSectors);
   
 }).catch(err => {
-  // Do something for an error here
+  console.log("Error fetching CTR/TMA sectors");
 });
 
 // FETCHING DATA for AORs
@@ -457,7 +508,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_airfield_aor.geojson').the
   layerList.push(layerAirfieldAor);
   
 }).catch(err => {
-  // Do something for an error here
+  console.log("Error fetching AOR for Airports");
 });
 
 // FETCHING DATA for SERVICE ROADS
@@ -596,6 +647,7 @@ fetch('https://kitpaddle.github.io/hosting/essaosmaeroways220928.geojson').then(
   // Adding layers to controlpanel, maybe remove it at the end? ONLY TESTING?
   panelLayers.addOverlay(layerAirfield, "Airfield");
   panelLayers.addOverlay(layerCtr, "CTR");
+  panelLayers.addOverlay(layerTMA, "TMA");
   
   mapButton(1); // Initaliasing first layer
   
@@ -646,6 +698,7 @@ function mapButton(nr){
     map.removeLayer(layerGroupSectors);
     map.removeLayer(layerGroupCtrPoints);
     map.removeLayer(layerGroupCtrPlaces);
+    map.removeLayer(layerGroupTMAPoints);
   }
   
   switch (nr){
@@ -698,6 +751,13 @@ function mapButton(nr){
       layerGroupSectors.addTo(map);
       qsize = layerCtrPoints.getLayers().length;
       moveMap(layerCtrPoints);
+      break;
+    case 9:
+      selectedLayer = layerGroupTMAPoints;
+      layerGroupTMAPoints.addTo(map);
+      layerGroupSectors.addTo(map);
+      qsize = layerTMAPoints.getLayers().length;
+      moveMap(layerTMAPoints);
       break;
   }
   
