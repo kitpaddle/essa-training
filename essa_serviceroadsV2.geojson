@@ -1006,6 +1006,27 @@
         "type": "LineString"
       },
       "id": 20
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Driftväg W",
+        "category": "Service Road"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            17.95317358316092,
+            59.65235834026092
+          ],
+          [
+            17.953648167171195,
+            59.652425478977875
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": 21
     }
   ]
 }
