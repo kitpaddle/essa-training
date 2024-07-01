@@ -51,32 +51,32 @@
       "properties": {
         "name": "Markim",
         "category": "VFR Holding",
-        "description": "Vänstervarv i cirkel där cikerln västra punkt är Markims kyrka."
+        "description": "Vänstervarv i cirkel där cirkelns västra punkt är Markims kyrka."
       },
       "geometry": {
         "coordinates": [
-          18.06471703599476,
-          59.60726348327364
+          18.068224632042188,
+          59.60411607863293
         ],
         "type": "Point"
       },
-      "id": 7
+      "id": 3
     },
     {
       "type": "Feature",
       "properties": {
         "name": "Odensala",
         "category": "VFR Holding",
-        "description": "Vänstervarv i cirkel där Odensala kyrka är cirkeln östra punkt."
+        "description": "Vänstervarv i cirkel där Odensala kyrka är cirkelns östra punkt."
       },
       "geometry": {
         "coordinates": [
-          17.850468572551307,
-          59.66458618248055
+          17.847613457408073,
+          59.665889344798615
         ],
         "type": "Point"
       },
-      "id": 8
+      "id": 4
     },
     {
       "type": "Feature",
