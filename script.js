@@ -131,6 +131,20 @@ let iconVfrVor = L.icon({
     popupAnchor:  [21, 10] // point from which the popup should open relative to the iconAnchor
 });
 
+let iconVfrChurch = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/kitpaddle/essa-training/main/ctr_vfr_church.png',
+  iconSize: [20, 20], // size of the icon
+  iconAnchor: [10, 10], // point of the icon which will correspond to marker's location
+  popupAnchor: [21, 10] // point from which the popup should open relative to the iconAnchor
+});
+
+let iconVfrAirfield = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/kitpaddle/essa-training/main/ctr_vfr_airfield.png',
+  iconSize: [20, 20], // size of the icon
+  iconAnchor: [10, 10], // point of the icon which will correspond to marker's location
+  popupAnchor: [21, 10] // point from which the popup should open relative to the iconAnchor
+});
+
 //// JS RELATED TO MAP / LEAFLET
 
 const startingPos =[59.651, 17.941];
@@ -445,6 +459,9 @@ fetch('https://kitpaddle.github.io/essa-training/essa_ctr_vfrPoints.geojson').th
       switch(feature.properties.category){
         case 'VFR Holding': return L.marker(latlng, {icon: iconVfrHold});
         case 'VFR Reporting Point': return L.marker(latlng, {icon: iconVfrPoint});
+        case 'Church': return L.marker(latlng, {icon: iconVfrChurch});
+        case 'Navaid': return L.marker(latlng, {icon: iconVfrDme});
+        case 'Airfield': return L.marker(latlng, {icon: iconVfrAirfield});
       }
     }
   });
