@@ -1,1 +1,217 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Vada","category":"VFR Reporting Point"},"geometry":{"coordinates":[18.214635574719466,59.590735539542806],"type":"Point"},"id":4},{"type":"Feature","properties":{"name":"Vassunda","category":"VFR Reporting Point"},"geometry":{"coordinates":[17.745097247956522,59.70820386723665],"type":"Point"},"id":5},{"type":"Feature","properties":{"name":"Skedviken","category":"VFR Reporting Point"},"geometry":{"coordinates":[18.2549229242029,59.77406785261559],"type":"Point"},"id":6},{"type":"Feature","properties":{"name":"Markim","category":"VFR Holding","description":"Vänstervarv i cirkel där cikerln västra punkt är Markims kyrka."},"geometry":{"coordinates":[18.06471703599476,59.60726348327364],"type":"Point"},"id":7},{"type":"Feature","properties":{"name":"Odensala","category":"VFR Holding","description":"Vänstervarv i cirkel där Odensala kyrka är cirkeln östra punkt."},"geometry":{"coordinates":[17.850468572551307,59.66458618248055],"type":"Point"},"id":8}]}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vada",
+        "category": "VFR Reporting Point"
+      },
+      "geometry": {
+        "coordinates": [
+          18.214635574719466,
+          59.590735539542806
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vassunda",
+        "category": "VFR Reporting Point"
+      },
+      "geometry": {
+        "coordinates": [
+          17.745097247956522,
+          59.70820386723665
+        ],
+        "type": "Point"
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Skedviken",
+        "category": "VFR Reporting Point"
+      },
+      "geometry": {
+        "coordinates": [
+          18.2549229242029,
+          59.77406785261559
+        ],
+        "type": "Point"
+      },
+      "id": 6
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Markim",
+        "category": "VFR Holding",
+        "description": "Vänstervarv i cirkel där cikerln västra punkt är Markims kyrka."
+      },
+      "geometry": {
+        "coordinates": [
+          18.06471703599476,
+          59.60726348327364
+        ],
+        "type": "Point"
+      },
+      "id": 7
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Odensala",
+        "category": "VFR Holding",
+        "description": "Vänstervarv i cirkel där Odensala kyrka är cirkeln östra punkt."
+      },
+      "geometry": {
+        "coordinates": [
+          17.850468572551307,
+          59.66458618248055
+        ],
+        "type": "Point"
+      },
+      "id": 8
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Danmark Kyrka",
+        "category": "Church"
+      },
+      "geometry": {
+        "coordinates": [
+          17.740203844448985,
+          59.83140474982767
+        ],
+        "type": "Point"
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Husby Långhundra",
+        "category": "Church"
+      },
+      "geometry": {
+        "coordinates": [
+          18.017542910433548,
+          59.75062224832706
+        ],
+        "type": "Point"
+      },
+      "id": 6
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Skepptuna",
+        "category": "Church"
+      },
+      "geometry": {
+        "coordinates": [
+          18.0931068101099,
+          59.70898088703882
+        ],
+        "type": "Point"
+      },
+      "id": 7
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lunda",
+        "category": "Church"
+      },
+      "geometry": {
+        "coordinates": [
+          18.0462523630043,
+          59.66683974710486
+        ],
+        "type": "Point"
+      },
+      "id": 8
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kårsta kyrka",
+        "category": "Church"
+      },
+      "geometry": {
+        "coordinates": [
+          18.241123032410258,
+          59.65265783807732
+        ],
+        "type": "Point"
+      },
+      "id": 9
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Markim kyrka",
+        "category": "Church"
+      },
+      "geometry": {
+        "coordinates": [
+          18.06223222211287,
+          59.60385684695689
+        ],
+        "type": "Point"
+      },
+      "id": 10
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Husby Årlinghundra",
+        "category": "Church"
+      },
+      "geometry": {
+        "coordinates": [
+          17.882273706040593,
+          59.64011990794688
+        ],
+        "type": "Point"
+      },
+      "id": 11
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Odensala kyrka",
+        "category": "Church"
+      },
+      "geometry": {
+        "coordinates": [
+          17.85061338417256,
+          59.66580381334575
+        ],
+        "type": "Point"
+      },
+      "id": 12
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Frösunda",
+        "category": "Church"
+      },
+      "geometry": {
+        "coordinates": [
+          18.167570884534825,
+          59.6215098033052
+        ],
+        "type": "Point"
+      },
+      "id": 13
+    }
+  ]
+}
