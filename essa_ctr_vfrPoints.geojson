@@ -302,6 +302,51 @@
         "type": "Point"
       },
       "id": 19
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vassunda Flygfält",
+        "category": "Airfield"
+      },
+      "geometry": {
+        "coordinates": [
+          17.72308671052724,
+          59.72112241518283
+        ],
+        "type": "Point"
+      },
+      "id": 20
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hova Flygfält",
+        "category": "Airfield"
+      },
+      "geometry": {
+        "coordinates": [
+          17.778930381323818,
+          59.674827886597626
+        ],
+        "type": "Point"
+      },
+      "id": 21
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vallentuna Flygfält",
+        "category": "Airfield"
+      },
+      "geometry": {
+        "coordinates": [
+          18.038700095255678,
+          59.541806829018356
+        ],
+        "type": "Point"
+      },
+      "id": 22
     }
   ]
 }
