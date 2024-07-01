@@ -212,6 +212,96 @@
         "type": "Point"
       },
       "id": 13
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "WA",
+        "category": "Navaid"
+      },
+      "geometry": {
+        "coordinates": [
+          17.91537798045539,
+          59.65575389345901
+        ],
+        "type": "Point"
+      },
+      "id": 14
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ARL",
+        "category": "Navaid"
+      },
+      "geometry": {
+        "coordinates": [
+          17.914473282340452,
+          59.65337381527988
+        ],
+        "type": "Point"
+      },
+      "id": 15
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ANW",
+        "category": "Navaid"
+      },
+      "geometry": {
+        "coordinates": [
+          17.852583,
+          59.713278
+        ],
+        "type": "Point"
+      },
+      "id": 16
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ANE",
+        "category": "Navaid"
+      },
+      "geometry": {
+        "coordinates": [
+          18.059861,
+          59.693972
+        ],
+        "type": "Point"
+      },
+      "id": 17
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ASE",
+        "category": "Navaid"
+      },
+      "geometry": {
+        "coordinates": [
+          17.95736303231186,
+          59.63713333711948
+        ],
+        "type": "Point"
+      },
+      "id": 18
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ASW",
+        "category": "Navaid"
+      },
+      "geometry": {
+        "coordinates": [
+          17.819694,
+          59.587694
+        ],
+        "type": "Point"
+      },
+      "id": 19
     }
   ]
 }
