@@ -319,16 +319,47 @@ function onEachPoi(feature, layer){
 
 function onEachVfrPoint(feature, layer){
   let html;
-  if(feature.properties.description!=undefined){
-    html = '<div class="tooltip"><b>'+feature.properties.name+'</b><br>'+feature.properties.description+'</div>';
-  }else{
-    html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
-  }
+  let html2;
   
-  layer.bindTooltip(html, {permanent: false, direction: 'top'});
-  layer.on('click', function(){
+  if (feature.properties.category == 'label') {
+    layer.setStyle({
+            fillColor: 'transparent', // Set the fill color to transparent
+            color: 'transparent', // Set the border color to transparent
+            opacity: 0, // Set the opacity to 0 (invisible)
+            fillOpacity: 0, // Set the fill opacity to 0 (invisible)
+            pointerEvents: 'none' // Disable pointer events on the polygon
+        });
+    let html2 = '<b>'+feature.properties.aor+'</b>';
+    let bounds = layer.getBounds().getCenter()
+    layer.bindTooltip(html2, {permanent: true, direction: 'center', className: 'aorTip'}).openTooltip();
+    
+  }else if (feature.properties.category == 'other') {
+
+    let html = '<div class="tooltip"><b>'+feature.properties.aor+'</b><br>Frequency: '+feature.properties.name+'</div>';
+    layer.bindTooltip(html, {permanent: false, direction: 'top'});
+
+    layer.on('mouseover', function () {
+      this.setStyle({color: 'orange', weight: 7});
+      //layer.bindPopup(feature.properties.name).openPopup(); // here add openPopup()
+    });
+    layer.on('mouseout', function () {
+      this.setStyle({color: 'black', weight: 4});
+    });
+    layer.on('click', function(){
       testClick(feature.properties.name);
     });
+  }else{
+    if(feature.properties.description!=undefined){
+      html = '<div class="tooltip"><b>'+feature.properties.name+'</b><br>'+feature.properties.description+'</div>';
+    }else{
+      html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
+    }
+
+    layer.bindTooltip(html, {permanent: false, direction: 'top'});
+    layer.on('click', function(){
+      testClick(feature.properties.name);
+    });
+  }
 }
 
 function onEachAoR(feature,layer){
