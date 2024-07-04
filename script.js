@@ -318,9 +318,6 @@ function onEachPoi(feature, layer){
 }
 
 function onEachVfrPoint(feature, layer){
-  let html;
-  let html2;
-  
   if (feature.properties.category == 'label') {
     layer.setStyle({
             fillColor: 'transparent', // Set the fill color to transparent
@@ -329,36 +326,37 @@ function onEachVfrPoint(feature, layer){
             fillOpacity: 0, // Set the fill opacity to 0 (invisible)
             pointerEvents: 'none' // Disable pointer events on the polygon
         });
-    let html2 = '<b>'+feature.properties.aor+'</b>';
+    let html = '<b>'+feature.properties.aor+'</b>';
     let bounds = layer.getBounds().getCenter()
-    layer.bindTooltip(html2, {permanent: true, direction: 'center', className: 'aorTip'}).openTooltip();
+    layer.bindTooltip(html, {permanent: true, direction: 'center', className: 'aorTip'}).openTooltip();
     
-  }else if (feature.properties.category == 'other') {
-
-    let html = '<div class="tooltip"><b>'+feature.properties.aor+'</b><br>Frequency: '+feature.properties.name+'</div>';
-    layer.bindTooltip(html, {permanent: false, direction: 'top'});
-
-    layer.on('mouseover', function () {
-      this.setStyle({color: 'orange', weight: 7});
-      //layer.bindPopup(feature.properties.name).openPopup(); // here add openPopup()
-    });
-    layer.on('mouseout', function () {
-      this.setStyle({color: 'black', weight: 4});
-    });
-    layer.on('click', function(){
-      testClick(feature.properties.name);
-    });
   }else{
-    if(feature.properties.description!=undefined){
-      html = '<div class="tooltip"><b>'+feature.properties.name+'</b><br>'+feature.properties.description+'</div>';
-    }else{
-      html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
-    }
+    if(feature.properties.category == 'other'){
+      let html = '<div class="tooltip"><b>'+feature.properties.aor+'</b><br>Frequency:'+feature.properties.name+'</div>';
+      layer.bindTooltip(html, {permanent: false, direction: 'top'});
 
-    layer.bindTooltip(html, {permanent: false, direction: 'top'});
-    layer.on('click', function(){
-      testClick(feature.properties.name);
-    });
+      layer.on('mouseover', function () {
+        this.setStyle({color: 'orange', weight: 7});
+        //layer.bindPopup(feature.properties.name).openPopup(); // here add openPopup()
+      });
+      layer.on('mouseout', function () {
+        this.setStyle({color: 'black', weight: 4});
+      });
+      layer.on('click', function(){
+        testClick(feature.properties.name);
+      });
+    }else{
+      if(feature.properties.description!=undefined){
+        html = '<div class="tooltip"><b>'+feature.properties.name+'</b><br>'+feature.properties.description+'</div>';
+      }else{
+        html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
+      }
+
+      layer.bindTooltip(html, {permanent: false, direction: 'top'});
+      layer.on('click', function(){
+        testClick(feature.properties.name);
+      });
+    }
   }
 }
 
@@ -436,19 +434,28 @@ fetch('https://kitpaddle.github.io/essa-training/essa_tma_points.geojson').then(
 }).then(data => {
   dataTMAPoints = data; // Save data locally
   
+  layerTMAPointsLabel = L.geoJSON(dataTMAPoints, {
+    onEachFeature: onEachVfrPoint,
+    style:{color:'black', weight: 3},
+    filter: function(feature,layer){ return (feature.properties.category == "label")}
+    
+  });
   layerTMAPoints = L.geoJSON(dataTMAPoints, {
     onEachFeature: onEachVfrPoint,
     style:{color:'black', weight: 3},
-    pointToLayer: function (feature, latlng) { return L.marker(latlng, {icon: iconVfrPoint}); }
-      /*switch(feature.properties.TYPEOFPOINT){
+    filter: function(feature,layer){ return (feature.properties.category != "label")},
+    pointToLayer: function (feature, latlng) { 
+      switch(feature.properties.TYPEOFPOINT){
         case 'DNPT': return L.marker(latlng, {icon: iconVfrPoint});
         case 'NDB': return L.marker(latlng, {icon: iconVfrDme});
       }
-    }*/
+      //return L.marker(latlng, {icon: iconVfrPoint}); }
+      
+    }
   });
   
-  // Grouping stands to one layer
-  layerGroupTMAPoints = L.layerGroup([layerTMAPoints]);
+  // Grouping points to one layer
+  layerGroupTMAPoints = L.layerGroup([layerTMAPoints, layerTMAPointsLabel]);
   // CTR LAYER
   layerTMA.addLayer(layerTMAPoints);
   // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
@@ -532,7 +539,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_ctr_sectors.geojson').then
   console.log("Error fetching CTR/TMA sectors");
 });
 
-// FETCHING DATA for AORs
+// FETCHING DATA for AORs in airfield (Frequencies)
 fetch('https://kitpaddle.github.io/essa-training/essa_airfield_aor.geojson').then(response => {
   return response.json();
 }).then(data => {
