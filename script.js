@@ -437,7 +437,8 @@ fetch('https://kitpaddle.github.io/essa-training/essa_tma_points.geojson').then(
   dataTMAPoints = data; // Save data locally
   
   layerTMAPoints = L.geoJSON(dataTMAPoints, {
-    onEachFeature: onEachVfrPoint, 
+    onEachFeature: onEachVfrPoint,
+    style:{color:'black', weight: 3},
     pointToLayer: function (feature, latlng) { return L.marker(latlng, {icon: iconVfrPoint}); }
       /*switch(feature.properties.TYPEOFPOINT){
         case 'DNPT': return L.marker(latlng, {icon: iconVfrPoint});
