@@ -681,7 +681,7 @@ fetch('https://kitpaddle.github.io/hosting/essaosmaeroways220928.geojson').then(
   layerStandLines = L.geoJSON(dataStandLines, {style:{color:'black', opacity: 0.1, weight: 1}});
   
   // Grouping stands to one layer
-  layerStands = L.layerGroup([layerStandPoint, layerStandLines]);
+  layerStands = L.layerGroup([layerStandPoint]);
   // Grouping taxiways and Runways to one layer
   layerWays = L.layerGroup([layerRunways, layerTaxiways]);
   // Grouping Aprons and Terminals
@@ -755,6 +755,7 @@ function mapButton(nr){
     map.removeLayer(layerGroupCtrPoints);
     map.removeLayer(layerGroupCtrPlaces);
     map.removeLayer(layerGroupTMAPoints);
+    map.removeLayer(layerStandLines);
   }
   
   switch (nr){
@@ -767,6 +768,7 @@ function mapButton(nr){
     case 2:
       selectedLayer = layerStands;
       layerStands.addTo(map);
+      layerStandLines.addTo(map);
       qsize = layerStandPoint.getLayers().length;
       moveMap(layerStandPoint);
       break;
