@@ -1022,7 +1022,7 @@
       "geometry_name": "GEOMETRY",
       "properties": {
         "POSITIONINDICATOR": "ESOW",
-        "TYPEOFPOINT": "NDB", //should be DMEV but I have no icon for that, so manual overrirde
+        "TYPEOFPOINT": "NDB",
         "NAMEOFPOINT": "ARS",
         "ESTABLISHEDYEAR": "null",
         "DRAWSEQNUMBER": "null",
