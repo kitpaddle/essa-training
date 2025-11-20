@@ -448,6 +448,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_tma_points.geojson').then(
       switch(feature.properties.TYPEOFPOINT){
         case 'DNPT': return L.marker(latlng, {icon: iconVfrPoint});
         case 'NDB': return L.marker(latlng, {icon: iconVfrDme});
+        case 'DMEV': return L.marker(latlng, {icon: iconVfrDme});
       }
       //return L.marker(latlng, {icon: iconVfrPoint}); }
       
