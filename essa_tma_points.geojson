@@ -1022,7 +1022,7 @@
       "geometry_name": "GEOMETRY",
       "properties": {
         "POSITIONINDICATOR": "ESOW",
-        "TYPEOFPOINT": "NDB",
+        "TYPEOFPOINT": "DMEV",
         "NAMEOFPOINT": "ARS",
         "ESTABLISHEDYEAR": "null",
         "DRAWSEQNUMBER": "null",
