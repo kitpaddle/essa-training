@@ -49,6 +49,21 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Vallentuna",
+        "category": "VFR Reporting Point"
+      },
+      "geometry": {
+        "coordinates": [
+          18.016389,
+          59.512222
+        ],
+        "type": "Point"
+      },
+      "id": 23
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Markim",
         "category": "VFR Holding",
         "description": "Vänstervarv i cirkel där cirkelns västra punkt är Markims kyrka."
