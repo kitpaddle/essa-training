@@ -1251,6 +1251,54 @@
     },
     {
       "type": "Feature",
+      "id": 29,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.59027778,
+          59.63896611
+        ]
+      },
+      "geometry_name": "GEOMETRY",
+      "properties": {
+        "POSITIONINDICATOR": "ESAA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "HAPZI",
+        "ESTABLISHEDYEAR": "null",
+        "DRAWSEQNUMBER": "null",
+        "SEQUENCENUMBER": "null",
+        "DATETIMEOFCHG": "null",
+        "NAMEOFOPERATOR": "null",
+        "ORIGIN": "AIP",
+        "LOCATION": "null",
+        "MSL": "null",
+        "AGL": "null",
+        "ELLIPSOIDHEIGHT": "null",
+        "FREQ": "null",
+        "WEF": "2024-02-22",
+        "AFTN": "F",
+        "BASENO": 0,
+        "COMMENT_1": "ESSA SID",
+        "COMMENT_2": "null",
+        "QUALITY": "ESSENTIAL",
+        "CRC_HEIGHT": "null",
+        "CRC_ID": "null",
+        "CRC_POS": "null",
+        "CRC_TOT": "null",
+        "MSID": 4875,
+        "IDNR": 78135,
+        "MI_STYLE": "null",
+        "name": "HAPZI"
+      },
+      "bbox": [
+        17.59027778,
+        59.63896611,
+        17.59027778,
+        59.63896611
+      ]
+    },
+    {
+      "type": "Feature",
       "properties": {
         "aor": "DEP-W",
         "category": "label",
