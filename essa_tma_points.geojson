@@ -110,15 +110,15 @@
       "geometry_name": "GEOMETRY",
       "properties": {
         "POSITIONINDICATOR": "ESAA",
-        "TYPEOFPOINT": "DMEV",
-        "NAMEOFPOINT": "HMR",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "VACRA",
         "ESTABLISHEDYEAR": "null",
         "DRAWSEQNUMBER": "null",
         "SEQUENCENUMBER": "null",
         "DATETIMEOFCHG": "null",
         "NAMEOFOPERATOR": "null",
         "ORIGIN": "AIP",
-        "LOCATION": "ESAA DMEV HMR",
+        "LOCATION": "ESAA DNPT VACRA",
         "MSL": 30,
         "AGL": "null",
         "ELLIPSOIDHEIGHT": "null",
@@ -136,7 +136,7 @@
         "MSID": 5918,
         "IDNR": 6762,
         "MI_STYLE": "null",
-        "name": "HMR"
+        "name": "VACRA"
       },
       "bbox": [
         18.39156133,
@@ -494,15 +494,15 @@
       "geometry_name": "GEOMETRY",
       "properties": {
         "POSITIONINDICATOR": "ESAA",
-        "TYPEOFPOINT": "DMEV",
-        "NAMEOFPOINT": "TRS",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "INWIQ",
         "ESTABLISHEDYEAR": "null",
         "DRAWSEQNUMBER": "null",
         "SEQUENCENUMBER": "null",
         "DATETIMEOFCHG": "null",
         "NAMEOFOPERATOR": "null",
         "ORIGIN": "AIP",
-        "LOCATION": "ESAA DMEV TRS",
+        "LOCATION": "ESAA DNPT INWIQ",
         "MSL": 63,
         "AGL": "null",
         "ELLIPSOIDHEIGHT": "null",
@@ -520,7 +520,7 @@
         "MSID": 5919,
         "IDNR": 6763,
         "MI_STYLE": "null",
-        "name": "TRS"
+        "name": "INWIQ"
       },
       "bbox": [
         17.50230681,
@@ -782,15 +782,15 @@
       "geometry_name": "GEOMETRY",
       "properties": {
         "POSITIONINDICATOR": "ESSA",
-        "TYPEOFPOINT": "NDB",
-        "NAMEOFPOINT": "LNA",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "OBCIV",
         "ESTABLISHEDYEAR": "null",
         "DRAWSEQNUMBER": "null",
         "SEQUENCENUMBER": "null",
         "DATETIMEOFCHG": "null",
         "NAMEOFOPERATOR": "null",
         "ORIGIN": "AIP",
-        "LOCATION": "LENA",
+        "LOCATION": "OBCIV",
         "MSL": 10,
         "AGL": "null",
         "ELLIPSOIDHEIGHT": "null",
@@ -808,7 +808,7 @@
         "MSID": 87934,
         "IDNR": 17341,
         "MI_STYLE": "null",
-        "name": "LNA"
+        "name": "OBCIV"
       },
       "bbox": [
         17.35836639,
@@ -830,15 +830,15 @@
       "geometry_name": "GEOMETRY",
       "properties": {
         "POSITIONINDICATOR": "ESAA",
-        "TYPEOFPOINT": "NDB",
-        "NAMEOFPOINT": "COR",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "SOVAX",
         "ESTABLISHEDYEAR": "null",
         "DRAWSEQNUMBER": "null",
         "SEQUENCENUMBER": "null",
         "DATETIMEOFCHG": "null",
         "NAMEOFOPERATOR": "null",
         "ORIGIN": "AIP",
-        "LOCATION": "CORNER",
+        "LOCATION": "SOVAX",
         "MSL": 0,
         "AGL": "null",
         "ELLIPSOIDHEIGHT": "null",
@@ -856,7 +856,7 @@
         "MSID": 5806,
         "IDNR": 17379,
         "MI_STYLE": "null",
-        "name": "COR"
+        "name": "SOVAX"
       },
       "bbox": [
         17.48408056,
@@ -878,7 +878,7 @@
       "geometry_name": "GEOMETRY",
       "properties": {
         "POSITIONINDICATOR": "ESAA",
-        "TYPEOFPOINT": "DMEV",
+        "TYPEOFPOINT": "DNPT",
         "NAMEOFPOINT": "TEB",
         "ESTABLISHEDYEAR": "null",
         "DRAWSEQNUMBER": "null",
@@ -886,7 +886,7 @@
         "DATETIMEOFCHG": "null",
         "NAMEOFOPERATOR": "null",
         "ORIGIN": "AIP",
-        "LOCATION": "ESAA DMEV TEB",
+        "LOCATION": "ESAA DNPT TEB",
         "MSL": 64,
         "AGL": "null",
         "ELLIPSOIDHEIGHT": "null",
@@ -926,15 +926,15 @@
       "geometry_name": "GEOMETRY",
       "properties": {
         "POSITIONINDICATOR": "ESSA",
-        "TYPEOFPOINT": "NDB",
-        "NAMEOFPOINT": "ERK",
+        "TYPEOFPOINT": "DNPT",
+        "NAMEOFPOINT": "ERXEK",
         "ESTABLISHEDYEAR": "null",
         "DRAWSEQNUMBER": "null",
         "SEQUENCENUMBER": "null",
         "DATETIMEOFCHG": "null",
         "NAMEOFOPERATOR": "null",
         "ORIGIN": "AIP",
-        "LOCATION": "ERKEN",
+        "LOCATION": "ERXEK",
         "MSL": 18,
         "AGL": "null",
         "ELLIPSOIDHEIGHT": "null",
@@ -952,7 +952,7 @@
         "MSID": 87933,
         "IDNR": 17342,
         "MI_STYLE": "null",
-        "name": "ERK"
+        "name": "ERXEK"
       },
       "bbox": [
         18.33691278,
@@ -1022,7 +1022,7 @@
       "geometry_name": "GEOMETRY",
       "properties": {
         "POSITIONINDICATOR": "ESOW",
-        "TYPEOFPOINT": "DMEV",
+        "TYPEOFPOINT": "DNPT",
         "NAMEOFPOINT": "ARS",
         "ESTABLISHEDYEAR": "null",
         "DRAWSEQNUMBER": "null",
@@ -1030,7 +1030,7 @@
         "DATETIMEOFCHG": "null",
         "NAMEOFOPERATOR": "null",
         "ORIGIN": "AIP",
-        "LOCATION": "ESOW DMEV ARS",
+        "LOCATION": "ESOW DNPT ARS",
         "MSL": 12,
         "AGL": "null",
         "ELLIPSOIDHEIGHT": "null",
