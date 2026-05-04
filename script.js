@@ -318,78 +318,32 @@ function onEachPoi(feature, layer){
 }
 
 function onEachVfrPoint(feature, layer){
-  if (feature.properties.category == 'label') {
-    layer.setStyle({
-            fillColor: 'transparent', // Set the fill color to transparent
-            color: 'transparent', // Set the border color to transparent
-            opacity: 0, // Set the opacity to 0 (invisible)
-            fillOpacity: 0, // Set the fill opacity to 0 (invisible)
-            pointerEvents: 'none' // Disable pointer events on the polygon
-        });
-    let html = '<b>'+feature.properties.aor+'</b>';
-    let bounds = layer.getBounds().getCenter()
-    layer.bindTooltip(html, {permanent: true, direction: 'center', className: 'aorTip'}).openTooltip();
-    
-  }else{
-    if(feature.properties.category == 'other'){
-      let html = '<div class="tooltip"><b>'+feature.properties.aor+'</b><br>Frequency:'+feature.properties.name+'</div>';
-      layer.bindTooltip(html, {permanent: false, direction: 'top'});
-
-      layer.on('mouseover', function () {
-        this.setStyle({color: 'orange', weight: 7});
-        //layer.bindPopup(feature.properties.name).openPopup(); // here add openPopup()
-      });
-      layer.on('mouseout', function () {
-        this.setStyle({color: 'black', weight: 4});
-      });
-      layer.on('click', function(){
-        testClick(feature.properties.name);
-      });
-    }else{
-      if(feature.properties.description!=undefined){
-        html = '<div class="tooltip"><b>'+feature.properties.name+'</b><br>'+feature.properties.description+'</div>';
-      }else{
-        html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
-      }
-
-      layer.bindTooltip(html, {permanent: false, direction: 'top'});
-      layer.on('click', function(){
-        testClick(feature.properties.name);
-      });
-    }
+  if (feature.properties.category === 'label') return;
+  let html;
+  if(feature.properties.description != undefined){
+    html = '<div class="tooltip"><b>'+feature.properties.name+'</b><br>'+feature.properties.description+'</div>';
+  } else {
+    html = '<div class="tooltip"><b>'+feature.properties.name+'</b></div>';
   }
+  layer.bindTooltip(html, {permanent: false, direction: 'top'});
+  layer.on('click', function(){
+    testClick(feature.properties.name);
+  });
 }
 
-function onEachAoR(feature,layer){
-  //OBS for this to work the order of the features on tje geojson are important. This is a hack solution
-  if (feature.properties.category == 'label') {
-    layer.setStyle({
-            fillColor: 'transparent', // Set the fill color to transparent
-            color: 'transparent', // Set the border color to transparent
-            opacity: 0, // Set the opacity to 0 (invisible)
-            fillOpacity: 0, // Set the fill opacity to 0 (invisible)
-            pointerEvents: 'none' // Disable pointer events on the polygon
-        });
-    let html = '<b>'+feature.properties.aor+'</b>';
-    let bounds = layer.getBounds().getCenter()
-    layer.bindTooltip(html, {permanent: true, direction: 'center', className: 'aorTip'}).openTooltip();
-    
-  }else{
-
-    let html = '<div class="tooltip"><b>'+feature.properties.aor+'</b><br>Frequency: '+feature.properties.name+'</div>';
-    layer.bindTooltip(html, {permanent: false, direction: 'top'});
-
-    layer.on('mouseover', function () {
-      this.setStyle({color: 'orange', weight: 7});
-      //layer.bindPopup(feature.properties.name).openPopup(); // here add openPopup()
-    });
-    layer.on('mouseout', function () {
-      this.setStyle({color: 'black', weight: 4});
-    });
-    layer.on('click', function(){
-      testClick(feature.properties.name);
-    });
-  }
+function onEachAoR(feature, layer){
+  if (feature.properties.category === 'label') return;
+  let html = '<div class="tooltip"><b>'+feature.properties.aor+'</b><br>Frequency: '+feature.properties.name+'</div>';
+  layer.bindTooltip(html, {permanent: false, direction: 'top'});
+  layer.on('mouseover', function () {
+    this.setStyle({color: 'orange', weight: 7});
+  });
+  layer.on('mouseout', function () {
+    this.setStyle({color: 'black', weight: 4});
+  });
+  layer.on('click', function(){
+    testClick(String(feature.properties.name));
+  });
 }
 //For the places/areas in the CTR
 function onEachPlace(feature, layer){
@@ -436,22 +390,24 @@ fetch('https://kitpaddle.github.io/essa-training/essa_tma_points.geojson').then(
   
   layerTMAPointsLabel = L.geoJSON(dataTMAPoints, {
     onEachFeature: onEachVfrPoint,
-    style:{color:'black', weight: 3},
-    filter: function(feature,layer){ return (feature.properties.category == "label")}
-    
+    style: {color: 'black', weight: 3},
+    filter: function(feature) {
+      return feature.properties.category === 'label';
+    }
   });
   layerTMAPoints = L.geoJSON(dataTMAPoints, {
     onEachFeature: onEachVfrPoint,
-    style:{color:'black', weight: 3},
-    filter: function(feature,layer){ return (feature.properties.category != "label")},
-    pointToLayer: function (feature, latlng) { 
+    style: {color: 'black', weight: 3},
+    filter: function(feature) {
+      return feature.properties.category !== 'label'
+          && feature.properties.category !== 'button';
+    },
+    pointToLayer: function (feature, latlng) {
       switch(feature.properties.TYPEOFPOINT){
         case 'DNPT': return L.marker(latlng, {icon: iconVfrPoint});
-        case 'NDB': return L.marker(latlng, {icon: iconVfrDme});
+        case 'NDB':  return L.marker(latlng, {icon: iconVfrDme});
         case 'DMEV': return L.marker(latlng, {icon: iconVfrDme});
       }
-      //return L.marker(latlng, {icon: iconVfrPoint}); }
-      
     }
   });
   
@@ -548,13 +504,22 @@ fetch('https://kitpaddle.github.io/essa-training/essa_airfield_aor.geojson').the
 
   // Different layers for LABELS so these can never be hidden (not added to layerList)
   // Must be in code above the one below or drawn in wrong order and interferes with clicking
-  layerAirfieldAorLabel = L.geoJSON(dataAirfieldAor, {onEachFeature: onEachAoR, style:{color:'black', weight: 4}, filter: function(feature,layer){
-    return (feature.properties.category == "label")
-  }});
-  // Normal layer 
-  layerAirfieldAor = L.geoJSON(dataAirfieldAor, {onEachFeature: onEachAoR, style:{color:'black', weight: 4}, filter: function(feature,layer){
-    return (feature.properties.category != "label")
-  }});
+  layerAirfieldAorLabel = L.geoJSON(dataAirfieldAor, {
+    onEachFeature: onEachAoR,
+    style: {color: 'black', weight: 4},
+    filter: function(feature) {
+      return feature.properties.category === 'label';
+    }
+  });
+  // Normal layer
+  layerAirfieldAor = L.geoJSON(dataAirfieldAor, {
+    onEachFeature: onEachAoR,
+    style: {color: 'black', weight: 4},
+    filter: function(feature) {
+      return feature.properties.category !== 'label'
+          && feature.properties.category !== 'button';
+    }
+  });
   
   // Grouping the two layers to one layer
   layerGroupAirfieldAor = L.layerGroup([layerAirfieldAor, layerAirfieldAorLabel]);
