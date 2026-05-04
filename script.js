@@ -386,7 +386,7 @@ function onEachPlace(feature, layer){
 }
 
 // FETCHING DATA for TMA Points
-fetch('https://kitpaddle.github.io/essa-training/essa_tma_points.geojson').then(response => {
+fetch('./essa_tma_points.geojson').then(response => {
   return response.json();
 }).then(data => {
   dataTMAPoints = data; // Save data locally
@@ -427,7 +427,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_tma_points.geojson').then(
 });
 
 // FETCHING DATA for CTR Places, Sectors and Water bodies.
-fetch('https://kitpaddle.github.io/essa-training/essa_ctr_areas.geojson').then(response => {
+fetch('./essa_ctr_areas.geojson').then(response => {
   return response.json();
 }).then(data => {
   dataCtrPlaces = data; // Save data locally
@@ -447,7 +447,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_ctr_areas.geojson').then(r
 });
 
 // FETCHING DATA for VFR Points
-fetch('https://kitpaddle.github.io/essa-training/essa_ctr_vfrPoints.geojson').then(response => {
+fetch('./essa_ctr_vfrPoints.geojson').then(response => {
   return response.json();
 }).then(data => {
   dataCtrPoints = data; // Save data locally
@@ -479,7 +479,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_ctr_vfrPoints.geojson').th
 });
 
 // FETCHING DATA for CTR Sectors
-fetch('https://kitpaddle.github.io/essa-training/essa_ctr_sectors.geojson').then(response => {
+fetch('./essa_ctr_sectors.geojson').then(response => {
   return response.json();
 }).then(data => {
   dataSectors = data; // Save data locally
@@ -501,7 +501,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_ctr_sectors.geojson').then
 });
 
 // FETCHING DATA for AORs in airfield (Frequencies)
-fetch('https://kitpaddle.github.io/essa-training/essa_airfield_aor.geojson').then(response => {
+fetch('./essa_airfield_aor.geojson').then(response => {
   return response.json();
 }).then(data => {
   dataAirfieldAor = data; // Save data locally
@@ -539,7 +539,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_airfield_aor.geojson').the
 });
 
 // FETCHING DATA for SERVICE ROADS
-fetch('https://kitpaddle.github.io/essa-training/essa_serviceroadsV2.geojson').then(response => {
+fetch('./essa_serviceroadsV2.geojson').then(response => {
   return response.json();
 }).then(data => {
   dataRoads = data; // Save data locally
@@ -560,7 +560,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_serviceroadsV2.geojson').t
 });
 
 // FETCHING DATA for Points of Interests
-fetch('https://kitpaddle.github.io/essa-training/essa_poi.geojson').then(response => {
+fetch('./essa_poi.geojson').then(response => {
   return response.json();
 }).then(data => {
   dataPoi = data; // Save data locally
