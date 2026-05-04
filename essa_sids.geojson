@@ -1,0 +1,2117 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.926575,
+            59.67415833
+          ],
+          [
+            17.77910278,
+            59.68794167
+          ],
+          [
+            17.65209722,
+            59.66770278
+          ],
+          [
+            17.55026389,
+            59.61435278
+          ],
+          [
+            16.650333,
+            59.586222
+          ]
+        ]
+      },
+      "properties": {
+        "name": "ARS 6C",
+        "runway": "01L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "ARS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.926575,
+            59.67415833
+          ],
+          [
+            17.77910278,
+            59.68794167
+          ],
+          [
+            17.65209722,
+            59.66770278
+          ],
+          [
+            17.563225,
+            59.52279167
+          ],
+          [
+            17.50230681,
+            58.93790839
+          ]
+        ]
+      },
+      "properties": {
+        "name": "INWIQ 1C",
+        "runway": "01L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "INWIQ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.926575,
+            59.67415833
+          ],
+          [
+            17.77910278,
+            59.68794167
+          ],
+          [
+            17.65209722,
+            59.66770278
+          ],
+          [
+            17.58418611,
+            59.55708056
+          ],
+          [
+            17.78236389,
+            59.50234444
+          ],
+          [
+            18.61123889,
+            59.43093056
+          ],
+          [
+            18.70763889,
+            59.42227778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "MENGA 3C",
+        "runway": "01L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "BABAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.926575,
+            59.67415833
+          ],
+          [
+            17.77910278,
+            59.68794167
+          ],
+          [
+            17.65209722,
+            59.66770278
+          ],
+          [
+            17.563225,
+            59.52279167
+          ],
+          [
+            17.25811111,
+            59.07277778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "NOSLI 6C",
+        "runway": "01L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "NOSLI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.926575,
+            59.67415833
+          ],
+          [
+            17.77910278,
+            59.68794167
+          ],
+          [
+            17.65209722,
+            59.66770278
+          ],
+          [
+            17.563225,
+            59.52279167
+          ],
+          [
+            17.01208333,
+            59.20716667
+          ]
+        ]
+      },
+      "properties": {
+        "name": "PETEV 2C",
+        "runway": "01L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "PETEV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94860833,
+            59.73488333
+          ],
+          [
+            18.14949444,
+            59.75283333
+          ],
+          [
+            18.43410278,
+            59.75180833
+          ],
+          [
+            18.70763889,
+            59.42227778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "BABAP 5C",
+        "runway": "01L",
+        "next_sector": "DEP-E",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "BABAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94860833,
+            59.73488333
+          ],
+          [
+            18.14949444,
+            59.75283333
+          ],
+          [
+            18.76683344,
+            59.74980558
+          ]
+        ]
+      },
+      "properties": {
+        "name": "TOVRI 6C",
+        "runway": "01L",
+        "next_sector": "DEP-E",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "TOVRI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94860833,
+            59.73488333
+          ],
+          [
+            17.96208611,
+            59.84841111
+          ],
+          [
+            17.22961111,
+            60.08111111
+          ]
+        ]
+      },
+      "properties": {
+        "name": "KOGAV 5C",
+        "runway": "01L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "KOGAV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94860833,
+            59.73488333
+          ],
+          [
+            18.02483333,
+            60.36694444
+          ]
+        ]
+      },
+      "properties": {
+        "name": "RESNA 5C",
+        "runway": "01L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "RESNA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.99138889,
+            59.73755556
+          ],
+          [
+            17.68216667,
+            59.78069444
+          ],
+          [
+            17.65209722,
+            59.66770278
+          ],
+          [
+            17.563225,
+            59.52279167
+          ],
+          [
+            17.50230681,
+            58.93790839
+          ]
+        ]
+      },
+      "properties": {
+        "name": "INWIQ 1B",
+        "runway": "01R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "INWIQ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.99138889,
+            59.73755556
+          ],
+          [
+            17.68216667,
+            59.78069444
+          ],
+          [
+            16.650333,
+            59.586222
+          ]
+        ]
+      },
+      "properties": {
+        "name": "ARS 4B",
+        "runway": "01R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "ARS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.99138889,
+            59.73755556
+          ],
+          [
+            17.68216667,
+            59.78069444
+          ],
+          [
+            17.65209722,
+            59.66770278
+          ],
+          [
+            17.563225,
+            59.52279167
+          ],
+          [
+            17.25811111,
+            59.07277778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "NOSLI 5B",
+        "runway": "01R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "NOSLI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.99138889,
+            59.73755556
+          ],
+          [
+            17.68216667,
+            59.78069444
+          ],
+          [
+            17.24480556,
+            59.69644444
+          ],
+          [
+            17.01208333,
+            59.20716667
+          ]
+        ]
+      },
+      "properties": {
+        "name": "PETEV 2B",
+        "runway": "01R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "PETEV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.96654722,
+            59.66995
+          ],
+          [
+            18.15884444,
+            59.70463889
+          ],
+          [
+            18.76683344,
+            59.74980558
+          ]
+        ]
+      },
+      "properties": {
+        "name": "TOVRI 5B",
+        "runway": "01R",
+        "next_sector": "DEP-E",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "TOVRI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.96654722,
+            59.66995
+          ],
+          [
+            18.15884444,
+            59.70463889
+          ],
+          [
+            18.417025,
+            59.72415556
+          ],
+          [
+            18.70763889,
+            59.42227778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "BABAP 4B",
+        "runway": "01R",
+        "next_sector": "DEP-E",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "BABAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.01463333,
+            59.80071667
+          ],
+          [
+            17.22961111,
+            60.08111111
+          ]
+        ]
+      },
+      "properties": {
+        "name": "KOGAV 4B",
+        "runway": "01R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "KOGAV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.01463333,
+            59.80071667
+          ],
+          [
+            18.09916389,
+            60.02802778
+          ],
+          [
+            18.02483333,
+            60.36694444
+          ]
+        ]
+      },
+      "properties": {
+        "name": "RESNA 4B",
+        "runway": "01R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "RESNA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.03121944,
+            59.67049444
+          ],
+          [
+            17.92722222,
+            59.70872222
+          ],
+          [
+            17.86050278,
+            59.69388611
+          ],
+          [
+            17.65209722,
+            59.66770278
+          ],
+          [
+            17.55026389,
+            59.61435278
+          ],
+          [
+            16.650333,
+            59.586222
+          ]
+        ]
+      },
+      "properties": {
+        "name": "ARS 4L",
+        "runway": "08L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "ARS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.03121944,
+            59.67049444
+          ],
+          [
+            17.92722222,
+            59.70872222
+          ],
+          [
+            17.86050278,
+            59.69388611
+          ],
+          [
+            17.65209722,
+            59.66770278
+          ],
+          [
+            17.563225,
+            59.52279167
+          ],
+          [
+            17.50230681,
+            58.93790839
+          ]
+        ]
+      },
+      "properties": {
+        "name": "INWIQ 1L",
+        "runway": "08L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "INWIQ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.03121944,
+            59.67049444
+          ],
+          [
+            17.92722222,
+            59.70872222
+          ],
+          [
+            17.86050278,
+            59.69388611
+          ],
+          [
+            17.65209722,
+            59.66770278
+          ],
+          [
+            17.563225,
+            59.52279167
+          ],
+          [
+            17.25811111,
+            59.07277778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "NOSLI 6L",
+        "runway": "08L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "NOSLI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.03121944,
+            59.67049444
+          ],
+          [
+            17.92722222,
+            59.70872222
+          ],
+          [
+            17.86050278,
+            59.69388611
+          ],
+          [
+            17.65209722,
+            59.66770278
+          ],
+          [
+            17.563225,
+            59.52279167
+          ],
+          [
+            17.01208333,
+            59.20716667
+          ]
+        ]
+      },
+      "properties": {
+        "name": "PETEV 2L",
+        "runway": "08L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "PETEV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.03121944,
+            59.67049444
+          ],
+          [
+            18.06734444,
+            59.72024444
+          ],
+          [
+            18.03715556,
+            59.76747222
+          ],
+          [
+            17.22961111,
+            60.08111111
+          ]
+        ]
+      },
+      "properties": {
+        "name": "KOGAV 4L",
+        "runway": "08L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "KOGAV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.03121944,
+            59.67049444
+          ],
+          [
+            18.06734444,
+            59.72024444
+          ],
+          [
+            18.03715556,
+            59.76747222
+          ],
+          [
+            18.09698889,
+            60.02772778
+          ],
+          [
+            18.02483333,
+            60.36694444
+          ]
+        ]
+      },
+      "properties": {
+        "name": "RESNA 4L",
+        "runway": "08L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "RESNA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.03121944,
+            59.67049444
+          ],
+          [
+            18.41123333,
+            59.71204722
+          ],
+          [
+            18.70763889,
+            59.42227778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "BABAP 4L",
+        "runway": "08L",
+        "next_sector": "DEP-E",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "BABAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.03121944,
+            59.67049444
+          ],
+          [
+            18.76683344,
+            59.74980558
+          ]
+        ]
+      },
+      "properties": {
+        "name": "TOVRI 5L",
+        "runway": "08L",
+        "next_sector": "DEP-E",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "TOVRI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.01498611,
+            59.66843889
+          ],
+          [
+            17.97543889,
+            59.59861667
+          ],
+          [
+            17.85519722,
+            59.55063333
+          ],
+          [
+            16.74866667,
+            59.58441667
+          ],
+          [
+            16.650333,
+            59.586222
+          ]
+        ]
+      },
+      "properties": {
+        "name": "ROKNI 4R",
+        "runway": "08R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "ARS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.01498611,
+            59.66843889
+          ],
+          [
+            17.97543889,
+            59.59861667
+          ],
+          [
+            17.08877778,
+            59.23786111
+          ],
+          [
+            17.01208333,
+            59.20716667
+          ]
+        ]
+      },
+      "properties": {
+        "name": "ABENI 4R",
+        "runway": "08R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "PETEV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.01498611,
+            59.66843889
+          ],
+          [
+            17.97543889,
+            59.59861667
+          ],
+          [
+            17.73871389,
+            59.50391667
+          ],
+          [
+            17.30617072,
+            59.11609169
+          ],
+          [
+            17.25811111,
+            59.07277778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "DIGLI 4R",
+        "runway": "08R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "NOSLI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.01498611,
+            59.66843889
+          ],
+          [
+            17.97543889,
+            59.59861667
+          ],
+          [
+            17.73871389,
+            59.50391667
+          ],
+          [
+            17.45715,
+            59.252875
+          ],
+          [
+            17.49516667,
+            58.98766667
+          ],
+          [
+            17.50230681,
+            58.93790839
+          ]
+        ]
+      },
+      "properties": {
+        "name": "GALNU 4R",
+        "runway": "08R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "INWIQ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.01498611,
+            59.66843889
+          ],
+          [
+            18.41123333,
+            59.71204722
+          ],
+          [
+            18.70763889,
+            59.42227778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "BABAP 4R",
+        "runway": "08R",
+        "next_sector": "DEP-E",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "BABAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.01498611,
+            59.66843889
+          ],
+          [
+            18.76683344,
+            59.74980558
+          ]
+        ]
+      },
+      "properties": {
+        "name": "TOVRI 5R",
+        "runway": "08R",
+        "next_sector": "DEP-E",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "TOVRI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.01498611,
+            59.66843889
+          ],
+          [
+            17.96213889,
+            59.63052778
+          ],
+          [
+            17.914472,
+            59.653417
+          ],
+          [
+            17.8443,
+            59.81273333
+          ],
+          [
+            18.00855556,
+            60.31772222
+          ],
+          [
+            18.02483333,
+            60.36694444
+          ]
+        ]
+      },
+      "properties": {
+        "name": "LUMAX 6R",
+        "runway": "08R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "RESNA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.01498611,
+            59.66843889
+          ],
+          [
+            17.96213889,
+            59.63052778
+          ],
+          [
+            17.914472,
+            59.653417
+          ],
+          [
+            17.8443,
+            59.81273333
+          ],
+          [
+            17.30513889,
+            60.04852778
+          ],
+          [
+            17.22961111,
+            60.08111111
+          ]
+        ]
+      },
+      "properties": {
+        "name": "TALEK 6R",
+        "runway": "08R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "KOGAV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94770556,
+            59.61648611
+          ],
+          [
+            17.92178056,
+            59.57458056
+          ],
+          [
+            17.68326667,
+            59.50366111
+          ],
+          [
+            17.08877778,
+            59.23786111
+          ],
+          [
+            17.01208333,
+            59.20716667
+          ]
+        ]
+      },
+      "properties": {
+        "name": "ABENI 6Q",
+        "runway": "19L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "PETEV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94770556,
+            59.61648611
+          ],
+          [
+            18.01275278,
+            59.56324167
+          ],
+          [
+            17.99106667,
+            59.47004444
+          ],
+          [
+            17.47016944,
+            59.47382778
+          ],
+          [
+            16.650333,
+            59.586222
+          ]
+        ]
+      },
+      "properties": {
+        "name": "ARS 6E",
+        "runway": "19L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "ARS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94770556,
+            59.61648611
+          ],
+          [
+            18.15377778,
+            59.62521667
+          ],
+          [
+            18.42888333,
+            59.68161944
+          ],
+          [
+            18.70763889,
+            59.42227778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "BABAP 4E",
+        "runway": "19L",
+        "next_sector": "DEP-E",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "BABAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94770556,
+            59.61648611
+          ],
+          [
+            17.92178056,
+            59.57458056
+          ],
+          [
+            17.68326667,
+            59.50366111
+          ],
+          [
+            17.59638333,
+            59.40768889
+          ],
+          [
+            17.30617072,
+            59.11609169
+          ],
+          [
+            17.25811111,
+            59.07277778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "DIGLI 6Q",
+        "runway": "19L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "NOSLI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94770556,
+            59.61648611
+          ],
+          [
+            17.92178056,
+            59.57458056
+          ],
+          [
+            17.68326667,
+            59.50366111
+          ],
+          [
+            17.59638333,
+            59.40768889
+          ],
+          [
+            17.45516389,
+            59.26651111
+          ],
+          [
+            17.49516667,
+            58.98766667
+          ],
+          [
+            17.50230681,
+            58.93790839
+          ]
+        ]
+      },
+      "properties": {
+        "name": "GALNU 6Q",
+        "runway": "19L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "INWIQ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94770556,
+            59.61648611
+          ],
+          [
+            18.01275278,
+            59.56324167
+          ],
+          [
+            17.99413611,
+            59.483275
+          ],
+          [
+            17.59638333,
+            59.40768889
+          ],
+          [
+            17.45516389,
+            59.26651111
+          ],
+          [
+            17.50230681,
+            58.93790839
+          ]
+        ]
+      },
+      "properties": {
+        "name": "INWIQ 1E",
+        "runway": "19L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "INWIQ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94770556,
+            59.61648611
+          ],
+          [
+            17.92178056,
+            59.57458056
+          ],
+          [
+            17.79133056,
+            59.54338056
+          ],
+          [
+            17.66217778,
+            59.58584722
+          ],
+          [
+            17.70993056,
+            59.81273333
+          ],
+          [
+            18.00855556,
+            60.31772222
+          ],
+          [
+            18.02483333,
+            60.36694444
+          ]
+        ]
+      },
+      "properties": {
+        "name": "LUMAX 6Q",
+        "runway": "19L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "RESNA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94770556,
+            59.61648611
+          ],
+          [
+            18.01275278,
+            59.56324167
+          ],
+          [
+            17.99413611,
+            59.483275
+          ],
+          [
+            17.59638333,
+            59.40768889
+          ],
+          [
+            17.25811111,
+            59.07277778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "NOSLI 6E",
+        "runway": "19L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "NOSLI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94770556,
+            59.61648611
+          ],
+          [
+            18.01275278,
+            59.56324167
+          ],
+          [
+            17.99413611,
+            59.483275
+          ],
+          [
+            17.59638333,
+            59.40768889
+          ],
+          [
+            17.01208333,
+            59.20716667
+          ]
+        ]
+      },
+      "properties": {
+        "name": "PETEV 2E",
+        "runway": "19L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "PETEV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94770556,
+            59.61648611
+          ],
+          [
+            17.92178056,
+            59.57458056
+          ],
+          [
+            17.79133056,
+            59.54338056
+          ],
+          [
+            16.74866667,
+            59.58441667
+          ],
+          [
+            16.650333,
+            59.586222
+          ]
+        ]
+      },
+      "properties": {
+        "name": "ROKNI 6Q",
+        "runway": "19L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "ARS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94770556,
+            59.61648611
+          ],
+          [
+            17.92178056,
+            59.57458056
+          ],
+          [
+            17.79133056,
+            59.54338056
+          ],
+          [
+            17.66217778,
+            59.58584722
+          ],
+          [
+            17.70993056,
+            59.81273333
+          ],
+          [
+            17.30513889,
+            60.04852778
+          ],
+          [
+            17.22961111,
+            60.08111111
+          ]
+        ]
+      },
+      "properties": {
+        "name": "TALEK 6Q",
+        "runway": "19L",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "KOGAV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.94770556,
+            59.61648611
+          ],
+          [
+            18.15377778,
+            59.62521667
+          ],
+          [
+            18.76683344,
+            59.74980558
+          ]
+        ]
+      },
+      "properties": {
+        "name": "TOVRI 5E",
+        "runway": "19L",
+        "next_sector": "DEP-E",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "TOVRI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.90830278,
+            59.62367778
+          ],
+          [
+            17.81738889,
+            59.58741667
+          ],
+          [
+            17.73933333,
+            59.56710556
+          ],
+          [
+            16.650333,
+            59.586222
+          ]
+        ]
+      },
+      "properties": {
+        "name": "ARS 6G",
+        "runway": "19R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "ARS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.90830278,
+            59.62367778
+          ],
+          [
+            17.81738889,
+            59.58741667
+          ],
+          [
+            17.73933333,
+            59.56710556
+          ],
+          [
+            17.45364722,
+            59.27710833
+          ],
+          [
+            17.50230681,
+            58.93790839
+          ]
+        ]
+      },
+      "properties": {
+        "name": "INWIQ 1G",
+        "runway": "19R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "INWIQ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.90830278,
+            59.62367778
+          ],
+          [
+            17.81738889,
+            59.58741667
+          ],
+          [
+            17.73933333,
+            59.56710556
+          ],
+          [
+            17.674725,
+            59.56806389
+          ],
+          [
+            17.70993056,
+            59.81273333
+          ],
+          [
+            17.22961111,
+            60.08111111
+          ]
+        ]
+      },
+      "properties": {
+        "name": "KOGAV 6G",
+        "runway": "19R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "KOGAV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.90830278,
+            59.62367778
+          ],
+          [
+            17.81738889,
+            59.58741667
+          ],
+          [
+            17.73933333,
+            59.56710556
+          ],
+          [
+            17.25811111,
+            59.07277778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "NOSLI 6G",
+        "runway": "19R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "NOSLI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.90830278,
+            59.62367778
+          ],
+          [
+            17.81738889,
+            59.58741667
+          ],
+          [
+            17.73933333,
+            59.56710556
+          ],
+          [
+            17.01208333,
+            59.20716667
+          ]
+        ]
+      },
+      "properties": {
+        "name": "PETEV 2G",
+        "runway": "19R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "PETEV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.90830278,
+            59.62367778
+          ],
+          [
+            17.81738889,
+            59.58741667
+          ],
+          [
+            17.73933333,
+            59.56710556
+          ],
+          [
+            17.674725,
+            59.56806389
+          ],
+          [
+            17.70993056,
+            59.81273333
+          ],
+          [
+            18.02483333,
+            60.36694444
+          ]
+        ]
+      },
+      "properties": {
+        "name": "RESNA 6G",
+        "runway": "19R",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "RESNA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.90830278,
+            59.62367778
+          ],
+          [
+            17.90127778,
+            59.56741667
+          ],
+          [
+            17.98527778,
+            59.52758333
+          ],
+          [
+            18.13967778,
+            59.61474444
+          ],
+          [
+            18.5319,
+            59.68348333
+          ],
+          [
+            18.76683344,
+            59.74980558
+          ]
+        ]
+      },
+      "properties": {
+        "name": "TOVRI 6G",
+        "runway": "19R",
+        "next_sector": "DEP-E",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "TOVRI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.90830278,
+            59.62367778
+          ],
+          [
+            17.90127778,
+            59.56741667
+          ],
+          [
+            17.98527778,
+            59.52758333
+          ],
+          [
+            18.13967778,
+            59.61474444
+          ],
+          [
+            18.5319,
+            59.68348333
+          ],
+          [
+            18.70763889,
+            59.42227778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "BABAP 5G",
+        "runway": "19R",
+        "next_sector": "DEP-E",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "BABAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.90830278,
+            59.62367778
+          ],
+          [
+            17.80563539,
+            59.59800506
+          ],
+          [
+            17.58283825,
+            59.61230408
+          ]
+        ]
+      },
+      "properties": {
+        "name": "HAPZI 1G",
+        "runway": "19R",
+        "next_sector": "DEP-W",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "HAPZI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.91541667,
+            59.65577778
+          ],
+          [
+            17.65375,
+            59.65852778
+          ],
+          [
+            16.650333,
+            59.586222
+          ]
+        ]
+      },
+      "properties": {
+        "name": "ARS 4K",
+        "runway": "26",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "ARS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.91541667,
+            59.65577778
+          ],
+          [
+            17.65375,
+            59.65852778
+          ],
+          [
+            17.58418611,
+            59.55708056
+          ],
+          [
+            17.78236389,
+            59.50234444
+          ],
+          [
+            18.70763889,
+            59.42227778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "BABAP 4K",
+        "runway": "26",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "BABAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.91541667,
+            59.65577778
+          ],
+          [
+            17.65375,
+            59.65852778
+          ],
+          [
+            17.42675556,
+            59.325075
+          ],
+          [
+            17.50230681,
+            58.93790839
+          ]
+        ]
+      },
+      "properties": {
+        "name": "INWIQ 1K",
+        "runway": "26",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "INWIQ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.91541667,
+            59.65577778
+          ],
+          [
+            17.90863611,
+            59.77276389
+          ],
+          [
+            17.92199444,
+            59.84041389
+          ],
+          [
+            17.22961111,
+            60.08111111
+          ]
+        ]
+      },
+      "properties": {
+        "name": "KOGAV 4K",
+        "runway": "26",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "KOGAV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.91541667,
+            59.65577778
+          ],
+          [
+            17.65375,
+            59.65852778
+          ],
+          [
+            17.25811111,
+            59.07277778
+          ]
+        ]
+      },
+      "properties": {
+        "name": "NOSLI 4K",
+        "runway": "26",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "NOSLI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.91541667,
+            59.65577778
+          ],
+          [
+            17.65375,
+            59.65852778
+          ],
+          [
+            17.01208333,
+            59.20716667
+          ]
+        ]
+      },
+      "properties": {
+        "name": "PETEV 2K",
+        "runway": "26",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "PETEV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.91541667,
+            59.65577778
+          ],
+          [
+            17.90863611,
+            59.77276389
+          ],
+          [
+            18.02483333,
+            60.36694444
+          ]
+        ]
+      },
+      "properties": {
+        "name": "RESNA 4K",
+        "runway": "26",
+        "next_sector": "DEP-W",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "RESNA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.91541667,
+            59.65577778
+          ],
+          [
+            17.99779722,
+            59.757125
+          ],
+          [
+            18.76683344,
+            59.74980558
+          ]
+        ]
+      },
+      "properties": {
+        "name": "TOVRI 5K",
+        "runway": "26",
+        "next_sector": "DEP-E",
+        "LF": false,
+        "CA": 5000,
+        "exit_point": "TOVRI"
+      }
+    }
+  ]
+}
