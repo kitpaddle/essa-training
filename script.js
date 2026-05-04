@@ -99,6 +99,9 @@ const INIT1 = [[59.648, 17.941], 15];
 let testArray = [];
 let testProgress = 0;
 let testPoints = 0;
+let buttonDataAor = [];
+let buttonDataTMA = [];
+let currentButtonData = [];
 
 
 let timerInterval; //Define the timerInterval so its available
@@ -387,6 +390,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_tma_points.geojson').then(
   return response.json();
 }).then(data => {
   dataTMAPoints = data; // Save data locally
+  buttonDataTMA = data.features.filter(function(f) { return f.properties.category === 'button'; });
   
   layerTMAPointsLabel = L.geoJSON(dataTMAPoints, {
     onEachFeature: onEachVfrPoint,
@@ -501,6 +505,7 @@ fetch('https://kitpaddle.github.io/essa-training/essa_airfield_aor.geojson').the
   return response.json();
 }).then(data => {
   dataAirfieldAor = data; // Save data locally
+  buttonDataAor = data.features.filter(function(f) { return f.properties.category === 'button'; });
 
   // Different layers for LABELS so these can never be hidden (not added to layerList)
   // Must be in code above the one below or drawn in wrong order and interferes with clicking
@@ -722,6 +727,8 @@ function mapButton(nr){
     map.removeLayer(layerGroupCtrPlaces);
     map.removeLayer(layerGroupTMAPoints);
     map.removeLayer(layerStandLines);
+    showButtonPanel(false);
+    currentButtonData = [];
   }
   
   switch (nr){
@@ -759,7 +766,10 @@ function mapButton(nr){
     case 6:
       selectedLayer = layerGroupAirfieldAor;
       layerGroupAirfieldAor.addTo(map);
-      qsize = layerAirfieldAor.getLayers().length;
+      qsize = layerAirfieldAor.getLayers().length + buttonDataAor.length;
+      currentButtonData = buttonDataAor;
+      buildButtonPanel(buttonDataAor);
+      showButtonPanel(true);
       moveMap(layerAirfieldAor);
       break;
     case 7:
@@ -780,7 +790,10 @@ function mapButton(nr){
       selectedLayer = layerGroupTMAPoints;
       layerGroupTMAPoints.addTo(map);
       layerGroupSectors.addTo(map);
-      qsize = layerTMAPoints.getLayers().length;
+      qsize = layerTMAPoints.getLayers().length + buttonDataTMA.length;
+      currentButtonData = buttonDataTMA;
+      buildButtonPanel(buttonDataTMA);
+      showButtonPanel(true);
       moveMap(layerTMAPoints);
       break;
   }
@@ -798,6 +811,42 @@ function moveMap(layer){
   map.fitBounds(bounds);
 }
 
+function buildButtonPanel(buttonData) {
+  const panel = document.getElementById('button-panel');
+  panel.innerHTML = '';
+  buttonData.forEach(function(feature) {
+    const btn = document.createElement('button');
+    btn.className = 'pButton panel-button';
+    btn.dataset.name = String(feature.properties.name);
+    btn.dataset.aor = feature.properties.aor;
+    btn.textContent = feature.properties.aor + ' — ' + feature.properties.name;
+    btn.onclick = function() { testClick(String(feature.properties.name)); };
+    panel.appendChild(btn);
+  });
+}
+
+function showButtonPanel(show) {
+  document.getElementById('button-panel').style.display = show ? 'flex' : 'none';
+}
+
+function updateQuestion() {
+  const current = testArray[testProgress];
+  const isButton = current.feature.properties.category === 'button';
+  const question = isButton
+    ? 'What is the frequency of ' + current.feature.properties.aor + '?'
+    : 'Where is ' + current.feature.properties.name + '?';
+  document.getElementById('questions').innerHTML = 'Question: ' + (testProgress + 1) + '/' + qsize;
+  document.getElementById('tq').innerHTML = question;
+}
+
+function setButtonPanelTestMode(isTest) {
+  document.querySelectorAll('.panel-button').forEach(function(btn) {
+    btn.textContent = isTest
+      ? btn.dataset.name
+      : btn.dataset.aor + ' — ' + btn.dataset.name;
+  });
+}
+
 function timerButton(){  
   if(!testing){
     console.log("Starting testing");
@@ -808,7 +857,7 @@ function timerButton(){
     document.getElementById('ttip').checked = false;
     ttipClick(); // If Tooltips checkbox was on, set to off and update
     document.getElementById('ttip').disabled = true; // Disable checkbox
-    document.getElementById("questions").innerHTML = "Question: 1/"+qsize;
+    // question display handled by updateQuestion() after array is built
     timerInterval = setInterval( function(){
       testTime++;
       document.getElementById("timer").innerHTML='Time lapsed: '+padNumber(parseInt(testTime/60,10))+':'+padNumber(testTime%60)
@@ -837,10 +886,13 @@ function timerButton(){
         })
       })
     }
+    currentButtonData.forEach(function(feature) {
+      testArray.push({ feature: feature });
+    });
     testArray = shuffleArray(testArray);
-    console.log("Testing: "+ testArray[testProgress].feature.properties.name);
-    document.getElementById('tq').innerHTML = "Where is "+testArray[testProgress].feature.properties.name+" ?";
-    document.getElementById('answers').innerHTML = "Correct answers: 0/"+qsize;
+    setButtonPanelTestMode(true);
+    document.getElementById('answers').innerHTML = 'Correct answers: 0/' + qsize;
+    updateQuestion();
     
   } 
   else {
@@ -848,6 +900,7 @@ function timerButton(){
     document.getElementById("testbutton").innerHTML = "Start Test";
     console.log("not testing");
     document.getElementById('ttip').disabled = false; //un-disable checkbox
+    setButtonPanelTestMode(false);
     
     clearInterval ( timerInterval );
     
@@ -877,9 +930,7 @@ function testClick(r){
       timerButton();
     }else{
       testProgress++;
-      console.log("Testing: "+ testArray[testProgress].feature.properties.name + " "+testArray[testProgress].feature.properties.category);
-      document.getElementById('questions').innerHTML = "Question: "+(testProgress+1) +"/"+qsize;
-      document.getElementById('tq').innerHTML = "Where is "+testArray[testProgress].feature.properties.name+" ?";
+      updateQuestion();
     }
   }
 }
