@@ -467,8 +467,8 @@ fetch('./essa_sids.geojson').then(response => {
     // otherwise right. Uses fixed-width div + iconAnchor for reliable positioning.
     const placeLeft = hdg > 235 && hdg < 305;
     const labelHtml = placeLeft
-      ? '<div style="width:90px;text-align:right;padding-right:8px;color:#00008B;font-size:11px;font-weight:bold;white-space:nowrap;">' + f.properties.name + '</div>'
-      : '<div style="padding-left:8px;color:#00008B;font-size:11px;font-weight:bold;white-space:nowrap;">' + f.properties.name + '</div>';
+      ? '<div style="width:90px;text-align:right;padding-right:18px;color:#00008B;font-size:11px;font-weight:bold;white-space:nowrap;">' + f.properties.name + '</div>'
+      : '<div style="padding-left:18px;color:#00008B;font-size:11px;font-weight:bold;white-space:nowrap;">' + f.properties.name + '</div>';
     const labelIcon = L.divIcon({
       className: '',
       html: labelHtml,
