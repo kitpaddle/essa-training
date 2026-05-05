@@ -88,7 +88,7 @@ let layerGroupSectors, layerGroupCtrPoints, layerGroupCtrPlaces;
 // LAYER GROUPS TMA
 let layerGroupTMAPoints;
 let layerGroupSIDs;
-let currentRunwayFilter = 'ALL';
+let currentRunwayFilter = '01L';
 
 // Layer BIG Groups
 let layerAirfield;
@@ -790,7 +790,7 @@ function mapButton(nr){
     showButtonPanel(false);
     showRunwayPanel(false);
     currentButtonData = [];
-    currentRunwayFilter = 'ALL';
+    currentRunwayFilter = '01L';
   }
   
   switch (nr){
@@ -864,7 +864,7 @@ function mapButton(nr){
       qsize = 0;
       buildRunwayPanel();
       showRunwayPanel(true);
-      filterSIDsByRunway('ALL');
+      filterSIDsByRunway('01L');
       map.fitBounds(layerSIDsNormal.getBounds().extend(layerSIDsLF.getBounds()));
       document.getElementById('testbutton').disabled = true;
       break;
@@ -906,19 +906,26 @@ function showRunwayPanel(show) {
 }
 
 function buildRunwayPanel() {
-  const runways = ['ALL RWYs', '01L', '01R', '08L', '08R', '19L', '19R', '26'];
+  const runways = [
+    { label: '01L',   key: '01L' },
+    { label: '01R',   key: '01R' },
+    { label: '08(L)', key: '08L' },
+    { label: '08(R)', key: '08R' },
+    { label: '19L',   key: '19L' },
+    { label: '19R',   key: '19R' },
+    { label: '26',    key: '26'  },
+  ];
   const panel = document.getElementById('runway-panel');
   panel.innerHTML = '';
   runways.forEach(function(rwy) {
     const btn = document.createElement('button');
-    btn.className = 'pButton runway-button' + (rwy === 'ALL RWYs' ? ' active' : '');
-    btn.textContent = rwy;
-    const key = rwy === 'ALL RWYs' ? 'ALL' : rwy;
+    btn.className = 'pButton runway-button' + (rwy.key === currentRunwayFilter ? ' active' : '');
+    btn.textContent = rwy.label;
     btn.onclick = function() {
-      currentRunwayFilter = key;
+      currentRunwayFilter = rwy.key;
       document.querySelectorAll('.runway-button').forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
-      filterSIDsByRunway(key);
+      filterSIDsByRunway(rwy.key);
     };
     panel.appendChild(btn);
   });
