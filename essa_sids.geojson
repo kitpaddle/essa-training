@@ -126,7 +126,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       }
     },
     {
@@ -254,7 +255,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       }
     },
     {
@@ -414,7 +416,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       }
     },
     {
@@ -542,7 +545,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       }
     },
     {
@@ -670,7 +674,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       }
     },
     {
@@ -766,7 +771,8 @@
         "next_sector": "DEP-E",
         "LF": false,
         "CA": 5000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       }
     },
     {
@@ -846,7 +852,8 @@
         "next_sector": "DEP-E",
         "LF": false,
         "CA": 5000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       }
     },
     {
@@ -926,7 +933,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "KOGAV"
+        "exit_point": "KOGAV",
+        "weight": 1
       }
     },
     {
@@ -990,7 +998,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "RESNA"
+        "exit_point": "RESNA",
+        "weight": 1
       }
     },
     {
@@ -1102,7 +1111,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       }
     },
     {
@@ -1182,7 +1192,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       }
     },
     {
@@ -1294,7 +1305,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       }
     },
     {
@@ -1390,7 +1402,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       }
     },
     {
@@ -1470,7 +1483,8 @@
         "next_sector": "DEP-E",
         "LF": false,
         "CA": 5000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       }
     },
     {
@@ -1566,7 +1580,8 @@
         "next_sector": "DEP-E",
         "LF": false,
         "CA": 5000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       }
     },
     {
@@ -1630,7 +1645,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "KOGAV"
+        "exit_point": "KOGAV",
+        "weight": 1
       }
     },
     {
@@ -1710,7 +1726,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "RESNA"
+        "exit_point": "RESNA",
+        "weight": 1
       }
     },
     {
@@ -1870,7 +1887,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       }
     },
     {
@@ -2030,7 +2048,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       }
     },
     {
@@ -2190,7 +2209,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       }
     },
     {
@@ -2350,7 +2370,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       }
     },
     {
@@ -2462,7 +2483,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "KOGAV"
+        "exit_point": "KOGAV",
+        "weight": 1
       }
     },
     {
@@ -2590,7 +2612,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "RESNA"
+        "exit_point": "RESNA",
+        "weight": 1
       }
     },
     {
@@ -2670,7 +2693,8 @@
         "next_sector": "DEP-E",
         "LF": false,
         "CA": 5000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       }
     },
     {
@@ -2734,7 +2758,8 @@
         "next_sector": "DEP-E",
         "LF": false,
         "CA": 5000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       }
     },
     {
@@ -2878,7 +2903,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       }
     },
     {
@@ -3006,7 +3032,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       }
     },
     {
@@ -3150,7 +3177,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       }
     },
     {
@@ -3310,7 +3338,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       }
     },
     {
@@ -3390,7 +3419,8 @@
         "next_sector": "DEP-E",
         "LF": false,
         "CA": 5000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       }
     },
     {
@@ -3454,7 +3484,8 @@
         "next_sector": "DEP-E",
         "LF": false,
         "CA": 5000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       }
     },
     {
@@ -3614,7 +3645,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "RESNA"
+        "exit_point": "RESNA",
+        "weight": 1
       }
     },
     {
@@ -3774,7 +3806,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "KOGAV"
+        "exit_point": "KOGAV",
+        "weight": 1
       }
     },
     {
@@ -3886,7 +3919,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       }
     },
     {
@@ -3998,7 +4032,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       }
     },
     {
@@ -4110,7 +4145,8 @@
         "next_sector": "DEP-E",
         "LF": false,
         "CA": 5000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       }
     },
     {
@@ -4238,7 +4274,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       }
     },
     {
@@ -4382,7 +4419,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       }
     },
     {
@@ -4510,7 +4548,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       }
     },
     {
@@ -4654,7 +4693,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "RESNA"
+        "exit_point": "RESNA",
+        "weight": 1
       }
     },
     {
@@ -4766,7 +4806,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       }
     },
     {
@@ -4878,7 +4919,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       }
     },
     {
@@ -4990,7 +5032,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       }
     },
     {
@@ -5134,7 +5177,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "KOGAV"
+        "exit_point": "KOGAV",
+        "weight": 1
       }
     },
     {
@@ -5230,7 +5274,8 @@
         "next_sector": "DEP-E",
         "LF": false,
         "CA": 5000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       }
     },
     {
@@ -5326,7 +5371,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       }
     },
     {
@@ -5438,7 +5484,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       }
     },
     {
@@ -5566,7 +5613,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "KOGAV"
+        "exit_point": "KOGAV",
+        "weight": 1
       }
     },
     {
@@ -5662,7 +5710,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       }
     },
     {
@@ -5758,7 +5807,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       }
     },
     {
@@ -5886,7 +5936,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "RESNA"
+        "exit_point": "RESNA",
+        "weight": 1
       }
     },
     {
@@ -6014,7 +6065,8 @@
         "next_sector": "DEP-E",
         "LF": false,
         "CA": 5000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       }
     },
     {
@@ -6142,7 +6194,8 @@
         "next_sector": "DEP-E",
         "LF": false,
         "CA": 5000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       }
     },
     {
@@ -6222,7 +6275,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "HAPZI"
+        "exit_point": "HAPZI",
+        "weight": 1
       }
     },
     {
@@ -6302,7 +6356,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       }
     },
     {
@@ -6414,7 +6469,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       }
     },
     {
@@ -6510,7 +6566,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       }
     },
     {
@@ -6622,7 +6679,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "KOGAV"
+        "exit_point": "KOGAV",
+        "weight": 1
       }
     },
     {
@@ -6702,7 +6760,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       }
     },
     {
@@ -6782,7 +6841,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       }
     },
     {
@@ -6878,7 +6938,8 @@
         "next_sector": "DEP-W",
         "LF": false,
         "CA": 5000,
-        "exit_point": "RESNA"
+        "exit_point": "RESNA",
+        "weight": 1
       }
     },
     {
@@ -6974,7 +7035,8 @@
         "next_sector": "DEP-E",
         "LF": false,
         "CA": 5000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       }
     },
     {
@@ -6985,7 +7047,8 @@
         "next_sector": "DEP-E",
         "LF": true,
         "CA": 3000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7013,7 +7076,8 @@
         "next_sector": "DEP-E",
         "LF": true,
         "CA": 3000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7041,7 +7105,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "KOGAV"
+        "exit_point": "KOGAV",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7069,7 +7134,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "RESNA"
+        "exit_point": "RESNA",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7097,7 +7163,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7125,7 +7192,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7153,7 +7221,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7181,7 +7250,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7209,7 +7279,8 @@
         "next_sector": "DEP-E",
         "LF": true,
         "CA": 3000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7237,7 +7308,8 @@
         "next_sector": "DEP-E",
         "LF": true,
         "CA": 3000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7265,7 +7337,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7293,7 +7366,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7321,7 +7395,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7349,7 +7424,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7377,7 +7453,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "KOGAV"
+        "exit_point": "KOGAV",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7405,7 +7482,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "RESNA"
+        "exit_point": "RESNA",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7433,7 +7511,8 @@
         "next_sector": "DEP-E",
         "LF": true,
         "CA": 3000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7461,7 +7540,8 @@
         "next_sector": "DEP-E",
         "LF": true,
         "CA": 3000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7489,7 +7569,8 @@
         "next_sector": "DEP-E",
         "LF": true,
         "CA": 3000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7517,7 +7598,8 @@
         "next_sector": "DEP-E",
         "LF": true,
         "CA": 3000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7545,7 +7627,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "KOGAV"
+        "exit_point": "KOGAV",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7573,7 +7656,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "RESNA"
+        "exit_point": "RESNA",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7601,7 +7685,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7629,7 +7714,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7657,7 +7743,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7685,7 +7772,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7713,7 +7801,8 @@
         "next_sector": "DEP-E",
         "LF": true,
         "CA": 3000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7741,7 +7830,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7769,7 +7859,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "KOGAV"
+        "exit_point": "KOGAV",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7797,7 +7888,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "RESNA"
+        "exit_point": "RESNA",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7825,7 +7917,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7853,7 +7946,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7881,7 +7975,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7909,7 +8004,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7937,7 +8033,8 @@
         "next_sector": "DEP-E",
         "LF": true,
         "CA": 3000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7965,7 +8062,8 @@
         "next_sector": "DEP-E",
         "LF": true,
         "CA": 3000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -7993,7 +8091,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "RESNA"
+        "exit_point": "RESNA",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -8021,7 +8120,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "KOGAV"
+        "exit_point": "KOGAV",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -8049,7 +8149,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -8077,7 +8178,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -8105,7 +8207,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -8133,7 +8236,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -8161,7 +8265,8 @@
         "next_sector": "DEP-E",
         "LF": true,
         "CA": 3000,
-        "exit_point": "BABAP"
+        "exit_point": "BABAP",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -8189,7 +8294,8 @@
         "next_sector": "DEP-E",
         "LF": true,
         "CA": 3000,
-        "exit_point": "TOVRI"
+        "exit_point": "TOVRI",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -8217,7 +8323,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "RESNA"
+        "exit_point": "RESNA",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -8245,7 +8352,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "KOGAV"
+        "exit_point": "KOGAV",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -8273,7 +8381,8 @@
         "next_sector": "DEP-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "ARS"
+        "exit_point": "ARS",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -8301,7 +8410,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "PETEV"
+        "exit_point": "PETEV",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -8329,7 +8439,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "NOSLI"
+        "exit_point": "NOSLI",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
@@ -8357,7 +8468,8 @@
         "next_sector": "ARR-W",
         "LF": true,
         "CA": 3000,
-        "exit_point": "INWIQ"
+        "exit_point": "INWIQ",
+        "weight": 1
       },
       "geometry": {
         "type": "LineString",
