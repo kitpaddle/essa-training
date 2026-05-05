@@ -114,6 +114,17 @@ body{
   border-radius: 5px;
 }
 
+#sid-answer-buttons {
+  display: none;
+  width: 100%;
+  gap: 5px;
+  padding: 0 0 5px 0;
+}
+
+#sid-answer-buttons .pButton {
+  flex: 1;
+}
+
 .runway-button {
   height: 28px;
   padding: 0 12px;

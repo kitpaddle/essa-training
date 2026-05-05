@@ -89,6 +89,10 @@ let layerGroupSectors, layerGroupCtrPoints, layerGroupCtrPlaces;
 let layerGroupTMAPoints;
 let layerGroupSIDs;
 let currentRunwayFilter = '01L';
+let isSIDTest = false;
+let sidTestPairs = [];
+let sidTestProgress = 0;
+let sidTestPoints = 0;
 
 // Layer BIG Groups
 let layerAirfield;
@@ -792,6 +796,7 @@ function mapButton(nr){
     if(layerGroupSIDs) map.removeLayer(layerGroupSIDs);
     showButtonPanel(false);
     showRunwayPanel(false);
+    showSIDAnswerButtons(false);
     currentButtonData = [];
     currentRunwayFilter = '01L';
   }
@@ -869,7 +874,6 @@ function mapButton(nr){
       showRunwayPanel(true);
       filterSIDsByRunway('01L');
       map.setView(layerRunways.getBounds().getCenter(), map.getBoundsZoom(layerCtrPlaces.getBounds()) + 1);
-      document.getElementById('testbutton').disabled = true;
       break;
   }
   
@@ -954,6 +958,75 @@ function filterSIDsByRunway(rwy) {
 }
 
 
+function weightedRandom(features) {
+  const total = features.reduce(function(s, f) { return s + (f.properties.weight || 1); }, 0);
+  let r = Math.random() * total;
+  for (let i = 0; i < features.length; i++) {
+    r -= (features[i].properties.weight || 1);
+    if (r <= 0) return features[i];
+  }
+  return features[features.length - 1];
+}
+
+function generateSIDTestPairs() {
+  const all = dataSIDs.features;
+  const pairs = [];
+  for (let i = 0; i < 50; i++) {
+    const sid1 = weightedRandom(all);
+    const sameRwy = all.filter(function(f) {
+      return f.properties.runway === sid1.properties.runway && f !== sid1;
+    });
+    const sid2 = weightedRandom(sameRwy);
+    pairs.push({ sid1: sid1, sid2: sid2 });
+  }
+  return pairs;
+}
+
+function getSIDDisplayName(f) {
+  if (!f.properties.LF) return f.properties.name;
+  if (f.properties.exit_point === 'HAPZI') return f.properties.name + ' 3.0';
+  return f.properties.name + ' 3.0 ve ' + f.properties.exit_point;
+}
+
+function showSIDPair(pair) {
+  [layerSIDsNormal, layerSIDsLF].forEach(function(lg) {
+    lg.eachLayer(function(l) {
+      const match = l.feature === pair.sid1 || l.feature === pair.sid2;
+      l.setStyle({ opacity: match ? (l.feature.properties.LF ? 0.9 : 0.8) : 0 });
+    });
+  });
+  [layerSIDArrows, layerSIDLabels].forEach(function(lg) {
+    lg.eachLayer(function(l) {
+      l.setOpacity((l.feature === pair.sid1 || l.feature === pair.sid2) ? 1 : 0);
+    });
+  });
+}
+
+function showSIDAnswerButtons(show) {
+  document.getElementById('sid-answer-buttons').style.display = show ? 'flex' : 'none';
+}
+
+function sidUpdateQuestion() {
+  const pair = sidTestPairs[sidTestProgress];
+  document.getElementById('questions').innerHTML = 'Question: ' + (sidTestProgress + 1) + '/50';
+  document.getElementById('tq').innerHTML =
+    'DEP ' + pair.sid1.properties.runway +
+    ' Flight 1: ' + getSIDDisplayName(pair.sid1) +
+    ' -> Flight 2: ' + getSIDDisplayName(pair.sid2);
+  showSIDPair(pair);
+}
+
+function sidAnswerClick(nm) {
+  // Scoring rules to be added later
+  if (sidTestProgress + 1 >= 50) {
+    document.getElementById('tq').innerHTML = 'Test complete!';
+    timerButton();
+  } else {
+    sidTestProgress++;
+    sidUpdateQuestion();
+  }
+}
+
 function updateQuestion() {
   const current = testArray[testProgress];
   const isButton = current.feature.properties.category === 'button';
@@ -972,74 +1045,68 @@ function setButtonPanelTestMode(isTest) {
   });
 }
 
-function timerButton(){  
+function timerButton(){
   if(!testing){
-    console.log("Starting testing");
-    let testTime = 0; //Define time in seconds for timer
-    testArray = []; testProgress = 0; testPoints = 0;
-    testing = true; // starting test
-    document.getElementById("testbutton").innerHTML = "Stop Testing";
-    document.getElementById('ttip').checked = false;
-    ttipClick(); // If Tooltips checkbox was on, set to off and update
-    document.getElementById('ttip').disabled = true; // Disable checkbox
-    // question display handled by updateQuestion() after array is built
-    timerInterval = setInterval( function(){
+    testing = true;
+    let testTime = 0;
+    document.getElementById('testbutton').innerHTML = 'Stop Testing';
+    timerInterval = setInterval(function(){
       testTime++;
-      document.getElementById("timer").innerHTML='Time lapsed: '+padNumber(parseInt(testTime/60,10))+':'+padNumber(testTime%60)
+      document.getElementById('timer').innerHTML = 'Time lapsed: ' + padNumber(parseInt(testTime/60,10)) + ':' + padNumber(testTime%60);
     }, 1000);
-    
-    // HIDE ALL TOOLTIPS by setting opacity 0
-    layerList.forEach(l =>{
-      l.eachLayer(function(l) {
-        if (l.getTooltip()) {
-          let tt = l.getTooltip();
-          tt.setOpacity(0);
-        }
-      })
-    })
-    // If multiple layers in selectedLayer
-    if(selectedLayer.getLayers().length>1){
-      selectedLayer.eachLayer(function(s){
-        s.eachLayer(function(layer){
-          testArray.push(layer);
+
+    if(selectedLayer === layerGroupSIDs){
+      // SID test
+      isSIDTest = true;
+      sidTestProgress = 0; sidTestPoints = 0;
+      sidTestPairs = generateSIDTestPairs();
+      showRunwayPanel(false);
+      showSIDAnswerButtons(true);
+      document.getElementById('answers').innerHTML = 'Correct answers: 0/50';
+      sidUpdateQuestion();
+    } else {
+      // Regular test
+      isSIDTest = false;
+      testArray = []; testProgress = 0; testPoints = 0;
+      document.getElementById('ttip').checked = false;
+      ttipClick();
+      document.getElementById('ttip').disabled = true;
+      layerList.forEach(l =>{
+        l.eachLayer(function(l) {
+          if (l.getTooltip()) { l.getTooltip().setOpacity(0); }
         })
-      })
-    }else{ // If single layer
+      });
       selectedLayer.eachLayer(function(s){
-        s.eachLayer(function(layer){
-          testArray.push(layer);
-        })
-      })
+        s.eachLayer(function(layer){ testArray.push(layer); });
+      });
+      currentButtonData.forEach(function(feature) {
+        testArray.push({ feature: feature });
+      });
+      testArray = shuffleArray(testArray);
+      setButtonPanelTestMode(true);
+      document.getElementById('answers').innerHTML = 'Correct answers: 0/' + qsize;
+      updateQuestion();
     }
-    currentButtonData.forEach(function(feature) {
-      testArray.push({ feature: feature });
-    });
-    testArray = shuffleArray(testArray);
-    setButtonPanelTestMode(true);
-    document.getElementById('answers').innerHTML = 'Correct answers: 0/' + qsize;
-    updateQuestion();
-    
-  } 
-  else {
-    testing = false; // no longer testing
-    document.getElementById("testbutton").innerHTML = "Start Test";
-    console.log("not testing");
-    document.getElementById('ttip').disabled = false; //un-disable checkbox
-    setButtonPanelTestMode(false);
-    
-    clearInterval ( timerInterval );
-    
-    // "UNHIDE" ALL TOOLTIPS by setting opacity back to 1
-    layerList.forEach(l =>{
-      l.eachLayer(function(l) {
-        if (l.getTooltip()) {
-          let tt = l.getTooltip();
-          tt.setOpacity(1);
-        }
-      })
-    })
-    
-  }  
+  } else {
+    testing = false;
+    document.getElementById('testbutton').innerHTML = 'Start Test';
+    clearInterval(timerInterval);
+
+    if(isSIDTest){
+      isSIDTest = false;
+      showSIDAnswerButtons(false);
+      showRunwayPanel(true);
+      filterSIDsByRunway(currentRunwayFilter);
+    } else {
+      document.getElementById('ttip').disabled = false;
+      setButtonPanelTestMode(false);
+      layerList.forEach(l =>{
+        l.eachLayer(function(l) {
+          if (l.getTooltip()) { l.getTooltip().setOpacity(1); }
+        })
+      });
+    }
+  }
 }
 
 function testClick(r){
