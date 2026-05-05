@@ -451,7 +451,7 @@ fetch('./essa_sids.geojson').then(response => {
   data.features.filter(function(f) { return f.properties.LF; }).forEach(function(f) {
     const coords = f.geometry.coordinates;
     const last = coords[coords.length - 1];
-    const hdg = f.properties.end_bearing;
+    const hdg = parseInt(f.properties.name.split('/')[1]);
 
     const arrowIcon = L.divIcon({
       className: '',
