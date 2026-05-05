@@ -451,8 +451,7 @@ fetch('./essa_sids.geojson').then(response => {
   data.features.filter(function(f) { return f.properties.LF; }).forEach(function(f) {
     const coords = f.geometry.coordinates;
     const last = coords[coords.length - 1];
-    const prev = coords[coords.length - 2];
-    const hdg = sidBearing(prev, last);
+    const hdg = f.properties.end_bearing;
 
     const arrowIcon = L.divIcon({
       className: '',
@@ -952,14 +951,6 @@ function filterSIDsByRunway(rwy) {
   });
 }
 
-function sidBearing(p1, p2) {
-  const lat1 = p1[1] * Math.PI / 180;
-  const lat2 = p2[1] * Math.PI / 180;
-  const dlon = (p2[0] - p1[0]) * Math.PI / 180;
-  const y = Math.sin(dlon) * Math.cos(lat2);
-  const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dlon);
-  return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
-}
 
 function updateQuestion() {
   const current = testArray[testProgress];
