@@ -849,6 +849,7 @@ function mapButton(nr){
       qsize = 0;
       buildRunwayPanel();
       showRunwayPanel(true);
+      filterSIDsByRunway('ALL');
       map.fitBounds(layerSIDsNormal.getBounds().extend(layerSIDsLF.getBounds()));
       document.getElementById('testbutton').disabled = true;
       break;
@@ -898,8 +899,6 @@ function buildRunwayPanel() {
     btn.className = 'pButton runway-button' + (rwy === 'ALL RWYs' ? ' active' : '');
     btn.textContent = rwy;
     const key = rwy === 'ALL RWYs' ? 'ALL' : rwy;
-    btn.onmouseover = function() { filterSIDsByRunway(key); };
-    btn.onmouseleave = function() { filterSIDsByRunway(currentRunwayFilter); };
     btn.onclick = function() {
       currentRunwayFilter = key;
       document.querySelectorAll('.runway-button').forEach(function(b) { b.classList.remove('active'); });

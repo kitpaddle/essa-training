@@ -102,8 +102,9 @@ body{
 
 #runway-panel {
   position: absolute;
-  bottom: 12px;
+  top: 50%;
   left: 12px;
+  transform: translateY(-50%);
   z-index: 1000;
   display: none;
   flex-direction: column;
