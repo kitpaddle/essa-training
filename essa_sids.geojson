@@ -6976,6 +6976,62 @@
         "CA": 5000,
         "exit_point": "TOVRI"
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "190/120",
+        "runway": "19R",
+        "next_sector": "DEP-E",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "TOVRI"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.913207368492266,
+            59.63724421058501
+          ],
+          [
+            17.907031640196386,
+            59.619530887555904
+          ],
+          [
+            17.937823243106116,
+            59.61053406076837
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "190/120",
+        "runway": "19R",
+        "next_sector": "DEP-E",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "BABAP"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.913207368492266,
+            59.63724421058501
+          ],
+          [
+            17.907031640196386,
+            59.619530887555904
+          ],
+          [
+            17.937823243106116,
+            59.61053406076837
+          ]
+        ]
+      }
     }
   ]
 }
