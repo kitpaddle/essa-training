@@ -70,6 +70,7 @@ let dataRoads, dataPoi, dataAirfieldAor;
 let dataSectors, dataCtrPoints, dataCtrPlaces;
 // TMA DATA
 let dataTMAPoints;
+let dataSIDs;
 
 // Initialising the corresponding layers to be used by Leaflet
 // AIRFIELD LAYERS
@@ -78,6 +79,7 @@ let layerTerminals, layerAprons, layerTaxiways, layerRunways, layerStandPoint, l
 let layerSectors, layerCtrPoints, layerCtrPlaces;
 // TMA LAYERS
 let layerTMAPoints;
+let layerSIDsNormal, layerSIDsLF, layerSIDArrows;
 
 // LAYER GROUPS AIRFIELD
 let layerStands, layerRamps, layerWays, layerGroupRoads, layerGroupPoi, layerGroupAirfieldAor;
@@ -85,6 +87,8 @@ let layerStands, layerRamps, layerWays, layerGroupRoads, layerGroupPoi, layerGro
 let layerGroupSectors, layerGroupCtrPoints, layerGroupCtrPlaces;
 // LAYER GROUPS TMA
 let layerGroupTMAPoints;
+let layerGroupSIDs;
+let currentRunwayFilter = 'ALL';
 
 // Layer BIG Groups
 let layerAirfield;
@@ -426,6 +430,45 @@ fetch('./essa_tma_points.geojson').then(response => {
   console.log("Error fetching TMA points from file essa_tma_points.geojson");
 });
 
+// FETCHING DATA for SIDs (Leveransavstånd)
+fetch('./essa_sids.geojson').then(response => {
+  return response.json();
+}).then(data => {
+  dataSIDs = data;
+
+  layerSIDsNormal = L.geoJSON(data, {
+    filter: function(f) { return !f.properties.LF; },
+    style: { color: '#3388ff', weight: 2, opacity: 0.8 }
+  });
+
+  layerSIDsLF = L.geoJSON(data, {
+    filter: function(f) { return f.properties.LF; },
+    style: { color: '#00008B', weight: 2, dashArray: '8, 5', opacity: 0.9 }
+  });
+
+  layerSIDArrows = L.layerGroup();
+  data.features.filter(function(f) { return f.properties.LF; }).forEach(function(f) {
+    const coords = f.geometry.coordinates;
+    const last = coords[coords.length - 1];
+    const prev = coords[coords.length - 2];
+    const hdg = sidBearing(prev, last);
+    const arrowIcon = L.divIcon({
+      className: '',
+      html: '<div style="transform:rotate(' + (hdg - 90) + 'deg);color:#00008B;font-size:13px;line-height:1;">&#9654;</div>',
+      iconSize: [13, 13],
+      iconAnchor: [6, 6]
+    });
+    const marker = L.marker([last[1], last[0]], { icon: arrowIcon, interactive: false });
+    marker.feature = f;
+    layerSIDArrows.addLayer(marker);
+  });
+
+  layerGroupSIDs = L.layerGroup([layerSIDsNormal, layerSIDsLF, layerSIDArrows]);
+
+}).catch(err => {
+  console.log("Error fetching SIDs from essa_sids.geojson");
+});
+
 // FETCHING DATA for CTR Places, Sectors and Water bodies.
 fetch('./essa_ctr_areas.geojson').then(response => {
   return response.json();
@@ -715,6 +758,7 @@ function ttipClick(){
 function mapButton(nr){
   [...document.getElementsByClassName('pButton')].map(x => x.classList.remove('active')); // Removes 'active' class from all pButton
   document.getElementById(nr).classList.add('active'); // Add 'active'-class to the one just pressed
+  document.getElementById('testbutton').disabled = false;
   if(selectedLayer){
     map.removeLayer(layerWays);
     map.removeLayer(layerRamps);
@@ -727,8 +771,11 @@ function mapButton(nr){
     map.removeLayer(layerGroupCtrPlaces);
     map.removeLayer(layerGroupTMAPoints);
     map.removeLayer(layerStandLines);
+    if(layerGroupSIDs) map.removeLayer(layerGroupSIDs);
     showButtonPanel(false);
+    showRunwayPanel(false);
     currentButtonData = [];
+    currentRunwayFilter = 'ALL';
   }
   
   switch (nr){
@@ -796,6 +843,15 @@ function mapButton(nr){
       showButtonPanel(true);
       moveMap(layerTMAPoints);
       break;
+    case 10:
+      selectedLayer = layerGroupSIDs;
+      layerGroupSIDs.addTo(map);
+      qsize = 0;
+      buildRunwayPanel();
+      showRunwayPanel(true);
+      map.fitBounds(layerSIDsNormal.getBounds().extend(layerSIDsLF.getBounds()));
+      document.getElementById('testbutton').disabled = true;
+      break;
   }
   
   document.getElementById("questions").innerHTML = "Questions: 0/"+qsize;
@@ -827,6 +883,55 @@ function buildButtonPanel(buttonData) {
 
 function showButtonPanel(show) {
   document.getElementById('button-panel').style.display = show ? 'flex' : 'none';
+}
+
+function showRunwayPanel(show) {
+  document.getElementById('runway-panel').style.display = show ? 'flex' : 'none';
+}
+
+function buildRunwayPanel() {
+  const runways = ['ALL RWYs', '01L', '01R', '08L', '08R', '19L', '19R', '26'];
+  const panel = document.getElementById('runway-panel');
+  panel.innerHTML = '';
+  runways.forEach(function(rwy) {
+    const btn = document.createElement('button');
+    btn.className = 'pButton runway-button' + (rwy === 'ALL RWYs' ? ' active' : '');
+    btn.textContent = rwy;
+    const key = rwy === 'ALL RWYs' ? 'ALL' : rwy;
+    btn.onmouseover = function() { filterSIDsByRunway(key); };
+    btn.onmouseleave = function() { filterSIDsByRunway(currentRunwayFilter); };
+    btn.onclick = function() {
+      currentRunwayFilter = key;
+      document.querySelectorAll('.runway-button').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      filterSIDsByRunway(key);
+    };
+    panel.appendChild(btn);
+  });
+}
+
+function filterSIDsByRunway(rwy) {
+  layerSIDsNormal.eachLayer(function(l) {
+    const match = rwy === 'ALL' || l.feature.properties.runway === rwy;
+    l.setStyle({ opacity: match ? 0.8 : 0 });
+  });
+  layerSIDsLF.eachLayer(function(l) {
+    const match = rwy === 'ALL' || l.feature.properties.runway === rwy;
+    l.setStyle({ opacity: match ? 0.9 : 0 });
+  });
+  layerSIDArrows.eachLayer(function(l) {
+    const match = rwy === 'ALL' || l.feature.properties.runway === rwy;
+    l.setOpacity(match ? 1 : 0);
+  });
+}
+
+function sidBearing(p1, p2) {
+  const lat1 = p1[1] * Math.PI / 180;
+  const lat2 = p2[1] * Math.PI / 180;
+  const dlon = (p2[0] - p1[0]) * Math.PI / 180;
+  const y = Math.sin(dlon) * Math.cos(lat2);
+  const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dlon);
+  return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
 }
 
 function updateQuestion() {
