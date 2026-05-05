@@ -466,14 +466,15 @@ fetch('./essa_sids.geojson').then(response => {
     // Place label left of endpoint when line approaches from the east (endHdg 235–305°),
     // otherwise right. Uses fixed-width div + iconAnchor for reliable positioning.
     const placeLeft = hdg > 235 && hdg < 305;
+    const baseStyle = 'color:#00008B;font-size:11px;font-weight:bold;white-space:nowrap;position:absolute;top:0;';
     const labelHtml = placeLeft
-      ? '<div style="width:90px;text-align:right;padding-right:18px;color:#00008B;font-size:11px;font-weight:bold;white-space:nowrap;">' + f.properties.name + '</div>'
-      : '<div style="padding-left:18px;color:#00008B;font-size:11px;font-weight:bold;white-space:nowrap;">' + f.properties.name + '</div>';
+      ? '<div style="' + baseStyle + 'right:18px;">' + f.properties.name + '</div>'
+      : '<div style="' + baseStyle + 'left:18px;">' + f.properties.name + '</div>';
     const labelIcon = L.divIcon({
       className: '',
       html: labelHtml,
-      iconSize: placeLeft ? [90, 14] : [0, 14],
-      iconAnchor: placeLeft ? [90, 7] : [0, 7]
+      iconSize: [0, 14],
+      iconAnchor: [0, 7]
     });
     const labelMarker = L.marker([last[1], last[0]], { icon: labelIcon, interactive: false });
     labelMarker.feature = f;
