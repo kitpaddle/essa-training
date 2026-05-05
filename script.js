@@ -447,35 +447,36 @@ fetch('./essa_sids.geojson').then(response => {
   });
 
   layerSIDArrows = L.layerGroup();
+  layerSIDLabels = L.layerGroup();
   data.features.filter(function(f) { return f.properties.LF; }).forEach(function(f) {
     const coords = f.geometry.coordinates;
     const last = coords[coords.length - 1];
     const prev = coords[coords.length - 2];
     const hdg = sidBearing(prev, last);
+
     const arrowIcon = L.divIcon({
       className: '',
       html: '<div style="transform:rotate(' + (hdg - 90) + 'deg);color:#00008B;font-size:13px;line-height:1;">&#9654;</div>',
       iconSize: [13, 13],
       iconAnchor: [6, 6]
     });
-    const marker = L.marker([last[1], last[0]], { icon: arrowIcon, interactive: false });
-    marker.feature = f;
-    layerSIDArrows.addLayer(marker);
-  });
+    const arrowMarker = L.marker([last[1], last[0]], { icon: arrowIcon, interactive: false });
+    arrowMarker.feature = f;
+    layerSIDArrows.addLayer(arrowMarker);
 
-  layerSIDLabels = L.layerGroup();
-  data.features.filter(function(f) { return f.properties.LF; }).forEach(function(f) {
-    const coords = f.geometry.coordinates;
-    const last = coords[coords.length - 1];
+    const goingWest = hdg > 180;
+    const labelHtml = goingWest
+      ? '<div style="color:#00008B;font-size:11px;font-weight:bold;white-space:nowrap;padding-right:10px;transform:translateX(-100%);">' + f.properties.name + '</div>'
+      : '<div style="color:#00008B;font-size:11px;font-weight:bold;white-space:nowrap;padding-left:10px;">' + f.properties.name + '</div>';
     const labelIcon = L.divIcon({
       className: '',
-      html: '<div style="color:#00008B;font-size:11px;font-weight:bold;white-space:nowrap;padding-left:10px;">' + f.properties.name + '</div>',
+      html: labelHtml,
       iconSize: [0, 0],
-      iconAnchor: [0, 0]
+      iconAnchor: [0, 6]
     });
-    const marker = L.marker([last[1], last[0]], { icon: labelIcon, interactive: false });
-    marker.feature = f;
-    layerSIDLabels.addLayer(marker);
+    const labelMarker = L.marker([last[1], last[0]], { icon: labelIcon, interactive: false });
+    labelMarker.feature = f;
+    layerSIDLabels.addLayer(labelMarker);
   });
 
   layerGroupSIDs = L.layerGroup([layerSIDsNormal, layerSIDsLF, layerSIDArrows, layerSIDLabels]);
