@@ -79,7 +79,7 @@ let layerTerminals, layerAprons, layerTaxiways, layerRunways, layerStandPoint, l
 let layerSectors, layerCtrPoints, layerCtrPlaces;
 // TMA LAYERS
 let layerTMAPoints;
-let layerSIDsNormal, layerSIDsLF, layerSIDArrows;
+let layerSIDsNormal, layerSIDsLF, layerSIDArrows, layerSIDLabels;
 
 // LAYER GROUPS AIRFIELD
 let layerStands, layerRamps, layerWays, layerGroupRoads, layerGroupPoi, layerGroupAirfieldAor;
@@ -463,7 +463,22 @@ fetch('./essa_sids.geojson').then(response => {
     layerSIDArrows.addLayer(marker);
   });
 
-  layerGroupSIDs = L.layerGroup([layerSIDsNormal, layerSIDsLF, layerSIDArrows]);
+  layerSIDLabels = L.layerGroup();
+  data.features.filter(function(f) { return f.properties.LF; }).forEach(function(f) {
+    const coords = f.geometry.coordinates;
+    const last = coords[coords.length - 1];
+    const labelIcon = L.divIcon({
+      className: '',
+      html: '<div style="color:#00008B;font-size:11px;font-weight:bold;white-space:nowrap;padding-left:10px;">' + f.properties.name + '</div>',
+      iconSize: [0, 0],
+      iconAnchor: [0, 0]
+    });
+    const marker = L.marker([last[1], last[0]], { icon: labelIcon, interactive: false });
+    marker.feature = f;
+    layerSIDLabels.addLayer(marker);
+  });
+
+  layerGroupSIDs = L.layerGroup([layerSIDsNormal, layerSIDsLF, layerSIDArrows, layerSIDLabels]);
 
 }).catch(err => {
   console.log("Error fetching SIDs from essa_sids.geojson");
@@ -919,6 +934,10 @@ function filterSIDsByRunway(rwy) {
     l.setStyle({ opacity: match ? 0.9 : 0 });
   });
   layerSIDArrows.eachLayer(function(l) {
+    const match = rwy === 'ALL' || l.feature.properties.runway === rwy;
+    l.setOpacity(match ? 1 : 0);
+  });
+  layerSIDLabels.eachLayer(function(l) {
     const match = rwy === 'ALL' || l.feature.properties.runway === rwy;
     l.setOpacity(match ? 1 : 0);
   });
