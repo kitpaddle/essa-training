@@ -7928,6 +7928,230 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "360/120",
+        "runway": "01L",
+        "next_sector": "DEP-E",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "BABAP"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.923753681711446,
+            59.66643313040876
+          ],
+          [
+            17.923753681711446,
+            59.693412778586335
+          ],
+          [
+            17.97003668870605,
+            59.67991480751911
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "360/120",
+        "runway": "01L",
+        "next_sector": "DEP-E",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "TOVRI"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.923753681711446,
+            59.66643313040876
+          ],
+          [
+            17.923753681711446,
+            59.693412778586335
+          ],
+          [
+            17.97003668870605,
+            59.67991480751911
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "330/330",
+        "runway": "01L",
+        "next_sector": "DEP-W",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "RESNA"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.923753681711446,
+            59.66643313040876
+          ],
+          [
+            17.89702429485516,
+            59.689795475062766
+          ],
+          [
+            17.870276249148198,
+            59.71315781717274
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "330/330",
+        "runway": "01L",
+        "next_sector": "DEP-W",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "KOGAV"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.923753681711446,
+            59.66643313040876
+          ],
+          [
+            17.89702429485516,
+            59.689795475062766
+          ],
+          [
+            17.870276249148198,
+            59.71315781717274
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "330/330",
+        "runway": "01L",
+        "next_sector": "DEP-W",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "ARS"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.923753681711446,
+            59.66643313040876
+          ],
+          [
+            17.89702429485516,
+            59.689795475062766
+          ],
+          [
+            17.870276249148198,
+            59.71315781717274
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "240/240",
+        "runway": "01L",
+        "next_sector": "ARR-W",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "PETEV"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.923753681711446,
+            59.66643313040876
+          ],
+          [
+            17.877507905424107,
+            59.65293516813693
+          ],
+          [
+            17.831280729405243,
+            59.63943721026013
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "240/240",
+        "runway": "01L",
+        "next_sector": "ARR-W",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "NOSLI"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.923753681711446,
+            59.66643313040876
+          ],
+          [
+            17.877507905424107,
+            59.65293516813693
+          ],
+          [
+            17.831280729405243,
+            59.63943721026013
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "240/240",
+        "runway": "01L",
+        "next_sector": "ARR-W",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "INWIQ"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.923753681711446,
+            59.66643313040876
+          ],
+          [
+            17.877507905424107,
+            59.65293516813693
+          ],
+          [
+            17.831280729405243,
+            59.63943721026013
+          ]
+        ]
+      }
     }
   ]
 }
