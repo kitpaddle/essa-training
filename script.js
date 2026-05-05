@@ -865,7 +865,7 @@ function mapButton(nr){
       buildRunwayPanel();
       showRunwayPanel(true);
       filterSIDsByRunway('01L');
-      map.fitBounds(layerSIDsNormal.getBounds().extend(layerSIDsLF.getBounds()));
+      moveMap(layerCtrPlaces);
       document.getElementById('testbutton').disabled = true;
       break;
   }
