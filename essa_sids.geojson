@@ -7256,6 +7256,230 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "040/250",
+        "runway": "08L",
+        "next_sector": "ARR-W",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "ARS"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.97919174923493,
+            59.663906319052415
+          ],
+          [
+            18.013549026934033,
+            59.6845694406427
+          ],
+          [
+            17.96333588791733,
+            59.67533226759326
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "040/250",
+        "runway": "08L",
+        "next_sector": "ARR-W",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "PETEV"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.97919174923493,
+            59.663906319052415
+          ],
+          [
+            18.013549026934033,
+            59.6845694406427
+          ],
+          [
+            17.96333588791733,
+            59.67533226759326
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "040/250",
+        "runway": "08L",
+        "next_sector": "ARR-W",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "NOSLI"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.97919174923493,
+            59.663906319052415
+          ],
+          [
+            18.013549026934033,
+            59.6845694406427
+          ],
+          [
+            17.96333588791733,
+            59.67533226759326
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "040/250",
+        "runway": "08L",
+        "next_sector": "ARR-W",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "INWIQ"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.97919174923493,
+            59.663906319052415
+          ],
+          [
+            18.013549026934033,
+            59.6845694406427
+          ],
+          [
+            17.96333588791733,
+            59.67533226759326
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "040/330",
+        "runway": "08L",
+        "next_sector": "DEP-W",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "KOGAV"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.97919174923493,
+            59.663906319052415
+          ],
+          [
+            18.013549026934033,
+            59.6845694406427
+          ],
+          [
+            17.986805157762113,
+            59.70793178332206
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "040/330",
+        "runway": "08L",
+        "next_sector": "DEP-W",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "RESNA"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.97919174923493,
+            59.663906319052415
+          ],
+          [
+            18.013549026934033,
+            59.6845694406427
+          ],
+          [
+            17.986805157762113,
+            59.70793178332206
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "120/120",
+        "runway": "08L",
+        "next_sector": "DEP-E",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "TOVRI"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.97919174923493,
+            59.663906319052415
+          ],
+          [
+            18.02543404222797,
+            59.65040835760361
+          ],
+          [
+            18.071657738235128,
+            59.63691040054916
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "120/120",
+        "runway": "08L",
+        "next_sector": "DEP-E",
+        "LF": true,
+        "CA": 3000,
+        "exit_point": "BABAP"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.97919174923493,
+            59.663906319052415
+          ],
+          [
+            18.02543404222797,
+            59.65040835760361
+          ],
+          [
+            18.071657738235128,
+            59.63691040054916
+          ]
+        ]
+      }
     }
   ]
 }
