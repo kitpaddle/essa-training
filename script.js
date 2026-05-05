@@ -451,7 +451,7 @@ fetch('./essa_sids.geojson').then(response => {
   data.features.filter(function(f) { return f.properties.LF; }).forEach(function(f) {
     const coords = f.geometry.coordinates;
     const last = coords[coords.length - 1];
-    const hdg = parseInt(f.properties.name.split('/')[1]);
+    const hdg = f.properties.end_heading;
 
     const arrowIcon = L.divIcon({
       className: '',
@@ -867,7 +867,7 @@ function mapButton(nr){
       buildRunwayPanel();
       showRunwayPanel(true);
       filterSIDsByRunway('01L');
-      map.setView(layerCtrPlaces.getBounds().getCenter(), map.getBoundsZoom(layerCtrPlaces.getBounds()) + 1);
+      map.setView(layerRunways.getBounds().getCenter(), map.getBoundsZoom(layerCtrPlaces.getBounds()) + 1);
       document.getElementById('testbutton').disabled = true;
       break;
   }

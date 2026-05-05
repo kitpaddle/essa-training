@@ -6276,7 +6276,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "HAPZI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 277.2
       }
     },
     {
@@ -7048,7 +7049,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "TOVRI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 120
       },
       "geometry": {
         "type": "LineString",
@@ -7077,7 +7079,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "BABAP",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 120
       },
       "geometry": {
         "type": "LineString",
@@ -7106,7 +7109,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "KOGAV",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 290
       },
       "geometry": {
         "type": "LineString",
@@ -7135,7 +7139,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "RESNA",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 290
       },
       "geometry": {
         "type": "LineString",
@@ -7164,7 +7169,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "ARS",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 270
       },
       "geometry": {
         "type": "LineString",
@@ -7193,7 +7199,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "PETEV",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 270
       },
       "geometry": {
         "type": "LineString",
@@ -7222,7 +7229,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "NOSLI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 270
       },
       "geometry": {
         "type": "LineString",
@@ -7251,7 +7259,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "INWIQ",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 270
       },
       "geometry": {
         "type": "LineString",
@@ -7280,7 +7289,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "TOVRI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 120
       },
       "geometry": {
         "type": "LineString",
@@ -7309,7 +7319,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "BABAP",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 120
       },
       "geometry": {
         "type": "LineString",
@@ -7338,7 +7349,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "ARS",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 250
       },
       "geometry": {
         "type": "LineString",
@@ -7367,7 +7379,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "PETEV",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 250
       },
       "geometry": {
         "type": "LineString",
@@ -7396,7 +7409,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "NOSLI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 250
       },
       "geometry": {
         "type": "LineString",
@@ -7425,7 +7439,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "INWIQ",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 250
       },
       "geometry": {
         "type": "LineString",
@@ -7454,7 +7469,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "KOGAV",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 330
       },
       "geometry": {
         "type": "LineString",
@@ -7483,7 +7499,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "RESNA",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 330
       },
       "geometry": {
         "type": "LineString",
@@ -7512,7 +7529,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "TOVRI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 120
       },
       "geometry": {
         "type": "LineString",
@@ -7541,7 +7559,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "BABAP",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 120
       },
       "geometry": {
         "type": "LineString",
@@ -7570,7 +7589,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "TOVRI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 120
       },
       "geometry": {
         "type": "LineString",
@@ -7599,7 +7619,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "BABAP",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 120
       },
       "geometry": {
         "type": "LineString",
@@ -7628,7 +7649,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "KOGAV",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 270
       },
       "geometry": {
         "type": "LineString",
@@ -7657,7 +7679,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "RESNA",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 270
       },
       "geometry": {
         "type": "LineString",
@@ -7686,7 +7709,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "ARS",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 250
       },
       "geometry": {
         "type": "LineString",
@@ -7715,7 +7739,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "PETEV",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 250
       },
       "geometry": {
         "type": "LineString",
@@ -7744,7 +7769,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "NOSLI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 250
       },
       "geometry": {
         "type": "LineString",
@@ -7773,7 +7799,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "INWIQ",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 250
       },
       "geometry": {
         "type": "LineString",
@@ -7802,7 +7829,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "TOVRI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 40
       },
       "geometry": {
         "type": "LineString",
@@ -7831,7 +7859,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "ARS",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 300
       },
       "geometry": {
         "type": "LineString",
@@ -7860,7 +7889,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "KOGAV",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 300
       },
       "geometry": {
         "type": "LineString",
@@ -7889,7 +7919,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "RESNA",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 300
       },
       "geometry": {
         "type": "LineString",
@@ -7918,7 +7949,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "PETEV",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 230
       },
       "geometry": {
         "type": "LineString",
@@ -7947,7 +7979,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "NOSLI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 230
       },
       "geometry": {
         "type": "LineString",
@@ -7976,7 +8009,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "INWIQ",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 230
       },
       "geometry": {
         "type": "LineString",
@@ -8005,7 +8039,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "BABAP",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 230
       },
       "geometry": {
         "type": "LineString",
@@ -8034,7 +8069,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "BABAP",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 120
       },
       "geometry": {
         "type": "LineString",
@@ -8063,7 +8099,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "TOVRI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 120
       },
       "geometry": {
         "type": "LineString",
@@ -8092,7 +8129,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "RESNA",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 330
       },
       "geometry": {
         "type": "LineString",
@@ -8121,7 +8159,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "KOGAV",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 330
       },
       "geometry": {
         "type": "LineString",
@@ -8150,7 +8189,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "ARS",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 330
       },
       "geometry": {
         "type": "LineString",
@@ -8179,7 +8219,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "PETEV",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 240
       },
       "geometry": {
         "type": "LineString",
@@ -8208,7 +8249,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "NOSLI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 240
       },
       "geometry": {
         "type": "LineString",
@@ -8237,7 +8279,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "INWIQ",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 240
       },
       "geometry": {
         "type": "LineString",
@@ -8266,7 +8309,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "BABAP",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 120
       },
       "geometry": {
         "type": "LineString",
@@ -8295,7 +8339,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "TOVRI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 120
       },
       "geometry": {
         "type": "LineString",
@@ -8324,7 +8369,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "RESNA",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 330
       },
       "geometry": {
         "type": "LineString",
@@ -8353,7 +8399,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "KOGAV",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 330
       },
       "geometry": {
         "type": "LineString",
@@ -8382,7 +8429,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "ARS",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 330
       },
       "geometry": {
         "type": "LineString",
@@ -8411,7 +8459,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "PETEV",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 240
       },
       "geometry": {
         "type": "LineString",
@@ -8440,7 +8489,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "NOSLI",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 240
       },
       "geometry": {
         "type": "LineString",
@@ -8469,7 +8519,8 @@
         "LF": true,
         "CA": 3000,
         "exit_point": "INWIQ",
-        "weight": 1
+        "weight": 1,
+        "end_heading": 240
       },
       "geometry": {
         "type": "LineString",
