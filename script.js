@@ -867,8 +867,7 @@ function mapButton(nr){
       buildRunwayPanel();
       showRunwayPanel(true);
       filterSIDsByRunway('01L');
-      moveMap(layerCtrPlaces);
-      map.zoomIn();
+      map.setView(layerCtrPlaces.getBounds().getCenter(), map.getBoundsZoom(layerCtrPlaces.getBounds()) + 1);
       document.getElementById('testbutton').disabled = true;
       break;
   }
