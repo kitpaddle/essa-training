@@ -1016,6 +1016,12 @@ function sidUpdateQuestion() {
   showSIDPair(pair);
 }
 
+function flashFeedback(correct) {
+  const el = document.getElementById('test');
+  el.style.backgroundColor = correct ? '#5cb85c' : '#d9534f';
+  setTimeout(function() { el.style.backgroundColor = ''; }, 600);
+}
+
 function getCorrectAnswer(pair) {
   const p1 = pair.sid1.properties, p2 = pair.sid2.properties;
   if (p1.LF || p2.LF) return 3;
@@ -1027,7 +1033,9 @@ function getCorrectAnswer(pair) {
 
 function sidAnswerClick(nm) {
   const correct = getCorrectAnswer(sidTestPairs[sidTestProgress]);
-  if (nm === correct) sidTestPoints++;
+  const isCorrect = nm === correct;
+  if (isCorrect) sidTestPoints++;
+  flashFeedback(isCorrect);
   document.getElementById('answers').innerHTML = 'Correct answers: ' + sidTestPoints + '/50';
   if (sidTestProgress + 1 >= 50) {
     document.getElementById('tq').innerHTML = 'Test complete!';
@@ -1123,9 +1131,11 @@ function timerButton(){
 function testClick(r){
   console.log("Clicked: "+r);
   if(testing){
-    if(r == testArray[testProgress].feature.properties.name){
+    const isCorrect = r == testArray[testProgress].feature.properties.name;
+    flashFeedback(isCorrect);
+    if(isCorrect){
       testPoints++;
-      document.getElementById('answers').innerHTML = "Correct answers: "+ testPoints +"/"+qsize; 
+      document.getElementById('answers').innerHTML = "Correct answers: "+ testPoints +"/"+qsize;
     }
     if(testProgress+2>qsize){
       console.log("Complete!");

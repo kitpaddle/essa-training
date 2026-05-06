@@ -74,6 +74,7 @@ body{
 }
 
 #test{
+  transition: background-color 0.6s ease;
   width: 100%;
   background-color: rgb(150,150,150);
   display: flex;
