@@ -870,7 +870,7 @@ function mapButton(nr){
     case 10:
       selectedLayer = layerGroupSIDs;
       layerGroupSIDs.addTo(map);
-      qsize = 0;
+      qsize = 50;
       buildRunwayPanel();
       showRunwayPanel(true);
       filterSIDsByRunway('01L');
