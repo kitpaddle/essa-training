@@ -1008,12 +1008,37 @@ function showSIDAnswerButtons(show) {
 
 function sidUpdateQuestion() {
   const pair = sidTestPairs[sidTestProgress];
+  const ac = assignAircraftTypes(pair);
   document.getElementById('questions').innerHTML = 'Question: ' + (sidTestProgress + 1) + '/50';
   document.getElementById('tq').innerHTML =
-    '<div style="text-align:center;font-weight:bold;">DEP ' + pair.sid1.properties.runway + '</div>' +
-    '<div>Flight 1: ' + getSIDDisplayName(pair.sid1) + '</div>' +
-    '<div>Flight 2: ' + getSIDDisplayName(pair.sid2) + '</div>';
+    '<div style="text-align:center;font-weight:bold;margin-top:8px;">DEP ' + pair.sid1.properties.runway + (ac.natt ? ' (natt)' : '') + '</div>' +
+    '<div>Flight 1 (' + ac.type1 + '): ' + getSIDDisplayName(pair.sid1) + '</div>' +
+    '<div>Flight 2 (' + ac.type2 + '): ' + getSIDDisplayName(pair.sid2) + '</div>';
   showSIDPair(pair);
+}
+
+function assignAircraftTypes(pair) {
+  const p1 = pair.sid1.properties, p2 = pair.sid2.properties;
+  const turboprops = ['F50', 'AT76'];
+  const jets = ['A320', 'A321', 'B737'];
+  function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+  let type1, type2, natt = false;
+  if (p1.LF && p2.LF) {
+    type1 = pick(turboprops); type2 = pick(turboprops);
+  } else if (p1.LF) {
+    type1 = pick(turboprops); type2 = pick(jets);
+  } else if (p2.LF) {
+    type1 = pick(jets); type2 = pick(turboprops);
+  } else {
+    type1 = pick(jets); type2 = pick(jets);
+    if (Math.random() < 0.3) {
+      if (Math.random() < 0.5) { type1 = pick(turboprops); }
+      else { type2 = pick(turboprops); }
+      natt = true;
+    }
+  }
+  return { type1: type1, type2: type2, natt: natt };
 }
 
 function flashFeedback(correct) {
