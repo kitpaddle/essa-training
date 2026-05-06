@@ -1158,6 +1158,7 @@ function timerButton(){
     document.getElementById('testbutton').innerHTML = 'Start Test';
     clearInterval(timerInterval);
 
+    document.getElementById('tq').innerHTML = '--';
     if(isSIDTest){
       isSIDTest = false;
       showSIDAnswerButtons(false);
