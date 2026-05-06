@@ -1032,8 +1032,10 @@ function sidUpdateQuestion() {
   document.getElementById('questions').innerHTML = 'Question: ' + (sidTestProgress + 1) + '/50';
   document.getElementById('tq').innerHTML =
     '<div style="text-align:center;font-weight:bold;margin-top:8px;">DEP ' + pair.sid1.properties.runway + (ac.natt ? ' (natt)' : '') + '</div>' +
-    '<div>Flight 1 (' + ac.type1 + '): ' + getSIDDisplayName(pair.sid1) + '</div>' +
-    '<div>Flight 2 (' + ac.type2 + '): ' + getSIDDisplayName(pair.sid2) + '</div>';
+    '<table style="width:100%;border-collapse:collapse;margin-top:4px;">' +
+      '<tr><td style="white-space:nowrap;padding-right:6px;">Flight 1 (' + ac.type1 + '):</td><td>' + getSIDDisplayName(pair.sid1) + '</td></tr>' +
+      '<tr><td style="white-space:nowrap;padding-right:6px;">Flight 2 (' + ac.type2 + '):</td><td>' + getSIDDisplayName(pair.sid2) + '</td></tr>' +
+    '</table>';
   if (sidShowSIDs) { showSIDPair(pair); } else { hideAllSIDs(); }
 }
 
