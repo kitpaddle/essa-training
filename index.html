@@ -48,7 +48,7 @@
       <h3>Knowledge Test</h3>
       <li><div id="questions">Questions: n/n</div></li>
       <li><div id="tq">n/a</div></li>
-      <li><div> -- </div></li>
+      <li><div style="display:flex;align-items:center;justify-content:center;gap:6px;">-- <button class="pButton" id="sid-toggle-btn" onclick="sidToggleSIDs()" style="display:none;width:auto;padding:0 8px;">HIDE SIDs</button> --</div></li>
       <li><div id="answers">Correct answers: n/n</div></li>
       <li><div id="timer">Time lapsed: 00:00</div></li>
       <div id="sid-answer-buttons">
@@ -56,7 +56,6 @@
         <button class="pButton" onclick="sidAnswerClick(4)">4 NM</button>
         <button class="pButton" onclick="sidAnswerClick(5)">5 NM</button>
       </div>
-      <button class="pButton" id="sid-toggle-btn" onclick="sidToggleSIDs()" style="display:none;">HIDE SIDs</button>
       <button class="pButton" id="testbutton" type="button" onclick="timerButton()">Start Test</button>
     </div>    
   </div>
