@@ -37,7 +37,7 @@ body{
 #info{
   width: 10%;
   height: 100%;
-  padding: 0 20px;
+  padding: 0 10px;
   min-width: 300px;
   display: flex;
   flex-direction: column;
