@@ -983,9 +983,9 @@ function generateSIDTestPairs() {
 }
 
 function getSIDDisplayName(f) {
-  if (!f.properties.LF) return '5.0 ' + f.properties.name;
-  if (f.properties.exit_point === 'HAPZI') return '3.0 HAPZI ' + f.properties.name;
-  return '3.0 ' + f.properties.name + ' ve ' + f.properties.exit_point;
+  if (!f.properties.LF) return '5.0ft ' + f.properties.name;
+  if (f.properties.exit_point === 'HAPZI') return '3.0ft HAPZI ' + f.properties.name;
+  return '3.0ft ' + f.properties.name + ' ve ' + f.properties.exit_point;
 }
 
 function showSIDPair(pair) {
