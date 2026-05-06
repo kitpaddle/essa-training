@@ -93,6 +93,7 @@ let isSIDTest = false;
 let sidTestPairs = [];
 let sidTestProgress = 0;
 let sidTestPoints = 0;
+let sidShowSIDs = true;
 
 // Layer BIG Groups
 let layerAirfield;
@@ -1004,6 +1005,25 @@ function showSIDPair(pair) {
 
 function showSIDAnswerButtons(show) {
   document.getElementById('sid-answer-buttons').style.display = show ? 'flex' : 'none';
+  const toggleBtn = document.getElementById('sid-toggle-btn');
+  toggleBtn.style.display = show ? '' : 'none';
+  if (show) { sidShowSIDs = true; toggleBtn.textContent = 'HIDE SIDs'; }
+}
+
+function hideAllSIDs() {
+  [layerSIDsNormal, layerSIDsLF].forEach(function(lg) {
+    lg.eachLayer(function(l) { l.setStyle({ opacity: 0 }); });
+  });
+  [layerSIDArrows, layerSIDLabels].forEach(function(lg) {
+    lg.eachLayer(function(l) { l.setOpacity(0); });
+  });
+}
+
+function sidToggleSIDs() {
+  sidShowSIDs = !sidShowSIDs;
+  document.getElementById('sid-toggle-btn').textContent = sidShowSIDs ? 'HIDE SIDs' : 'SHOW SIDs';
+  if (sidShowSIDs) { showSIDPair(sidTestPairs[sidTestProgress]); }
+  else { hideAllSIDs(); }
 }
 
 function sidUpdateQuestion() {
@@ -1014,7 +1034,7 @@ function sidUpdateQuestion() {
     '<div style="text-align:center;font-weight:bold;margin-top:8px;">DEP ' + pair.sid1.properties.runway + (ac.natt ? ' (natt)' : '') + '</div>' +
     '<div>Flight 1 (' + ac.type1 + '): ' + getSIDDisplayName(pair.sid1) + '</div>' +
     '<div>Flight 2 (' + ac.type2 + '): ' + getSIDDisplayName(pair.sid2) + '</div>';
-  showSIDPair(pair);
+  if (sidShowSIDs) { showSIDPair(pair); } else { hideAllSIDs(); }
 }
 
 function assignAircraftTypes(pair) {
