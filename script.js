@@ -983,9 +983,9 @@ function generateSIDTestPairs() {
 }
 
 function getSIDDisplayName(f) {
-  if (!f.properties.LF) return f.properties.name;
-  if (f.properties.exit_point === 'HAPZI') return f.properties.name + ' 3.0';
-  return f.properties.name + ' 3.0 ve ' + f.properties.exit_point;
+  if (!f.properties.LF) return '5.0 ' + f.properties.name;
+  if (f.properties.exit_point === 'HAPZI') return '3.0 HAPZI ' + f.properties.name;
+  return '3.0 ' + f.properties.name + ' ve ' + f.properties.exit_point;
 }
 
 function showSIDPair(pair) {
@@ -1010,9 +1010,9 @@ function sidUpdateQuestion() {
   const pair = sidTestPairs[sidTestProgress];
   document.getElementById('questions').innerHTML = 'Question: ' + (sidTestProgress + 1) + '/50';
   document.getElementById('tq').innerHTML =
-    'DEP ' + pair.sid1.properties.runway +
-    ' Flight 1: ' + getSIDDisplayName(pair.sid1) +
-    ' -> Flight 2: ' + getSIDDisplayName(pair.sid2);
+    '<div style="text-align:center;font-weight:bold;">DEP ' + pair.sid1.properties.runway + '</div>' +
+    '<div>Flight 1: ' + getSIDDisplayName(pair.sid1) + '</div>' +
+    '<div>Flight 2: ' + getSIDDisplayName(pair.sid2) + '</div>';
   showSIDPair(pair);
 }
 
