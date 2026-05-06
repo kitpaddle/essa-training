@@ -1016,8 +1016,19 @@ function sidUpdateQuestion() {
   showSIDPair(pair);
 }
 
+function getCorrectAnswer(pair) {
+  const p1 = pair.sid1.properties, p2 = pair.sid2.properties;
+  if (p1.LF || p2.LF) return 3;
+  const exits4nm = ['ARS', 'PETEV', 'KOGAV', 'RESNA'];
+  if (p1.runway === '19R' && (exits4nm.includes(p1.exit_point) || exits4nm.includes(p2.exit_point))) return 4;
+  if (p1.next_sector !== p2.next_sector) return 3;
+  return 5;
+}
+
 function sidAnswerClick(nm) {
-  // Scoring rules to be added later
+  const correct = getCorrectAnswer(sidTestPairs[sidTestProgress]);
+  if (nm === correct) sidTestPoints++;
+  document.getElementById('answers').innerHTML = 'Correct answers: ' + sidTestPoints + '/50';
   if (sidTestProgress + 1 >= 50) {
     document.getElementById('tq').innerHTML = 'Test complete!';
     timerButton();
