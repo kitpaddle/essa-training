@@ -1031,11 +1031,13 @@ function sidUpdateQuestion() {
   const ac = assignAircraftTypes(pair);
   document.getElementById('questions').innerHTML = 'Question: ' + (sidTestProgress + 1) + '/50';
   document.getElementById('tq').innerHTML =
-    '<div style="text-align:center;font-weight:bold;margin-top:8px;">DEP ' + pair.sid1.properties.runway + (ac.natt ? ' (natt)' : '') + '</div>' +
-    '<table style="width:100%;border-collapse:collapse;margin-top:4px;">' +
-      '<tr><td style="white-space:nowrap;padding-right:6px;">Flight 1 (' + ac.type1 + '):</td><td>' + getSIDDisplayName(pair.sid1) + '</td></tr>' +
-      '<tr><td style="white-space:nowrap;padding-right:6px;">Flight 2 (' + ac.type2 + '):</td><td>' + getSIDDisplayName(pair.sid2) + '</td></tr>' +
-    '</table>';
+    '<div class="sid-question">' +
+      '<div class="sid-question-header">DEP ' + pair.sid1.properties.runway + (ac.natt ? ' (natt)' : '') + '</div>' +
+      '<table class="sid-question-table">' +
+        '<tr><td>Flight 1 (' + ac.type1 + ')</td><td>' + getSIDDisplayName(pair.sid1) + '</td></tr>' +
+        '<tr><td>Flight 2 (' + ac.type2 + ')</td><td>' + getSIDDisplayName(pair.sid2) + '</td></tr>' +
+      '</table>' +
+    '</div>';
   if (sidShowSIDs) { showSIDPair(pair); } else { hideAllSIDs(); }
 }
 
@@ -1072,20 +1074,47 @@ function flashFeedback(correct) {
 function getCorrectAnswer(pair) {
   const p1 = pair.sid1.properties, p2 = pair.sid2.properties;
   if (p1.LF || p2.LF) return 3;
+  if (p1.next_sector !== p2.next_sector) return 3;
   const exits4nm = ['ARS', 'PETEV', 'KOGAV', 'RESNA'];
   if (p1.runway === '19R' && (exits4nm.includes(p1.exit_point) || exits4nm.includes(p2.exit_point))) return 4;
-  if (p1.next_sector !== p2.next_sector) return 3;
   return 5;
 }
 
 function sidAnswerClick(nm) {
-  const correct = getCorrectAnswer(sidTestPairs[sidTestProgress]);
+  const pair = sidTestPairs[sidTestProgress];
+  const correct = getCorrectAnswer(pair);
   const isCorrect = nm === correct;
   if (isCorrect) sidTestPoints++;
   flashFeedback(isCorrect);
+
+  const fb = document.getElementById('sid-wrong-feedback');
+  if (!isCorrect) {
+    const ac = assignAircraftTypes(pair);
+    const p1 = pair.sid1.properties, p2 = pair.sid2.properties;
+    const exits4nm = ['ARS', 'PETEV', 'KOGAV', 'RESNA'];
+    let reason;
+    if (p1.LF || p2.LF) reason = 'Avstånd mot lågfart dagtid 3NM';
+    else if (p1.next_sector !== p2.next_sector) reason = 'SID:ar till olika DEP-sektorer';
+    else if (p1.runway === '19R' && (exits4nm.includes(p1.exit_point) || exits4nm.includes(p2.exit_point))) reason = 'En eller bägge SID:ar till ARS, PETEV, KOGAV, RESNA';
+    else reason = '5NM standard mellan 2 SIDar till samma DEP-sektor';
+    fb.innerHTML =
+      '<div style="text-align:center;"><b>Wrong answer</b></div>' +
+      '<div style="text-align:center;">DEP ' + p1.runway + (ac.natt ? ' (natt)' : '') + '</div>' +
+      '<table style="border-collapse:collapse;margin:4px auto;">' +
+        '<tr><td style="white-space:nowrap;padding-right:6px;">Flight 1 (' + ac.type1 + '):</td><td>' + getSIDDisplayName(pair.sid1) + '</td></tr>' +
+        '<tr><td style="white-space:nowrap;padding-right:6px;">Flight 2 (' + ac.type2 + '):</td><td>' + getSIDDisplayName(pair.sid2) + '</td></tr>' +
+      '</table>' +
+      '<div style="text-align:center;">Your answer: <b>' + nm + ' NM</b> &nbsp;|&nbsp; Correct: <b>' + correct + ' NM</b></div>' +
+      '<div style="text-align:center;font-size:11px;font-style:italic;margin-top:3px;">(' + reason + ')</div>';
+    fb.style.display = 'block';
+  } else {
+    fb.style.display = 'none';
+  }
+
   document.getElementById('answers').innerHTML = 'Correct answers: ' + sidTestPoints + '/50';
   if (sidTestProgress + 1 >= 50) {
     document.getElementById('tq').innerHTML = 'Test complete!';
+    fb.style.display = 'none';
     timerButton();
   } else {
     sidTestProgress++;

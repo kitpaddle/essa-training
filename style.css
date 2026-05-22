@@ -45,6 +45,10 @@ body{
   row-gap: 10px;
 }
 
+#info h1 {
+  margin: 5px 0 0 0;
+}
+
 .practice{
   width: 100%;
   background-color: rgb(100,100,100);
@@ -56,7 +60,11 @@ body{
 }
 
 .practice h3{
-  margin: 10px;
+  margin: 5px 10px;
+}
+
+#test h3 {
+  margin: 10px 10px;
 }
 
 .pButton{
@@ -113,6 +121,50 @@ body{
   padding: 8px;
   background-color: rgba(40, 40, 40, 0.85);
   border-radius: 5px;
+}
+
+.sid-question {
+  width: calc(100% - 20px);
+  margin: 4px 10px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.15);
+}
+
+.sid-question-header {
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 8px;
+  background: rgba(0,0,0,0.2);
+  letter-spacing: 0.5px;
+}
+
+.sid-question-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sid-question-table tr {
+  border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+.sid-question-table td {
+  padding: 4px 8px;
+}
+
+.sid-question-table td:first-child {
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+#sid-wrong-feedback {
+  width: 100%;
+  background-color: rgba(200, 60, 60, 0.25);
+  border: 1px solid rgba(200, 60, 60, 0.5);
+  border-radius: 5px;
+  padding: 6px 10px;
+  font-size: 13px;
+  box-sizing: border-box;
 }
 
 #sid-answer-buttons {

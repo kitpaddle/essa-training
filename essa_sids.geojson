@@ -127,7 +127,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "ARS",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -256,7 +256,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "INWIQ",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -417,7 +417,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "BABAP",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -546,7 +546,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "NOSLI",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -675,7 +675,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "PETEV",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -772,7 +772,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "BABAP",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -853,7 +853,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "TOVRI",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -934,7 +934,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "KOGAV",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -999,7 +999,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "RESNA",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -1112,7 +1112,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "INWIQ",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -1193,7 +1193,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "ARS",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -1306,7 +1306,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "NOSLI",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -1403,7 +1403,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "PETEV",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -1484,7 +1484,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "TOVRI",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -1581,7 +1581,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "BABAP",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -1646,7 +1646,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "KOGAV",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -1727,7 +1727,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "RESNA",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -1888,7 +1888,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "ARS",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -2049,7 +2049,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "INWIQ",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -2210,7 +2210,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "NOSLI",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -2371,7 +2371,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "PETEV",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -2484,7 +2484,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "KOGAV",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -2613,7 +2613,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "RESNA",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -2694,7 +2694,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "BABAP",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -2759,7 +2759,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "TOVRI",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -2904,7 +2904,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "ARS",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -3033,7 +3033,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "PETEV",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -3178,7 +3178,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "NOSLI",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -3339,7 +3339,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "INWIQ",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -3420,7 +3420,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "BABAP",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -3485,7 +3485,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "TOVRI",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -3646,7 +3646,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "RESNA",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -3807,7 +3807,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "KOGAV",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -3920,7 +3920,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "PETEV",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -4033,7 +4033,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "ARS",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -4146,7 +4146,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "BABAP",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -4275,7 +4275,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "NOSLI",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -4420,7 +4420,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "INWIQ",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -4549,7 +4549,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "INWIQ",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -4694,7 +4694,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "RESNA",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -4807,7 +4807,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "NOSLI",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -4920,7 +4920,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "PETEV",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -5033,7 +5033,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "ARS",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -5178,7 +5178,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "KOGAV",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -5275,7 +5275,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "TOVRI",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -5372,7 +5372,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "ARS",
-        "weight": 3
+        "weight": 5
       }
     },
     {
@@ -5485,7 +5485,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "INWIQ",
-        "weight": 3
+        "weight": 5
       }
     },
     {
@@ -5614,7 +5614,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "KOGAV",
-        "weight": 3
+        "weight": 5
       }
     },
     {
@@ -5711,7 +5711,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "NOSLI",
-        "weight": 3
+        "weight": 5
       }
     },
     {
@@ -5808,7 +5808,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "PETEV",
-        "weight": 3
+        "weight": 5
       }
     },
     {
@@ -5937,7 +5937,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "RESNA",
-        "weight": 3
+        "weight": 5
       }
     },
     {
@@ -6066,7 +6066,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "TOVRI",
-        "weight": 3
+        "weight": 5
       }
     },
     {
@@ -6195,7 +6195,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "BABAP",
-        "weight": 3
+        "weight": 5
       }
     },
     {
@@ -6358,7 +6358,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "ARS",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -6471,7 +6471,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "BABAP",
-        "weight": 3
+        "weight": 6
       }
     },
     {
@@ -6568,7 +6568,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "INWIQ",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -6681,7 +6681,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "KOGAV",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -6762,7 +6762,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "NOSLI",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -6843,7 +6843,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "PETEV",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -6940,7 +6940,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "RESNA",
-        "weight": 1
+        "weight": 5
       }
     },
     {
@@ -7037,7 +7037,7 @@
         "LF": false,
         "CA": 5000,
         "exit_point": "TOVRI",
-        "weight": 1
+        "weight": 5
       }
     },
     {
