@@ -675,8 +675,8 @@ fetch('https://kitpaddle.github.io/hosting/essaosmaeroways260820.geojson').then(
     // FATO (helicopter Final Approach and Takeoff Area) grouped alongside runways
     if(osmData.features[i].properties.aeroway == "helipad" && osmData.features[i].properties.ref && osmData.features[i].properties.ref.toUpperCase().startsWith("FATO")) dataRunways.features.push(osmData.features[i]);
     if(osmData.features[i].properties.aeroway == "apron") dataAprons.features.push(osmData.features[i]);
-    // Skip unnamed terminal buildings; merge the separate Terminal 5 / Pier F buildings into one
-    if(osmData.features[i].properties.aeroway == "terminal" && osmData.features[i].properties.name) {
+    // Skip unnamed terminal buildings and Skycity; merge the separate Terminal 5 / Pier F buildings into one
+    if(osmData.features[i].properties.aeroway == "terminal" && osmData.features[i].properties.name && osmData.features[i].properties.name != "Skycity") {
       if(osmData.features[i].properties.name.startsWith("Terminal 5")) {
         terminal5Temp.push(osmData.features[i]);
       } else {
