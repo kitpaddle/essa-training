@@ -218,7 +218,8 @@ function getUniqueValues(array){
   return Array.from(new Set(array));
 }
 function onEachRunway(feature, layer){
-  let html = '<div class="tt"><b>RWY '+feature.properties.name+'</b></div>';
+  let label = feature.properties.aeroway == "runway" ? "RWY " + feature.properties.name : feature.properties.name;
+  let html = '<div class="tt"><b>'+label+'</b></div>';
   layer.bindTooltip(html, {direction: 'top', className: "tipClass"}).openTooltip();
   layer.on('mouseover', function () {
     this.setStyle({color: 'orange', weight: 10});
@@ -658,7 +659,7 @@ fetch('./essa_poi.geojson').then(response => {
 
 // FETCH DATA for RWYS & TWYS & STANDS & APRONS & TERMINALS
 // Data is sourced from OpenStreetMap as a GeoJSON saved on my github
-fetch('https://kitpaddle.github.io/hosting/essaosmaeroways220928.geojson').then(response => {
+fetch('https://kitpaddle.github.io/hosting/essaosmaeroways260820.geojson').then(response => {
   return response.json();
 }).then(data => {
   osmData = data; // Save data locally
@@ -666,12 +667,22 @@ fetch('https://kitpaddle.github.io/hosting/essaosmaeroways220928.geojson').then(
   // PUSH ALL FEATURES TO RESPECTIVE GEOJSON FEATURE ARRAY
   let taxiwayNames = [];
   let twytemp = [];
+  let terminal5Temp = [];
   // Iterating all features and sorting in respective Geojson arrays
   for (let i=0;i<osmData.features.length; i++){
     //temparr.push(osmData.features[i].properties.aeroway);
     if(osmData.features[i].properties.aeroway == "runway") dataRunways.features.push(osmData.features[i]);
+    // FATO (helicopter Final Approach and Takeoff Area) grouped alongside runways
+    if(osmData.features[i].properties.aeroway == "helipad" && osmData.features[i].properties.ref && osmData.features[i].properties.ref.toUpperCase().startsWith("FATO")) dataRunways.features.push(osmData.features[i]);
     if(osmData.features[i].properties.aeroway == "apron") dataAprons.features.push(osmData.features[i]);
-    if(osmData.features[i].properties.aeroway == "terminal") dataTerminals.features.push(osmData.features[i]);
+    // Skip unnamed terminal buildings; merge the separate Terminal 5 / Pier F buildings into one
+    if(osmData.features[i].properties.aeroway == "terminal" && osmData.features[i].properties.name) {
+      if(osmData.features[i].properties.name.startsWith("Terminal 5")) {
+        terminal5Temp.push(osmData.features[i]);
+      } else {
+        dataTerminals.features.push(osmData.features[i]);
+      }
+    }
     // Special case for STANDS to get lines AND points
     if(osmData.features[i].properties.aeroway == "parking_position" && osmData.features[i].geometry.type == "Point" ){
       osmData.features[i].properties.name = osmData.features[i].properties.ref;
@@ -708,6 +719,21 @@ fetch('https://kitpaddle.github.io/hosting/essaosmaeroways220928.geojson').then(
       dataTaxiways.features.push(newFeature);
     }
   }
+
+  // Merge the Terminal 5 buildings (main + Pier F) into a single "Terminal 5" feature
+  if(terminal5Temp.length > 0) {
+    dataTerminals.features.push({
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": terminal5Temp.map(f => f.geometry.coordinates)
+      },
+      "properties": {
+        "name": "Terminal 5"
+      }
+    });
+  }
+
   layerRunways = L.geoJSON(dataRunways, {onEachFeature: onEachRunway, style:{color:'black', weight: 9}});
   layerAprons = L.geoJSON(dataAprons, {onEachFeature: onEachApron,style:{weight: 0.5, color:'grey'}});
   layerTerminals = L.geoJSON(dataTerminals, {onEachFeature: onEachTerminal,style:{weight: 0.5, color:'black'}});
