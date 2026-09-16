@@ -160,8 +160,9 @@ let iconVfrAirfield = L.icon({
 //// JS RELATED TO MAP / LEAFLET
 
 const startingPos =[59.651, 17.941];
+const CARTO_API_KEY = 'cb1_3n88_1_9bdec080c5960b16551471c4';
 const URL_OSM = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-const URL_WHITE = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png';
+const URL_WHITE = `https://basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png?key=${CARTO_API_KEY}`;
 const URL_SAT = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
 
 // Creating MAP and baseMap Layer and adding them to the DIV
