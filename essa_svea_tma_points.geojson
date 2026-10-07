@@ -1,0 +1,187 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.30666667,
+          59.27444444
+        ]
+      },
+      "properties": {
+        "name": "ALCAM",
+        "TYPEOFPOINT": "DNPT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.93611111,
+          59.89833333
+        ]
+      },
+      "properties": {
+        "name": "ALEQI",
+        "TYPEOFPOINT": "DNPT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.98991667,
+          59.82444444
+        ]
+      },
+      "properties": {
+        "name": "ELTOK",
+        "TYPEOFPOINT": "DNPT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.22961111,
+          60.08111111
+        ]
+      },
+      "properties": {
+        "name": "KOGAV",
+        "TYPEOFPOINT": "DNPT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.69833333,
+          59.0125
+        ]
+      },
+      "properties": {
+        "name": "LINAQ",
+        "TYPEOFPOINT": "DNPT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.56638889,
+          58.92888889
+        ]
+      },
+      "properties": {
+        "name": "NEPVA",
+        "TYPEOFPOINT": "DNPT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.02483333,
+          60.36694444
+        ]
+      },
+      "properties": {
+        "name": "RESNA",
+        "TYPEOFPOINT": "DNPT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.04666667,
+          58.99027778
+        ]
+      },
+      "properties": {
+        "name": "SOFIQ",
+        "TYPEOFPOINT": "DNPT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.07605556,
+          59.65930556
+        ]
+      },
+      "properties": {
+        "name": "XILAN",
+        "TYPEOFPOINT": "DNPT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.39156133,
+          60.27922267
+        ]
+      },
+      "properties": {
+        "name": "VACRA",
+        "TYPEOFPOINT": "DNPT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.8688617,
+          59.3706712
+        ]
+      },
+      "properties": {
+        "name": "ROBIA",
+        "TYPEOFPOINT": "DNPT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.7066126,
+          58.9263144
+        ]
+      },
+      "properties": {
+        "name": "EMLIS",
+        "TYPEOFPOINT": "DNPT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.5316999,
+          59.5360045
+        ]
+      },
+      "properties": {
+        "name": "LUPAC",
+        "TYPEOFPOINT": "DNPT"
+      }
+    }
+  ]
+}

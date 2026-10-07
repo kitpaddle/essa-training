@@ -1,0 +1,26 @@
+{
+  "name": "essa-training",
+  "version": "1.0.0",
+  "description": "Small simple website/tool used by student Air Traffic Controllers to learn the geography related to ESSA (Arlanda Airport) and associated airspaces.",
+  "main": "script.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitpaddle/essa-training.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kitpaddle/essa-training/issues"
+  },
+  "homepage": "https://github.com/kitpaddle/essa-training#readme",
+  "devDependencies": {
+    "@turf/turf": "^7.4.0"
+  }
+}

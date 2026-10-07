@@ -88,6 +88,18 @@ let layerGroupSectors, layerGroupCtrPoints, layerGroupCtrPlaces;
 // LAYER GROUPS TMA
 let layerGroupTMAPoints;
 let layerGroupSIDs;
+// SVEA (new TMA sectorisation)
+let layerTMAPointsSvea;
+let layerGroupTMAPointsSvea = L.layerGroup([]);
+let layerGroupSectorsFreq = L.layerGroup([]);
+let buttonDataTMASvea = [];
+let buttonDataSveaFreq = [];
+let sveaMode = false;
+let dataSveaSectors;
+let layerSVEATMAOutline;
+let layerGroupSVEATMAOutline = L.layerGroup([]);
+let layerCtrSectorLines;
+let layerGroupCtrSectorLines = L.layerGroup([]);
 let currentRunwayFilter = '01L';
 let isSIDTest = false;
 let sidTestPairs = [];
@@ -345,6 +357,30 @@ function onEachVfrPoint(feature, layer){
   });
 }
 
+// Distinct color per SVEA parent sector, used for both fill/outline and the mouseout reset
+const sveaSectorColors = {
+  W: 'rgb(224, 99, 76)',   // red/orange
+  E: 'rgb(76, 165, 224)',  // blue
+  D: 'rgb(166, 207, 152)', // green
+  S: 'rgb(178, 123, 224)', // purple
+};
+
+// For the SVEA parent sectors (W/E/D/S) in the "Sectors and Frequencies" layer
+function onEachSveaSector(feature, layer){
+  const baseStyle = {color: sveaSectorColors[feature.properties.ID], weight: 2, fillOpacity: 0.15};
+  let html = '<div class="tooltip"><b>'+feature.properties.ID+'</b></div>';
+  layer.bindTooltip(html, {permanent: false, direction: 'center'});
+  layer.on('mouseover', function () {
+    this.setStyle({color: 'orange', weight: 4});
+  });
+  layer.on('mouseout', function () {
+    this.setStyle(baseStyle);
+  });
+  layer.on('click', function(){
+    testClick(String(feature.properties.name));
+  });
+}
+
 function onEachAoR(feature, layer){
   if (feature.properties.category === 'label') return;
   let html = '<div class="tooltip"><b>'+feature.properties.aor+'</b><br>Frequency: '+feature.properties.name+'</div>';
@@ -435,6 +471,38 @@ fetch('./essa_tma_points.geojson').then(response => {
   
 }).catch(err => {
   console.log("Error fetching TMA points from file essa_tma_points.geojson");
+});
+
+// Same triangle as ctr_vfr_point.png, but as SVG so it can be colored
+function triangleIcon(color){
+  return L.divIcon({
+    className: '', // no default white leaflet-div-icon box
+    html: '<svg width="20" height="20" viewBox="0 0 20 20"><polygon points="10,2 18.5,17.5 1.5,17.5" fill="'+color+'" stroke="black" stroke-width="1.2"/></svg>',
+    iconSize: [20, 20],
+    iconAnchor: [10, 10]
+  });
+}
+const iconSveaPointYellow = triangleIcon('rgb(255, 214, 0)');
+const iconSveaPointBlue = triangleIcon('rgb(76, 165, 224)');
+const sveaYellowPoints = ['VACRA', 'LUPAC', 'ROBIA', 'EMLIS'];
+
+// FETCHING DATA for SVEA TMA Points
+fetch('./essa_svea_tma_points.geojson').then(response => {
+  return response.json();
+}).then(data => {
+  layerTMAPointsSvea = L.geoJSON(data, {
+    onEachFeature: onEachVfrPoint,
+    pointToLayer: function (feature, latlng) {
+      const yellow = sveaYellowPoints.includes(feature.properties.name);
+      return L.marker(latlng, {icon: yellow ? iconSveaPointYellow : iconSveaPointBlue});
+    }
+  });
+  layerGroupTMAPointsSvea.addLayer(layerTMAPointsSvea);
+  // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
+  layerList.push(layerTMAPointsSvea);
+
+}).catch(err => {
+  console.log("Error fetching SVEA TMA points from file essa_svea_tma_points.geojson");
 });
 
 // FETCHING DATA for SIDs (Leveransavstånd)
@@ -554,7 +622,7 @@ fetch('./essa_ctr_sectors.geojson').then(response => {
   //console.log(dataRoads);
   
   layerSectors = L.geoJSON(dataSectors, {interactive: false, style:{color:'grey', weight: 1}});
-  
+
   // Grouping stands to one layer
   layerGroupSectors = L.layerGroup([layerSectors]);
   // CTR LAYER
@@ -563,9 +631,57 @@ fetch('./essa_ctr_sectors.geojson').then(response => {
   //test
   // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
   //layerList.push(layerSectors);
-  
+
+  // Same CTR sector lines (Sector West/East/Separation), but without the old TMA outline feature -
+  // used by the SVEA layers, which draw the new SVEA TMA outline instead.
+  const dataCtrSectorLinesOnly = {
+    type: 'FeatureCollection',
+    features: dataSectors.features.filter(f => !f.properties.TYPEOFAREA)
+  };
+  layerCtrSectorLines = L.geoJSON(dataCtrSectorLinesOnly, {interactive: false, style:{color:'grey', weight: 1}});
+  layerGroupCtrSectorLines = L.layerGroup([layerCtrSectorLines]);
+
 }).catch(err => {
   console.log("Error fetching CTR/TMA sectors");
+});
+
+// FETCHING DATA for the SVEA TMA outline (used by both new SVEA TMA layers)
+fetch('./essa_svea_sectors.geojson').then(response => {
+  return response.json();
+}).then(data => {
+  dataSveaSectors = data; // Save all SVEA sector data locally, for use by future SVEA layers too
+
+  const dataSveaTMAOutline = {
+    type: 'FeatureCollection',
+    features: data.features.filter(f => f.properties.ID === 'TMA')
+  };
+  layerSVEATMAOutline = L.geoJSON(dataSveaTMAOutline, {interactive: false, style: {color: 'grey', weight: 1, fillOpacity: 0}});
+  layerGroupSVEATMAOutline = L.layerGroup([layerSVEATMAOutline]);
+
+  buttonDataSveaFreq = data.features.filter(f => f.properties.category === 'button');
+
+  // The 4 parent sectors (W/E/D/S), testable/labeled the same way as other sector-style layers.
+  // Explicit draw order (bottom to top): S, W, D, E
+  const parentDrawOrder = ['S', 'W', 'D', 'E'];
+  const dataSveaParentSectors = {
+    type: 'FeatureCollection',
+    features: parentDrawOrder.map(id => {
+      const f = data.features.find(f => f.properties.parentSector === '' && f.properties.ID === id);
+      // testClick/updateQuestion key off properties.name (same convention as every other testable layer)
+      return {...f, properties: {...f.properties, name: 'sector ' + f.properties.ID}};
+    })
+  };
+  layerSectorsFreq = L.geoJSON(dataSveaParentSectors, {
+    onEachFeature: onEachSveaSector,
+    style: feature => ({color: sveaSectorColors[feature.properties.ID], weight: 2, fillOpacity: 0.15})
+  });
+  layerGroupSectorsFreq.addLayer(layerSectorsFreq);
+
+  // Making a layer list used by "ttipClick()" to activate/deactivate Tooltips
+  layerList.push(layerSectorsFreq);
+
+}).catch(err => {
+  console.log("Error fetching SVEA sectors from file essa_svea_sectors.geojson");
 });
 
 // FETCHING DATA for AORs in airfield (Frequencies)
@@ -806,7 +922,7 @@ function ttipClick(){
 }
 
 function mapButton(nr){
-  [...document.getElementsByClassName('pButton')].map(x => x.classList.remove('active')); // Removes 'active' class from all pButton
+  [...document.getElementsByClassName('pButton')].filter(x => x.id !== 'svea-toggle').map(x => x.classList.remove('active')); // Removes 'active' class from all pButton (except the SVEA toggle, whose highlight reflects sveaMode, not layer selection)
   document.getElementById(nr).classList.add('active'); // Add 'active'-class to the one just pressed
   document.getElementById('testbutton').disabled = false;
   if(selectedLayer){
@@ -820,6 +936,10 @@ function mapButton(nr){
     map.removeLayer(layerGroupCtrPoints);
     map.removeLayer(layerGroupCtrPlaces);
     map.removeLayer(layerGroupTMAPoints);
+    map.removeLayer(layerGroupTMAPointsSvea);
+    map.removeLayer(layerGroupSectorsFreq);
+    map.removeLayer(layerGroupSVEATMAOutline);
+    map.removeLayer(layerGroupCtrSectorLines);
     map.removeLayer(layerStandLines);
     if(layerGroupSIDs) map.removeLayer(layerGroupSIDs);
     showButtonPanel(false);
@@ -903,11 +1023,42 @@ function mapButton(nr){
       filterSIDsByRunway('01L');
       map.setView(layerRunways.getBounds().getCenter(), map.getBoundsZoom(layerCtrPlaces.getBounds()) + 1);
       break;
+    case 11:
+      // SVEA variant of TMA Significant Points
+      selectedLayer = layerGroupTMAPointsSvea;
+      layerGroupTMAPointsSvea.addTo(map);
+      layerGroupSVEATMAOutline.addTo(map);
+      layerGroupCtrSectorLines.addTo(map);
+      qsize = layerTMAPointsSvea.getLayers().length;
+      currentButtonData = buttonDataTMASvea;
+      moveMap(layerSVEATMAOutline);
+      break;
+    case 12:
+      selectedLayer = layerGroupSectorsFreq;
+      layerGroupSectorsFreq.addTo(map);
+      layerGroupSVEATMAOutline.addTo(map);
+      layerGroupCtrSectorLines.addTo(map);
+      qsize = layerSectorsFreq.getLayers().length + buttonDataSveaFreq.length;
+      currentButtonData = buttonDataSveaFreq;
+      buildButtonPanel(buttonDataSveaFreq);
+      showButtonPanel(true);
+      moveMap(layerSVEATMAOutline);
+      break;
   }
   
   document.getElementById("questions").innerHTML = "Questions: 0/"+qsize;
   document.getElementById("answers").innerHTML = "Correct answers: 0/"+qsize;
   if(testing) timerButton(); //If testing was ON, stop testing
+}
+
+function sveaToggleClick(){
+  sveaMode = !sveaMode;
+  document.getElementById('svea-toggle').classList.toggle('active', sveaMode);
+  document.getElementById('9').style.display = sveaMode ? 'none' : '';
+  document.getElementById('10').style.display = sveaMode ? 'none' : '';
+  document.getElementById('11').style.display = sveaMode ? '' : 'none';
+  document.getElementById('12').style.display = sveaMode ? '' : 'none';
+  mapButton(sveaMode ? 11 : 9);
 }
 
 function padNumber ( val ) { return val > 9 ? val : "0" + val; }
