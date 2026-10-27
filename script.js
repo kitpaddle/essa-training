@@ -776,7 +776,7 @@ fetch('./essa_poi.geojson').then(response => {
 
 // FETCH DATA for RWYS & TWYS & STANDS & APRONS & TERMINALS
 // Data is sourced from OpenStreetMap as a GeoJSON saved on my github
-fetch('https://kitpaddle.github.io/hosting/essaosmaeroways260820.geojson').then(response => {
+fetch('https://kitpaddle.github.io/hosting/essaosmaeroways261027.geojson').then(response => {
   return response.json();
 }).then(data => {
   osmData = data; // Save data locally
